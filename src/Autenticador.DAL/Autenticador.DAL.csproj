@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8963003-DA4B-4D2A-A644-90C3076AD445}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autenticador.DAL</RootNamespace>
+    <AssemblyName>Autenticador.DAL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreLibrary.Data.Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstracts\Abstract_CFG_ArquivoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_ConfiguracaoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_RelatorioDAO.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_RelatorioServidorRelatorioDAO.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_ServidorRelatorioDAO.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_TemaPadraoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_TemaPaletaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_UsuarioAPIDAO.cs" />
+    <Compile Include="Abstracts\Abstract_END_CidadeDAO.cs" />
+    <Compile Include="Abstracts\Abstract_END_EnderecoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_END_PaisDAO.cs" />
+    <Compile Include="Abstracts\Abstract_END_UnidadeFederativaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_GestaoCore.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_AuditoriaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_ErrosDAO.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_SistemaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_UsuarioADDAO.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_UsuarioADErroDAO.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_UsuarioAPIDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_CertidaoCivilDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaContatoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaDeficienciaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaDocumentoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaEnderecoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_TipoDeficienciaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_PES_TipoEscolaridadeDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_DiaNaoUtilDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_EntidadeContatoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_EntidadeDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_EntidadeEnderecoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_GrupoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_IntegracaoExternaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_IntegracaoExternaTipoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_LoginProviderDominioPermitidoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_LoginProvider_ConfigDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_MensagemSistemaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_ModuloDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_GrupoPermissaoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_ModuloSiteMapDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_ParametroDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_ParametroGrupoPerfilDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_ServicoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_SistemaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_SistemaEntidadeDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoDocumentacaoAtributoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoDocumentacaoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoEntidadeDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoMeioContatoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoUnidadeAdministrativaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UnidadeAdministrativaContatoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UnidadeAdministrativaDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UnidadeAdministrativaEnderecoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioFalhaAutenticacaoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioGrupoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioGrupoUADAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioLoginProviderDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioSenhaHistoricoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_VisaoDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_VisaoModuloDAO.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_VisaoModuloMenuDAO.cs" />
+    <Compile Include="CFG_TemaPadraoDAO.cs" />
+    <Compile Include="CFG_TemaPaletaDAO.cs" />
+    <Compile Include="CFG_UsuarioAPIDAO.cs" />
+    <Compile Include="CoreServicoDAO.cs" />
+    <Compile Include="Interfaces\INewDALUsuario.cs" />
+    <Compile Include="LOG_UsuarioADDAO.cs" />
+    <Compile Include="LOG_UsuarioADErroDAO.cs" />
+    <Compile Include="LOG_UsuarioAPIDAO.cs" />
+    <Compile Include="SYS_IntegracaoExternaTipoDAO.cs" />
+    <Compile Include="SYS_LoginProviderDominioPermitidoDAO.cs" />
+    <Compile Include="SYS_LoginProvider_ConfigDAO.cs" />
+    <Compile Include="SYS_MensagemSistemaDAO.cs" />
+    <Compile Include="CFG_ArquivoDAO.cs" />
+    <Compile Include="CFG_ConfiguracaoDAO.cs" />
+    <Compile Include="CFG_RelatorioDAO.cs" />
+    <Compile Include="CFG_RelatorioServidorRelatorioDAO.cs" />
+    <Compile Include="CFG_ServidorRelatorioDAO.cs" />
+    <Compile Include="END_CidadeDAO.cs" />
+    <Compile Include="END_EnderecoDAO.cs" />
+    <Compile Include="END_PaisDAO.cs" />
+    <Compile Include="END_UnidadeFederativaDAO.cs" />
+    <Compile Include="LOG_AuditoriaDAO.cs" />
+    <Compile Include="LOG_ErrosDAO.cs" />
+    <Compile Include="LOG_SistemaDAO.cs" />
+    <Compile Include="PES_CertidaoCivilDAO.cs" />
+    <Compile Include="PES_PessoaContatoDAO.cs" />
+    <Compile Include="PES_PessoaDAO.cs" />
+    <Compile Include="PES_PessoaDeficienciaDAO.cs" />
+    <Compile Include="PES_PessoaDocumentoDAO.cs" />
+    <Compile Include="PES_PessoaEnderecoDAO.cs" />
+    <Compile Include="PES_TipoDeficienciaDAO.cs" />
+    <Compile Include="PES_TipoEscolaridadeDAO.cs" />
+    <Compile Include="SYS_DiaNaoUtilDAO.cs" />
+    <Compile Include="SYS_EntidadeDAO.cs" />
+    <Compile Include="SYS_EntidadeEnderecoDAO.cs" />
+    <Compile Include="SYS_GrupoDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYS_GrupoPermissaoDAO.cs" />
+    <Compile Include="SYS_IntegracaoExternaDAO.cs" />
+    <Compile Include="SYS_ModuloDAO.cs" />
+    <Compile Include="SYS_ModuloSiteMapDAO.cs" />
+    <Compile Include="SYS_ParametroDAO.cs" />
+    <Compile Include="SYS_ParametroGrupoPerfilDAO.cs" />
+    <Compile Include="SYS_ServicoDAO.cs" />
+    <Compile Include="SYS_SistemaDAO.cs" />
+    <Compile Include="SYS_SistemaEntidadeDAO.cs" />
+    <Compile Include="SYS_TipoDocumentacaoAtributoDAO.cs" />
+    <Compile Include="SYS_TipoDocumentacaoDAO.cs" />
+    <Compile Include="SYS_TipoEntidadeDAO.cs" />
+    <Compile Include="SYS_TipoMeioContatoDAO.cs" />
+    <Compile Include="SYS_TipoUnidadeAdministrativaDAO.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaContatoDAO.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaDAO.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaEnderecoDAO.cs" />
+    <Compile Include="SYS_EntidadeContatoDAO.cs" />
+    <Compile Include="SYS_UsuarioDAO.cs" />
+    <Compile Include="SYS_UsuarioFalhaAutenticacaoDAO.cs" />
+    <Compile Include="SYS_UsuarioGrupoDAO.cs" />
+    <Compile Include="SYS_UsuarioGrupoUADAO.cs" />
+    <Compile Include="SYS_UsuarioLoginProviderDAO.cs" />
+    <Compile Include="SYS_UsuarioSenhaHistoricoDAO.cs" />
+    <Compile Include="SYS_VisaoDAO.cs" />
+    <Compile Include="SYS_VisaoModuloDAO.cs" />
+    <Compile Include="SYS_VisaoModuloMenuDAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autenticador.Entities\Autenticador.Entities.csproj">
+      <Project>{5C2D11D0-2FFA-4E80-8AEA-2FA82FD323E0}</Project>
+      <Name>Autenticador.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

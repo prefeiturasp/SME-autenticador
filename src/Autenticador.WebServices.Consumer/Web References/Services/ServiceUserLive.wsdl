@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AlterarContaEmailSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="novasenha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="situacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarContaEmailSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlterarContaEmailSenhaResult" type="tns:ContaLive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ContaLive">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="situacao" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="erro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServiceValidation" type="tns:ServiceValidation" />
+      <s:complexType name="ServiceValidation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WSToken" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CriarContaEmailAluno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="escola" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="turma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serie" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarContaEmailAlunoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CriarContaEmailAlunoResult" type="tns:ContaLive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarContaEmailDocente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="escola" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="turma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="disciplina" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarContaEmailDocenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CriarContaEmailDocenteResult" type="tns:ContaLive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarContaEmailColaborador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="funcao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="setor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarContaEmailColaboradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CriarContaEmailColaboradorResult" type="tns:ContaLive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificarContaEmailExistente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificarContaEmailExistenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificarContaEmailExistenteResult" type="tns:ContaLive" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AlterarContaEmailSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarContaEmailSenha" />
+  </wsdl:message>
+  <wsdl:message name="AlterarContaEmailSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarContaEmailSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarContaEmailSenhaServiceValidation">
+    <wsdl:part name="ServiceValidation" element="tns:ServiceValidation" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailAlunoSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarContaEmailAluno" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailAlunoSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarContaEmailAlunoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailAlunoServiceValidation">
+    <wsdl:part name="ServiceValidation" element="tns:ServiceValidation" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailDocenteSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarContaEmailDocente" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailDocenteSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarContaEmailDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailDocenteServiceValidation">
+    <wsdl:part name="ServiceValidation" element="tns:ServiceValidation" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailColaboradorSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarContaEmailColaborador" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailColaboradorSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarContaEmailColaboradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarContaEmailColaboradorServiceValidation">
+    <wsdl:part name="ServiceValidation" element="tns:ServiceValidation" />
+  </wsdl:message>
+  <wsdl:message name="VerificarContaEmailExistenteSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificarContaEmailExistente" />
+  </wsdl:message>
+  <wsdl:message name="VerificarContaEmailExistenteSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificarContaEmailExistenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificarContaEmailExistenteServiceValidation">
+    <wsdl:part name="ServiceValidation" element="tns:ServiceValidation" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceUserLiveSoap">
+    <wsdl:operation name="AlterarContaEmailSenha">
+      <wsdl:input message="tns:AlterarContaEmailSenhaSoapIn" />
+      <wsdl:output message="tns:AlterarContaEmailSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailAluno">
+      <wsdl:input message="tns:CriarContaEmailAlunoSoapIn" />
+      <wsdl:output message="tns:CriarContaEmailAlunoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailDocente">
+      <wsdl:input message="tns:CriarContaEmailDocenteSoapIn" />
+      <wsdl:output message="tns:CriarContaEmailDocenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailColaborador">
+      <wsdl:input message="tns:CriarContaEmailColaboradorSoapIn" />
+      <wsdl:output message="tns:CriarContaEmailColaboradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarContaEmailExistente">
+      <wsdl:input message="tns:VerificarContaEmailExistenteSoapIn" />
+      <wsdl:output message="tns:VerificarContaEmailExistenteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceUserLiveSoap" type="tns:ServiceUserLiveSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AlterarContaEmailSenha">
+      <soap:operation soapAction="http://tempuri.org/AlterarContaEmailSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlterarContaEmailSenhaServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailAluno">
+      <soap:operation soapAction="http://tempuri.org/CriarContaEmailAluno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarContaEmailAlunoServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailDocente">
+      <soap:operation soapAction="http://tempuri.org/CriarContaEmailDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarContaEmailDocenteServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailColaborador">
+      <soap:operation soapAction="http://tempuri.org/CriarContaEmailColaborador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarContaEmailColaboradorServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarContaEmailExistente">
+      <soap:operation soapAction="http://tempuri.org/VerificarContaEmailExistente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerificarContaEmailExistenteServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceUserLiveSoap12" type="tns:ServiceUserLiveSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AlterarContaEmailSenha">
+      <soap12:operation soapAction="http://tempuri.org/AlterarContaEmailSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlterarContaEmailSenhaServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailAluno">
+      <soap12:operation soapAction="http://tempuri.org/CriarContaEmailAluno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarContaEmailAlunoServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailDocente">
+      <soap12:operation soapAction="http://tempuri.org/CriarContaEmailDocente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarContaEmailDocenteServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarContaEmailColaborador">
+      <soap12:operation soapAction="http://tempuri.org/CriarContaEmailColaborador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarContaEmailColaboradorServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarContaEmailExistente">
+      <soap12:operation soapAction="http://tempuri.org/VerificarContaEmailExistente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerificarContaEmailExistenteServiceValidation" part="ServiceValidation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceUserLive">
+    <wsdl:port name="ServiceUserLiveSoap" binding="tns:ServiceUserLiveSoap">
+      <soap:address location="http://localhost:50114/ServiceUserLive.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceUserLiveSoap12" binding="tns:ServiceUserLiveSoap12">
+      <soap12:address location="http://localhost:50114/ServiceUserLive.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

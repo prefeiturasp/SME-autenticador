@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D154CDD-943D-4B25-BC0E-0B9007148230}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autenticador.UserControlLibrary</RootNamespace>
+    <AssemblyName>Autenticador.UserControlLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreLibrary.Business.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Business.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Data.Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Web.WebProject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Web.WebProject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buscas\Abstract_UCBusca.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buscas\UCCidade.ascx.cs">
+      <DependentUpon>UCCidade.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buscas\UCCidade.ascx.designer.cs">
+      <DependentUpon>UCCidade.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Buscas\UCPessoas.ascx.cs">
+      <DependentUpon>UCPessoas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buscas\UCPessoas.ascx.designer.cs">
+      <DependentUpon>UCPessoas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Buscas\UCUA.ascx.cs">
+      <DependentUpon>UCUA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buscas\UCUA.ascx.designer.cs">
+      <DependentUpon>UCUA.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Buscas\UCUsuario.ascx.cs">
+      <DependentUpon>UCUsuario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Buscas\UCUsuario.ascx.designer.cs">
+      <DependentUpon>UCUsuario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\Abstract_UCCombo.cs" />
+    <Compile Include="Combos\UCComboGrupo.ascx.cs">
+      <DependentUpon>UCComboGrupo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboGrupo.ascx.designer.cs">
+      <DependentUpon>UCComboGrupo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboVisao.ascx.cs">
+      <DependentUpon>UCComboVisao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboVisao.ascx.designer.cs">
+      <DependentUpon>UCComboVisao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboCidade.ascx.cs">
+      <DependentUpon>UCComboCidade.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboCidade.ascx.designer.cs">
+      <DependentUpon>UCComboCidade.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboEntidade.ascx.cs">
+      <DependentUpon>UCComboEntidade.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboEntidade.ascx.designer.cs">
+      <DependentUpon>UCComboEntidade.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboEstadoCivil.ascx.cs">
+      <DependentUpon>UCComboEstadoCivil.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboEstadoCivil.ascx.designer.cs">
+      <DependentUpon>UCComboEstadoCivil.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboPais.ascx.cs">
+      <DependentUpon>UCComboPais.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboPais.ascx.designer.cs">
+      <DependentUpon>UCComboPais.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboRacaCor.ascx.cs">
+      <DependentUpon>UCComboRacaCor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboRacaCor.ascx.designer.cs">
+      <DependentUpon>UCComboRacaCor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboSexo.ascx.cs">
+      <DependentUpon>UCComboSexo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboSexo.ascx.designer.cs">
+      <DependentUpon>UCComboSexo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboSistema.ascx.cs">
+      <DependentUpon>UCComboSistema.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboSistema.ascx.designer.cs">
+      <DependentUpon>UCComboSistema.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboSistemaGrupo.ascx.cs">
+      <DependentUpon>UCComboSistemaGrupo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboSistemaGrupo.ascx.designer.cs">
+      <DependentUpon>UCComboSistemaGrupo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoCertidaoCivil.ascx.cs">
+      <DependentUpon>UCComboTipoCertidaoCivil.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoCertidaoCivil.ascx.designer.cs">
+      <DependentUpon>UCComboTipoCertidaoCivil.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoDeficiencia.ascx.cs">
+      <DependentUpon>UCComboTipoDeficiencia.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoDeficiencia.ascx.designer.cs">
+      <DependentUpon>UCComboTipoDeficiencia.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoDocumentacao.ascx.cs">
+      <DependentUpon>UCComboTipoDocumentacao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoDocumentacao.ascx.designer.cs">
+      <DependentUpon>UCComboTipoDocumentacao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoEntidade.ascx.cs">
+      <DependentUpon>UCComboTipoEntidade.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoEntidade.ascx.designer.cs">
+      <DependentUpon>UCComboTipoEntidade.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoEscolaridade.ascx.cs">
+      <DependentUpon>UCComboTipoEscolaridade.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoEscolaridade.ascx.designer.cs">
+      <DependentUpon>UCComboTipoEscolaridade.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoMeioContato.ascx.cs">
+      <DependentUpon>UCComboTipoMeioContato.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoMeioContato.ascx.designer.cs">
+      <DependentUpon>UCComboTipoMeioContato.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoUnidadeAdministrativa.ascx.cs">
+      <DependentUpon>UCComboTipoUnidadeAdministrativa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboTipoUnidadeAdministrativa.ascx.designer.cs">
+      <DependentUpon>UCComboTipoUnidadeAdministrativa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboUnidadeAdministrativa.ascx.cs">
+      <DependentUpon>UCComboUnidadeAdministrativa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboUnidadeAdministrativa.ascx.designer.cs">
+      <DependentUpon>UCComboUnidadeAdministrativa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboUnidadeFederativa.ascx.cs">
+      <DependentUpon>UCComboUnidadeFederativa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboUnidadeFederativa.ascx.designer.cs">
+      <DependentUpon>UCComboUnidadeFederativa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Combos\UCComboZona.ascx.cs">
+      <DependentUpon>UCComboZona.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Combos\UCComboZona.ascx.designer.cs">
+      <DependentUpon>UCComboZona.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Buscas\UCCidade.ascx" />
+    <Content Include="Buscas\UCPessoas.ascx" />
+    <Content Include="Combos\UCComboCidade.ascx" />
+    <Content Include="Combos\UCComboEntidade.ascx" />
+    <Content Include="Combos\UCComboEstadoCivil.ascx" />
+    <Content Include="Combos\UCComboPais.ascx" />
+    <Content Include="Combos\UCComboRacaCor.ascx" />
+    <Content Include="Combos\UCComboSexo.ascx" />
+    <Content Include="Combos\UCComboSistema.ascx" />
+    <Content Include="Combos\UCComboSistemaGrupo.ascx" />
+    <Content Include="Combos\UCComboTipoCertidaoCivil.ascx" />
+    <Content Include="Combos\UCComboTipoDeficiencia.ascx" />
+    <Content Include="Combos\UCComboTipoDocumentacao.ascx" />
+    <Content Include="Combos\UCComboTipoEntidade.ascx" />
+    <Content Include="Combos\UCComboTipoEscolaridade.ascx" />
+    <Content Include="Combos\UCComboTipoMeioContato.ascx" />
+    <Content Include="Combos\UCComboTipoUnidadeAdministrativa.ascx" />
+    <Content Include="Combos\UCComboUnidadeAdministrativa.ascx" />
+    <Content Include="Combos\UCComboUnidadeFederativa.ascx" />
+    <Content Include="Combos\UCComboZona.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Buscas\UCUA.ascx" />
+    <Content Include="Buscas\UCUsuario.ascx" />
+    <Content Include="Combos\UCComboGrupo.ascx" />
+    <Content Include="Combos\UCComboVisao.ascx" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autenticador.BLL\Autenticador.BLL.csproj">
+      <Project>{15A9548E-FDF2-415C-BDAB-92AEF00A6156}</Project>
+      <Name>Autenticador.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.DAL\Autenticador.DAL.csproj">
+      <Project>{A8963003-DA4B-4D2A-A644-90C3076AD445}</Project>
+      <Name>Autenticador.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Entities\Autenticador.Entities.csproj">
+      <Project>{5C2D11D0-2FFA-4E80-8AEA-2FA82FD323E0}</Project>
+      <Name>Autenticador.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50143</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D8084A6-CA17-470B-96FB-68B8853EA3FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autenticador.Jobs</RootNamespace>
+    <AssemblyName>Autenticador.Jobs</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreLibrary.Business.Common">
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Business.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Data.Common">
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.LDAP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.LDAP.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Security.Cryptography, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\_External_Dependencies\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="Jobs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autenticador.BLL\Autenticador.BLL.csproj">
+      <Project>{15a9548e-fdf2-415c-bdab-92aef00a6156}</Project>
+      <Name>Autenticador.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.DAL\Autenticador.DAL.csproj">
+      <Project>{a8963003-da4b-4d2a-a644-90c3076ad445}</Project>
+      <Name>Autenticador.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Entities\Autenticador.Entities.csproj">
+      <Project>{5c2d11d0-2ffa-4e80-8aea-2fa82fd323e0}</Project>
+      <Name>Autenticador.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

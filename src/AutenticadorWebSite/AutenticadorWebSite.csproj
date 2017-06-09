@@ -1,0 +1,1623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F584F2A7-AFD6-4EE1-948B-98C186E1CE81}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutenticadorWebSite</RootNamespace>
+    <AssemblyName>AutenticadorWebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>14.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.2.33, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.2.206221351\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OpenIdConnect.3.0.1\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_External_Dependencies\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CoreLibrary.Business.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Business.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Data.Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Globalization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.IO.Compression, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.LDAP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.LDAP.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTech.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\MSTech.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Providers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.SAML20, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.SAML20.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Security.Cryptography, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="MSTech.Util.Strings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\MSTech.Util.Strings.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Web.Mail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Web.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Web.Util.GeraHTML, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Web.Util.GeraHTML.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Web.WebProject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Web.WebProject.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\_External_Dependencies\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcessoNaoAutorizado.aspx.cs">
+      <DependentUpon>AcessoNaoAutorizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcessoNaoAutorizado.aspx.designer.cs">
+      <DependentUpon>AcessoNaoAutorizado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="AreaAdm\Cidade\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\ControleTarefa\Controle.aspx.cs">
+      <DependentUpon>Controle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\ControleTarefa\Controle.aspx.designer.cs">
+      <DependentUpon>Controle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\MensagemSistema\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\MensagemSistema\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Relatorio\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Relatorio\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Servico\ConfigurarServico.aspx.cs">
+      <DependentUpon>ConfigurarServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Servico\ConfigurarServico.aspx.designer.cs">
+      <DependentUpon>ConfigurarServico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Sistema\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\UsuarioAPI\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\UsuarioAPI\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ConfiguracoesAuditoria\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ConfiguracoesAuditoria\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\DiasNaoUtil\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\DiasNaoUtil\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Entidade\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Entidade\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Grupo\Associar.aspx.designer.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Grupo\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Grupo\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\IntegracaoExterna\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\LogErro\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Log\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoCidade\Associar.aspx.designer.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoCidade\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoCidade\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoEndereco\Associar.aspx.designer.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoEndereco\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoEndereco\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoPessoa\Associar.aspx.designer.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoPessoa\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoPessoa\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoUnidadeFederativa\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoUnidadeFederativa\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoUnidadeFederativa\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoUnidadeFederativa\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Modulos\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Parametros\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Permissao\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Sistemas\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Sistemas\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Site\Gerenciamento.aspx.cs">
+      <DependentUpon>Gerenciamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Site\Gerenciamento.aspx.designer.cs">
+      <DependentUpon>Gerenciamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPadrao\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPadrao\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPadrao\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPadrao\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPaleta\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPaleta\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPaleta\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TemaPaleta\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDeficiencia\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDeficiencia\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDoc\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDoc\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEntidade\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEntidade\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEscolaridade\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEscolaridade\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoMeioContato\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoMeioContato\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoUA\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\TipoUA\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\UA\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\UA\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Usuario\Busca.aspx.designer.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Usuario\Cadastro.aspx.designer.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Usuario\MeusDados.aspx.designer.cs">
+      <DependentUpon>MeusDados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Busca\Cidade.aspx.designer.cs">
+      <DependentUpon>Cidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Busca\MasterPageBusca.master.designer.cs">
+      <DependentUpon>MasterPageBusca.master</DependentUpon>
+    </Compile>
+    <Compile Include="Busca\Pessoas.aspx.designer.cs">
+      <DependentUpon>Pessoas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Busca\UA.aspx.designer.cs">
+      <DependentUpon>UA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Captcha.ashx.cs">
+      <DependentUpon>Captcha.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manutencao.aspx.designer.cs">
+      <DependentUpon>Manutencao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageLogin.master.designer.cs">
+      <DependentUpon>MasterPageLogin.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageMeusDados.master.designer.cs">
+      <DependentUpon>MasterPageMeusDados.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageSistema.master.designer.cs">
+      <DependentUpon>MasterPageSistema.master</DependentUpon>
+    </Compile>
+    <Compile Include="MeusDados.aspx.designer.cs">
+      <DependentUpon>MeusDados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AreaAdm\Cidade\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Relatorio\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Relatorio\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Configuracao\Sistema\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ConfiguracoesAuditoria\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ConfiguracoesAuditoria\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\DiasNaoUtil\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\DiasNaoUtil\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Entidade\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Entidade\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Grupo\Associar.aspx.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Grupo\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Grupo\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\IntegracaoExterna\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\LogErro\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Log\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoCidade\Associar.aspx.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoCidade\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoCidade\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoEndereco\Associar.aspx.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoEndereco\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoEndereco\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoPessoa\Associar.aspx.cs">
+      <DependentUpon>Associar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoPessoa\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\ManutencaoPessoa\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Modulos\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Parametros\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Permissao\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Sistemas\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Sistemas\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDeficiencia\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDeficiencia\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDoc\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoDoc\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEntidade\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEntidade\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEscolaridade\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoEscolaridade\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoMeioContato\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoMeioContato\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoUA\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\TipoUA\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\UA\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\UA\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Usuario\Busca.aspx.cs">
+      <DependentUpon>Busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Usuario\Cadastro.aspx.cs">
+      <DependentUpon>Cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AreaAdm\Usuario\MeusDados.aspx.cs">
+      <DependentUpon>MeusDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busca\Cidade.aspx.cs">
+      <DependentUpon>Cidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busca\MasterPageBusca.master.cs">
+      <DependentUpon>MasterPageBusca.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busca\Pessoas.aspx.cs">
+      <DependentUpon>Pessoas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busca\UA.aspx.cs">
+      <DependentUpon>UA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manutencao.aspx.cs">
+      <DependentUpon>Manutencao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageLogin.master.cs">
+      <DependentUpon>MasterPageLogin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageMeusDados.master.cs">
+      <DependentUpon>MasterPageMeusDados.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageSistema.master.cs">
+      <DependentUpon>MasterPageSistema.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MeusDados.aspx.cs">
+      <DependentUpon>MeusDados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAML\Client\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAML\Client\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SAML\Signon.aspx.cs">
+      <DependentUpon>Signon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAML\Signon.aspx.designer.cs">
+      <DependentUpon>Signon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema.aspx.cs">
+      <DependentUpon>Sistema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema.aspx.designer.cs">
+      <DependentUpon>Sistema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="WebControls\Busca\UCUASuperior.ascx.cs">
+      <DependentUpon>UCUASuperior.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Busca\UCUASuperior.ascx.designer.cs">
+      <DependentUpon>UCUASuperior.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\CertidaoCivil\UCGridCertidaoCivil.ascx.cs">
+      <DependentUpon>UCGridCertidaoCivil.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\CertidaoCivil\UCGridCertidaoCivil.ascx.designer.cs">
+      <DependentUpon>UCGridCertidaoCivil.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Combos\UCComboServico.ascx.cs">
+      <DependentUpon>UCComboServico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Combos\UCComboServico.ascx.designer.cs">
+      <DependentUpon>UCComboServico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Combos\UCComboTemaPadrao.ascx.cs">
+      <DependentUpon>UCComboTemaPadrao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Combos\UCComboTemaPadrao.ascx.designer.cs">
+      <DependentUpon>UCComboTemaPadrao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Combos\UCComboTemaPaleta.ascx.cs">
+      <DependentUpon>UCComboTemaPaleta.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Combos\UCComboTemaPaleta.ascx.designer.cs">
+      <DependentUpon>UCComboTemaPaleta.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Contato\UCGridContato.ascx.cs">
+      <DependentUpon>UCGridContato.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Contato\UCGridContato.ascx.designer.cs">
+      <DependentUpon>UCGridContato.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Documento\UCGridDocumento.ascx.cs">
+      <DependentUpon>UCGridDocumento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Documento\UCGridDocumento.ascx.designer.cs">
+      <DependentUpon>UCGridDocumento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\EnderecoAntigo2\UCEnderecosAntigo2.ascx.cs">
+      <DependentUpon>UCEnderecosAntigo2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\EnderecoAntigo2\UCEnderecosAntigo2.ascx.designer.cs">
+      <DependentUpon>UCEnderecosAntigo2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\EnderecoAntigo\UCEnderecosAntigo.ascx.cs">
+      <DependentUpon>UCEnderecosAntigo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\EnderecoAntigo\UCEnderecosAntigo.ascx.designer.cs">
+      <DependentUpon>UCEnderecosAntigo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Endereco\UCEnderecos.ascx.cs">
+      <DependentUpon>UCEnderecos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Endereco\UCEnderecos.ascx.designer.cs">
+      <DependentUpon>UCEnderecos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\FrequenciaServico\UCFrequenciaServico.ascx.cs">
+      <DependentUpon>UCFrequenciaServico.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\FrequenciaServico\UCFrequenciaServico.ascx.designer.cs">
+      <DependentUpon>UCFrequenciaServico.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\MeusDados\UCMeusDados.ascx.cs">
+      <DependentUpon>UCMeusDados.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\MeusDados\UCMeusDados.ascx.designer.cs">
+      <DependentUpon>UCMeusDados.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Permissoes\UCPermissoes.ascx.cs">
+      <DependentUpon>UCPermissoes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Permissoes\UCPermissoes.ascx.designer.cs">
+      <DependentUpon>UCPermissoes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Pessoa\UCCadastroPessoa.ascx.cs">
+      <DependentUpon>UCCadastroPessoa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Pessoa\UCCadastroPessoa.ascx.designer.cs">
+      <DependentUpon>UCCadastroPessoa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\Sistemas\UCSistemas.ascx.cs">
+      <DependentUpon>UCSistemas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Sistemas\UCSistemas.ascx.designer.cs">
+      <DependentUpon>UCSistemas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WSServicos.cs">
+      <DependentUpon>WSServicos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AcessoNaoAutorizado.aspx" />
+    <Content Include="App_Browsers\BrowserFile.browser" />
+    <Content Include="App_Themes\Default\images\logos\logo-bigblue-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-bigblue.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-contratos-escolares-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-contratos-escolares.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gerenciamentobigblue-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gerenciamentobigblue.png" />
+    <Content Include="App_Themes\Default\images\logos\logo_calendar_128px.png" />
+    <Content Include="App_Themes\Default\images\logos\logo_classroom_96px.png" />
+    <Content Include="App_Themes\Default\images\logos\logo_drive_128px.png" />
+    <Content Include="App_Themes\Default\images\logos\logo_gmail_128px.png" />
+    <Content Include="App_Themes\Default\images\logos\logo_hangouts_128px.png" />
+    <Content Include="App_Themes\Default\images\logos\logo_office365_128px.png" />
+    <Content Include="App_Themes\Default\images\logos\Office_365_logo_branco.png" />
+    <Content Include="App_Themes\Default\Default.skin" />
+    <Content Include="App_Themes\Default\images\iconeHelp.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-almoxarifado-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-almoxarifado.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-area-aluno-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-area-aluno.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-blueguardweb-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-blueguardweb.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-blueMonitor-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-blueMonitor.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-censo-escolar-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-censo-escolar.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gerservicos-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gerservicos.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gfreq.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-LiveEdu-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-liveEdu.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-matricula-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-matricula.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-portal-escola.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-transporteescolar-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-transporteescolar.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-workflow.png" />
+    <Content Include="App_Themes\IntranetSME\css.css" />
+    <Content Include="App_Themes\IntranetSME\images\0800.png" />
+    <Content Include="App_Themes\IntranetSME\images\ajax-loader-mini.gif" />
+    <Content Include="App_Themes\IntranetSME\images\ajax-loader.gif" />
+    <Content Include="App_Themes\IntranetSME\images\alterar.png" />
+    <Content Include="App_Themes\IntranetSME\images\anexar.png" />
+    <Content Include="App_Themes\IntranetSME\images\asc.gif" />
+    <Content Include="App_Themes\IntranetSME\images\ativar.png" />
+    <Content Include="App_Themes\IntranetSME\images\atualizar.png" />
+    <Content Include="App_Themes\IntranetSME\images\baixo.png" />
+    <Content Include="App_Themes\IntranetSME\images\bg.gif" />
+    <Content Include="App_Themes\IntranetSME\images\bg_footer.png" />
+    <Content Include="App_Themes\IntranetSME\images\bg_widget-branco.png" />
+    <Content Include="App_Themes\IntranetSME\images\bk_fundoBD.png" />
+    <Content Include="App_Themes\IntranetSME\images\bk_main.png" />
+    <Content Include="App_Themes\IntranetSME\images\bk_top.png" />
+    <Content Include="App_Themes\IntranetSME\images\cancelar.gif" />
+    <Content Include="App_Themes\IntranetSME\images\cima.png" />
+    <Content Include="App_Themes\IntranetSME\images\confirmar.png" />
+    <Content Include="App_Themes\IntranetSME\images\convocar.png" />
+    <Content Include="App_Themes\IntranetSME\images\csv.png" />
+    <Content Include="App_Themes\IntranetSME\images\desativar.png" />
+    <Content Include="App_Themes\IntranetSME\images\desc.gif" />
+    <Content Include="App_Themes\IntranetSME\images\desfazer.png" />
+    <Content Include="App_Themes\IntranetSME\images\detalhar.gif" />
+    <Content Include="App_Themes\IntranetSME\images\error.png" />
+    <Content Include="App_Themes\IntranetSME\images\errorCombo.png" />
+    <Content Include="App_Themes\IntranetSME\images\excel.png" />
+    <Content Include="App_Themes\IntranetSME\images\excluir.png" />
+    <Content Include="App_Themes\IntranetSME\images\expandir.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-114x114.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-120x120.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-144x144.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-152x152.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-57x57.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-60x60.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-72x72.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-76x76.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon-precomposed.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\apple-touch-icon.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\browserconfig.xml" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\favicon-160x160.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\favicon-16x16.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\favicon-196x196.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\favicon-32x32.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\favicon-96x96.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\favicon.ico" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\mstile-144x144.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\mstile-150x150.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\mstile-310x150.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\mstile-310x310.png" />
+    <Content Include="App_Themes\IntranetSME\images\favicons\mstile-70x70.png" />
+    <Content Include="App_Themes\IntranetSME\images\folder.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoAzul.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoAzulAC.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoBody.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoDicas.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoEfeitoLogin.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoEndlist.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoFt.jpg" />
+    <Content Include="App_Themes\IntranetSME\images\fundoHeader.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoHTML.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoHTMLAC.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoInfos.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoInput-btn-login.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoInput-btn-login_.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoInput-login.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoInput-login_.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoLinkMenu.gif" />
+    <Content Include="App_Themes\IntranetSME\images\fundoLinkMenuAC.gif" />
+    <Content Include="App_Themes\IntranetSME\images\fundoLogin.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundologin2.jpg" />
+    <Content Include="App_Themes\IntranetSME\images\fundoLoginAC.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoMenu.gif" />
+    <Content Include="App_Themes\IntranetSME\images\fundoMenu.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoMenuAC.png" />
+    <Content Include="App_Themes\IntranetSME\images\fundoStartlist.png" />
+    <Content Include="App_Themes\IntranetSME\images\ico-aulas.png" />
+    <Content Include="App_Themes\IntranetSME\images\ico-planejamento.png" />
+    <Content Include="App_Themes\IntranetSME\images\icoAjuda.png" />
+    <Content Include="App_Themes\IntranetSME\images\icoCalendar.png" />
+    <Content Include="App_Themes\IntranetSME\images\icoInformacoes.png" />
+    <Content Include="App_Themes\IntranetSME\images\icoKey.gif" />
+    <Content Include="App_Themes\IntranetSME\images\icoMaxMin.gif" />
+    <Content Include="App_Themes\IntranetSME\images\icoMaxMinAC.gif" />
+    <Content Include="App_Themes\IntranetSME\images\iconeHelp.png" />
+    <Content Include="App_Themes\IntranetSME\images\icoUser.gif" />
+    <Content Include="App_Themes\IntranetSME\images\img_login.png" />
+    <Content Include="App_Themes\IntranetSME\images\imprimir.png" />
+    <Content Include="App_Themes\IntranetSME\images\informativo.png" />
+    <Content Include="App_Themes\IntranetSME\images\limpar.png" />
+    <Content Include="App_Themes\IntranetSME\images\logo-biblioteca-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logo-biblioteca.png" />
+    <Content Include="App_Themes\IntranetSME\images\logo-escola-3-0-login.png" />
+    <Content Include="App_Themes\IntranetSME\images\logo-merenda-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logo-merenda.png" />
+    <Content Include="App_Themes\IntranetSME\images\logoGestaoEscolar.png" />
+    <Content Include="App_Themes\IntranetSME\images\logoGestaoEscolarAC.png" />
+    <Content Include="App_Themes\IntranetSME\images\logoPequeno.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\iconeMenu-azul.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\iconeMenu-laranja.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\iconeMenu-rosa.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\iconeMenu-verde.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\iconeMenu-vermelho.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\icone_portalintegracaosme.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-administrativo-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-administrativo.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-almoxarifado-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-almoxarifado.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-area-aluno-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-area-aluno.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-ava-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-ava.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-biblioteca-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-biblioteca.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-bigblue-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-bigblue.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-blue-control-web.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-blueCore-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-blueCore.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-censo-escolar-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-censo-escolar.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-contratos-escolares-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-contratos-escolares.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-educopedia.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-escola-3-0-login.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-escola-3-0-login_.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-gerenciamentobigblue-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-gerenciamentobigblue.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-gestao-academica-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-gestao-academica.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-gfreq.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-gpag.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-inscricao-creche-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-inscricao-creche.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-integracao-rio-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-integracao-rio.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-LiveEdu-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-liveEdu.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-matricula-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-matricula.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-merenda-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-merenda.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-MeuEspacoWeb-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-MeuEspacoWeb.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-migracao-rio-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-migracao-rio.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-mstech-ft.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-mstech-ft_.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-padrao.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-permissoes-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-permissoes.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-pic-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-pic.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-portal-integracoes-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-portal-integracoes.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-prefeitura-4.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-quadro-horario-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-quadro-horario.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-remocao.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-rio-educacao.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-rioeduca.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-transporteescolar-full.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\logo-transporteescolar.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\LOGO_CLIENTE.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\LOGO_CLIENTE_.png" />
+    <Content Include="App_Themes\IntranetSME\images\logos\LOGO_GERAL_SISTEMA.png" />
+    <Content Include="App_Themes\IntranetSME\images\notepad.png" />
+    <Content Include="App_Themes\IntranetSME\images\novo.png" />
+    <Content Include="App_Themes\IntranetSME\images\permissao.png" />
+    <Content Include="App_Themes\IntranetSME\images\pesquisar.png" />
+    <Content Include="App_Themes\IntranetSME\images\seta.png" />
+    <Content Include="App_Themes\IntranetSME\images\setaAC.png" />
+    <Content Include="App_Themes\IntranetSME\images\setaDestaque.png" />
+    <Content Include="App_Themes\IntranetSME\images\setaDestaqueAC.png" />
+    <Content Include="App_Themes\IntranetSME\images\sistema-selecionado.png" />
+    <Content Include="App_Themes\IntranetSME\images\sistemaAdministrativo.png" />
+    <Content Include="App_Themes\IntranetSME\images\sombra-login.png" />
+    <Content Include="App_Themes\IntranetSME\images\success.png" />
+    <Content Include="App_Themes\IntranetSME\images\title-box-login.png" />
+    <Content Include="App_Themes\IntranetSME\images\warning.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_100_f4f4f4_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_100_fbec88_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_15_222222_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_25_64cad5_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_50_2995d9_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_75_1a75bb_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_flat_95_fef1ec_40x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-bg_highlight-soft_75_f4f4f4_1x100.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-icons_1a75bb_256x240.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="App_Themes\IntranetSME\jquery-ui-1.8.12.custom\jquery-ui-1.8.12.custom.css" />
+    <Content Include="App_Themes\SMESP\images\iconeHelp.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-almoxarifado-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-almoxarifado.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-area-aluno-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-area-aluno.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-censo-escolar-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-censo-escolar.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-gfreq.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-LiveEdu-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-liveEdu.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-matricula-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-matricula.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-transporteescolar-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-transporteescolar.png" />
+    <Content Include="AreaAdm\Configuracao\ControleTarefa\Controle.aspx" />
+    <Content Include="AreaAdm\Configuracao\MensagemSistema\Cadastro.aspx" />
+    <Content Include="AreaAdm\Configuracao\Servico\ConfigurarServico.aspx" />
+    <Content Include="AreaAdm\Configuracao\UsuarioAPI\Cadastro.aspx" />
+    <Content Include="AreaAdm\ManutencaoPessoa\Imagem.ashx" />
+    <Content Include="AreaAdm\ManutencaoUnidadeFederativa\Busca.aspx" />
+    <Content Include="AreaAdm\ManutencaoUnidadeFederativa\Cadastro.aspx" />
+    <Content Include="AreaAdm\MasterPageLogado.master" />
+    <Content Include="AreaAdm\TemaPadrao\Busca.aspx" />
+    <Content Include="AreaAdm\TemaPadrao\Cadastro.aspx" />
+    <Content Include="AreaAdm\TemaPaleta\Busca.aspx" />
+    <Content Include="AreaAdm\TemaPaleta\Cadastro.aspx" />
+    <Content Include="Busca\MasterPageBusca.master" />
+    <Content Include="imagem.ashx" />
+    <Content Include="Includes\Descompactados\JQuery\ui.ariaTabs.js" />
+    <Content Include="Includes\Descompactados\stylesheetToggle.js" />
+    <Content Include="Includes\Descompactados\Util\jquery.fixer.js" />
+    <Content Include="Includes\Descompactados\Util\jsMsgConfirmBtn.js" />
+    <Content Include="Includes\Descompactados\Util\jsMsgConfirmExclusao.js" />
+    <Content Include="Includes\Descompactados\Util\jsTabs.js" />
+    <Content Include="Includes\Descompactados\Util\Util.js" />
+    <Content Include="Includes\jsAcessibilidade.js" />
+    <Content Include="Includes\Telas\jsCadastroPermissoes.js" />
+    <Content Include="Includes\Telas\jsConfigurarServico.js" />
+    <Content Include="Includes\Telas\jsLoginIntranetSme.js" />
+    <Content Include="Includes\Telas\jsMeusDados.js" />
+    <Content Include="Includes\Telas\jsPesquisaUA.js" />
+    <Content Include="Includes\Telas\jsUCCadastroEnderecoAntigo.js" />
+    <Content Include="Includes\Util\autofill-event.js" />
+    <Content Include="Logout.ashx" />
+    <Content Include="MasterPage.master" />
+    <Content Include="MasterPageLogin.master" />
+    <Content Include="MasterPageMeusDados.master" />
+    <Content Include="MasterPageSistema.master" />
+    <Content Include="LoginService.ashx" />
+    <Content Include="App_Themes\SMESP\smesp.skin" />
+    <Content Include="SAML\Client\Login.ashx" />
+    <Content Include="SAML\Client\MasterPage.Master" />
+    <Content Include="SAML\Client\samlcert.pfx" />
+    <Content Include="App_Themes\IntranetSME\IntranetSME.skin" />
+    <Content Include="Captcha.ashx" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CoreSSO.pubxml" />
+    <None Include="Properties\PublishProfiles\DEV_CoreSSO.pubxml" />
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
+    <None Include="SAML\samlcert.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="SAML\SignonService.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\css.css" />
+    <Content Include="App_Themes\Default\images\ajax-loader.gif" />
+    <Content Include="App_Themes\Default\images\alterar.png" />
+    <Content Include="App_Themes\Default\images\ativar.png" />
+    <Content Include="App_Themes\Default\images\atualizar.png" />
+    <Content Include="App_Themes\Default\images\baixo.png" />
+    <Content Include="App_Themes\Default\images\cancelar.gif" />
+    <Content Include="App_Themes\Default\images\cima.png" />
+    <Content Include="App_Themes\Default\images\confirmar.png" />
+    <Content Include="App_Themes\Default\images\convocar.png" />
+    <Content Include="App_Themes\Default\images\desativar.png" />
+    <Content Include="App_Themes\Default\images\desfazer.png" />
+    <Content Include="App_Themes\Default\images\detalhar.gif" />
+    <Content Include="App_Themes\Default\images\error.png" />
+    <Content Include="App_Themes\Default\images\excluir.png" />
+    <Content Include="App_Themes\Default\images\folder.png" />
+    <Content Include="App_Themes\Default\images\fundoAzul.png" />
+    <Content Include="App_Themes\Default\images\fundoAzulAC.png" />
+    <Content Include="App_Themes\Default\images\fundoBody.png" />
+    <Content Include="App_Themes\Default\images\fundoDicas.png" />
+    <Content Include="App_Themes\Default\images\fundoEndlist.png" />
+    <Content Include="App_Themes\Default\images\fundoFt.jpg" />
+    <Content Include="App_Themes\Default\images\fundoHTML.png" />
+    <Content Include="App_Themes\Default\images\fundoHTMLAC.png" />
+    <Content Include="App_Themes\Default\images\fundoInfos.png" />
+    <Content Include="App_Themes\Default\images\fundoLinkMenu.gif" />
+    <Content Include="App_Themes\Default\images\fundoLinkMenuAC.gif" />
+    <Content Include="App_Themes\Default\images\fundoLogin.png" />
+    <Content Include="App_Themes\Default\images\fundoLoginAC.png" />
+    <Content Include="App_Themes\Default\images\fundoMenu.gif" />
+    <Content Include="App_Themes\Default\images\fundoMenu.png" />
+    <Content Include="App_Themes\Default\images\fundoMenuAC.png" />
+    <Content Include="App_Themes\Default\images\fundoStartlist.png" />
+    <Content Include="App_Themes\Default\images\ico-aulas.png" />
+    <Content Include="App_Themes\Default\images\ico-planejamento.png" />
+    <Content Include="App_Themes\Default\images\icoCalendar.png" />
+    <Content Include="App_Themes\Default\images\icoInformacoes.png" />
+    <Content Include="App_Themes\Default\images\icoKey.gif" />
+    <Content Include="App_Themes\Default\images\icoMaxMin.gif" />
+    <Content Include="App_Themes\Default\images\icoMaxMinAC.gif" />
+    <Content Include="App_Themes\Default\images\icoUser.gif" />
+    <Content Include="App_Themes\Default\images\limpar.png" />
+    <Content Include="App_Themes\Default\images\logoGestaoEscolar.png" />
+    <Content Include="App_Themes\Default\images\logoGestaoEscolarAC.png" />
+    <Content Include="App_Themes\Default\images\logoPequeno.png" />
+    <Content Include="App_Themes\Default\images\logos\iconeMenu-azul.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-administrativo-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-administrativo.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-biblioteca-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-biblioteca.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-bluecontrolweb-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-bluecontrolweb.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-blueCore-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-blueCore.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-central-de-servicos-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-central-de-servicos.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-controle-patrimonial-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-controle-patrimonial.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gestao-academica-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gestao-academica.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gestao-escolar-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gestao-escolar.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-gpag.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-indices-educacao-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-indices-educacao.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-inscricao-creche-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-inscricao-creche.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-integracao-rio-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-integracao-rio.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-merenda-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-merenda.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-MeuEspacoWeb-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-MeuEspacoWeb.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-migracao-rio-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-migracao-rio.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-padrao.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-pic-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-pic.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-remocao-full.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-remocao.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-rio-educacao.png" />
+    <Content Include="App_Themes\Default\images\logos\logo-undime.png" />
+    <Content Include="App_Themes\Default\images\logos\LOGO_GERAL_SISTEMA.png" />
+    <Content Include="App_Themes\Default\images\notepad.png" />
+    <Content Include="App_Themes\Default\images\novo.png" />
+    <Content Include="App_Themes\Default\images\permissao.png" />
+    <Content Include="App_Themes\Default\images\pesquisar.png" />
+    <Content Include="App_Themes\Default\images\seta.png" />
+    <Content Include="App_Themes\Default\images\setaAC.png" />
+    <Content Include="App_Themes\Default\images\setaDestaque.png" />
+    <Content Include="App_Themes\Default\images\setaDestaqueAC.png" />
+    <Content Include="App_Themes\Default\images\sistema-selecionado.png" />
+    <Content Include="App_Themes\Default\images\sistemaAdministrativo.png" />
+    <Content Include="App_Themes\Default\images\success.png" />
+    <Content Include="App_Themes\Default\images\warning.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_flat_100_f4f4f4_40x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_flat_100_fbec88_40x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_flat_15_222222_40x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_flat_95_fef1ec_40x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_glass_25_1a2f3d_1x400.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_highlight-soft_50_1a2f3d_1x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_highlight-soft_75_a3c3e4_1x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-bg_highlight-soft_75_f4f4f4_1x100.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-icons_1a2f3d_256x240.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="App_Themes\Default\jquery-ui-1.8.12.custom\jquery-ui-1.8.12.custom.css" />
+    <Content Include="App_Themes\SMESP\css.css" />
+    <Content Include="App_Themes\SMESP\images\0800.png" />
+    <Content Include="App_Themes\SMESP\images\ajax-loader-mini.gif" />
+    <Content Include="App_Themes\SMESP\images\ajax-loader.gif" />
+    <Content Include="App_Themes\SMESP\images\alterar.png" />
+    <Content Include="App_Themes\SMESP\images\anexar.png" />
+    <Content Include="App_Themes\SMESP\images\asc.gif" />
+    <Content Include="App_Themes\SMESP\images\ativar.png" />
+    <Content Include="App_Themes\SMESP\images\atualizar.png" />
+    <Content Include="App_Themes\SMESP\images\baixo.png" />
+    <Content Include="App_Themes\SMESP\images\bg.gif" />
+    <Content Include="App_Themes\SMESP\images\cancelar.gif" />
+    <Content Include="App_Themes\SMESP\images\cima.png" />
+    <Content Include="App_Themes\SMESP\images\confirmar.png" />
+    <Content Include="App_Themes\SMESP\images\convocar.png" />
+    <Content Include="App_Themes\SMESP\images\csv.png" />
+    <Content Include="App_Themes\SMESP\images\desativar.png" />
+    <Content Include="App_Themes\SMESP\images\desc.gif" />
+    <Content Include="App_Themes\SMESP\images\desfazer.png" />
+    <Content Include="App_Themes\SMESP\images\detalhar.gif" />
+    <Content Include="App_Themes\SMESP\images\error.png" />
+    <Content Include="App_Themes\SMESP\images\errorCombo.png" />
+    <Content Include="App_Themes\SMESP\images\excel.png" />
+    <Content Include="App_Themes\SMESP\images\excluir.png" />
+    <Content Include="App_Themes\SMESP\images\expandir.png" />
+    <Content Include="App_Themes\SMESP\images\folder.png" />
+    <Content Include="App_Themes\SMESP\images\fundoAzul.png" />
+    <Content Include="App_Themes\SMESP\images\fundoAzulAC.png" />
+    <Content Include="App_Themes\SMESP\images\fundoBody.png" />
+    <Content Include="App_Themes\SMESP\images\fundoDicas.png" />
+    <Content Include="App_Themes\SMESP\images\fundoEfeitoLogin.png" />
+    <Content Include="App_Themes\SMESP\images\fundoEndlist.png" />
+    <Content Include="App_Themes\SMESP\images\fundoFt.jpg" />
+    <Content Include="App_Themes\SMESP\images\fundoHeader.png" />
+    <Content Include="App_Themes\SMESP\images\fundoHTML.png" />
+    <Content Include="App_Themes\SMESP\images\fundoHTMLAC.png" />
+    <Content Include="App_Themes\SMESP\images\fundoInfos.png" />
+    <Content Include="App_Themes\SMESP\images\fundoInput-btn-login.png" />
+    <Content Include="App_Themes\SMESP\images\fundoInput-btn-login_.png" />
+    <Content Include="App_Themes\SMESP\images\fundoInput-login.png" />
+    <Content Include="App_Themes\SMESP\images\fundoInput-login_.png" />
+    <Content Include="App_Themes\SMESP\images\fundoLinkMenu.gif" />
+    <Content Include="App_Themes\SMESP\images\fundoLinkMenuAC.gif" />
+    <Content Include="App_Themes\SMESP\images\fundoLogin.png" />
+    <Content Include="App_Themes\SMESP\images\fundologin2.jpg" />
+    <Content Include="App_Themes\SMESP\images\fundoLoginAC.png" />
+    <Content Include="App_Themes\SMESP\images\fundoMenu.gif" />
+    <Content Include="App_Themes\SMESP\images\fundoMenu.png" />
+    <Content Include="App_Themes\SMESP\images\fundoMenuAC.png" />
+    <Content Include="App_Themes\SMESP\images\fundoStartlist.png" />
+    <Content Include="App_Themes\SMESP\images\ico-aulas.png" />
+    <Content Include="App_Themes\SMESP\images\ico-planejamento.png" />
+    <Content Include="App_Themes\SMESP\images\icoAjuda.png" />
+    <Content Include="App_Themes\SMESP\images\icoCalendar.png" />
+    <Content Include="App_Themes\SMESP\images\icoInformacoes.png" />
+    <Content Include="App_Themes\SMESP\images\icoKey.gif" />
+    <Content Include="App_Themes\SMESP\images\icoMaxMin.gif" />
+    <Content Include="App_Themes\SMESP\images\icoMaxMinAC.gif" />
+    <Content Include="App_Themes\SMESP\images\icoUser.gif" />
+    <Content Include="App_Themes\SMESP\images\img_login.png" />
+    <Content Include="App_Themes\SMESP\images\imprimir.png" />
+    <Content Include="App_Themes\SMESP\images\informativo.png" />
+    <Content Include="App_Themes\SMESP\images\limpar.png" />
+    <Content Include="App_Themes\SMESP\images\logo-biblioteca-full.png" />
+    <Content Include="App_Themes\SMESP\images\logo-biblioteca.png" />
+    <Content Include="App_Themes\SMESP\images\logo-escola-3-0-login.png" />
+    <Content Include="App_Themes\SMESP\images\logo-merenda-full.png" />
+    <Content Include="App_Themes\SMESP\images\logo-merenda.png" />
+    <Content Include="App_Themes\SMESP\images\logoGestaoEscolar.png" />
+    <Content Include="App_Themes\SMESP\images\logoGestaoEscolarAC.png" />
+    <Content Include="App_Themes\SMESP\images\logoPequeno.png" />
+    <Content Include="App_Themes\SMESP\images\logos\iconeMenu-azul.png" />
+    <Content Include="App_Themes\SMESP\images\logos\iconeMenu-laranja.png" />
+    <Content Include="App_Themes\SMESP\images\logos\iconeMenu-rosa.png" />
+    <Content Include="App_Themes\SMESP\images\logos\iconeMenu-verde.png" />
+    <Content Include="App_Themes\SMESP\images\logos\iconeMenu-vermelho.png" />
+    <Content Include="App_Themes\SMESP\images\logos\icone_portalintegracaosme.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-administrativo-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-administrativo.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-biblioteca-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-biblioteca.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-blue-control-web.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-blueCore-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-blueCore.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-educopedia.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-escola-3-0-login.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-escola-3-0-login_.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-gestao-academica-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-gestao-academica.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-gpag.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-inscricao-creche-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-inscricao-creche.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-integracao-rio-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-integracao-rio.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-merenda-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-merenda.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-MeuEspacoWeb-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-MeuEspacoWeb.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-migracao-rio-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-migracao-rio.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-mstech-ft.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-mstech-ft_.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-padrao.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-pic-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-pic.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-portal-integracoes-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-portal-integracoes.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-quadro-horario-full.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-quadro-horario.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-remocao.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-rio-educacao.png" />
+    <Content Include="App_Themes\SMESP\images\logos\logo-rioeduca.png" />
+    <Content Include="App_Themes\SMESP\images\logos\LOGO_CLIENTE.png" />
+    <Content Include="App_Themes\SMESP\images\logos\LOGO_CLIENTE_.png" />
+    <Content Include="App_Themes\SMESP\images\logos\LOGO_GERAL_SISTEMA.png" />
+    <Content Include="App_Themes\SMESP\images\notepad.png" />
+    <Content Include="App_Themes\SMESP\images\novo.png" />
+    <Content Include="App_Themes\SMESP\images\permissao.png" />
+    <Content Include="App_Themes\SMESP\images\pesquisar.png" />
+    <Content Include="App_Themes\SMESP\images\seta.png" />
+    <Content Include="App_Themes\SMESP\images\setaAC.png" />
+    <Content Include="App_Themes\SMESP\images\setaDestaque.png" />
+    <Content Include="App_Themes\SMESP\images\setaDestaqueAC.png" />
+    <Content Include="App_Themes\SMESP\images\sistema-selecionado.png" />
+    <Content Include="App_Themes\SMESP\images\sistemaAdministrativo.png" />
+    <Content Include="App_Themes\SMESP\images\sombra-login.png" />
+    <Content Include="App_Themes\SMESP\images\success.png" />
+    <Content Include="App_Themes\SMESP\images\warning.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_100_f4f4f4_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_100_fbec88_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_15_222222_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_25_64cad5_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_50_2995d9_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_75_1a75bb_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_flat_95_fef1ec_40x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-bg_highlight-soft_75_f4f4f4_1x100.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-icons_1a75bb_256x240.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="App_Themes\SMESP\jquery-ui-1.8.12.custom\jquery-ui-1.8.12.custom.css" />
+    <Content Include="AreaAdm\Cidade\Cadastro.aspx" />
+    <Content Include="AreaAdm\Configuracao\Relatorio\Busca.aspx" />
+    <Content Include="AreaAdm\Configuracao\Relatorio\Cadastro.aspx" />
+    <Content Include="AreaAdm\Configuracao\Sistema\Cadastro.aspx" />
+    <Content Include="AreaAdm\ConfiguracoesAuditoria\Busca.aspx" />
+    <Content Include="AreaAdm\ConfiguracoesAuditoria\Cadastro.aspx" />
+    <Content Include="AreaAdm\DiasNaoUtil\Busca.aspx" />
+    <Content Include="AreaAdm\DiasNaoUtil\Cadastro.aspx" />
+    <Content Include="AreaAdm\Entidade\Busca.aspx" />
+    <Content Include="AreaAdm\Entidade\Cadastro.aspx" />
+    <Content Include="AreaAdm\Grupo\Associar.aspx" />
+    <Content Include="AreaAdm\Grupo\Busca.aspx" />
+    <Content Include="AreaAdm\Grupo\Cadastro.aspx" />
+    <Content Include="AreaAdm\IntegracaoExterna\Cadastro.aspx" />
+    <Content Include="AreaAdm\LogErro\Busca.aspx" />
+    <Content Include="AreaAdm\Login.aspx" />
+    <Content Include="AreaAdm\Log\Busca.aspx" />
+    <Content Include="AreaAdm\ManutencaoCidade\Associar.aspx" />
+    <Content Include="AreaAdm\ManutencaoCidade\Busca.aspx" />
+    <Content Include="AreaAdm\ManutencaoCidade\Cadastro.aspx" />
+    <Content Include="AreaAdm\ManutencaoEndereco\Associar.aspx" />
+    <Content Include="AreaAdm\ManutencaoEndereco\Busca.aspx" />
+    <Content Include="AreaAdm\ManutencaoEndereco\Cadastro.aspx" />
+    <Content Include="AreaAdm\ManutencaoPessoa\Associar.aspx" />
+    <Content Include="AreaAdm\ManutencaoPessoa\Busca.aspx" />
+    <Content Include="AreaAdm\ManutencaoPessoa\Cadastro.aspx" />
+    <Content Include="AreaAdm\Modulos\Cadastro.aspx" />
+    <Content Include="AreaAdm\Parametros\Cadastro.aspx" />
+    <Content Include="AreaAdm\Permissao\Cadastro.aspx" />
+    <Content Include="AreaAdm\Sistemas\Busca.aspx" />
+    <Content Include="AreaAdm\Sistemas\Cadastro.aspx" />
+    <Content Include="AreaAdm\Site\Gerenciamento.aspx" />
+    <Content Include="AreaAdm\TipoDeficiencia\Busca.aspx" />
+    <Content Include="AreaAdm\TipoDeficiencia\Cadastro.aspx" />
+    <Content Include="AreaAdm\TipoDoc\Busca.aspx" />
+    <Content Include="AreaAdm\TipoDoc\Cadastro.aspx" />
+    <Content Include="AreaAdm\TipoEntidade\Busca.aspx" />
+    <Content Include="AreaAdm\TipoEntidade\Cadastro.aspx" />
+    <Content Include="AreaAdm\TipoEscolaridade\Busca.aspx" />
+    <Content Include="AreaAdm\TipoEscolaridade\Cadastro.aspx" />
+    <Content Include="AreaAdm\TipoMeioContato\Busca.aspx" />
+    <Content Include="AreaAdm\TipoMeioContato\Cadastro.aspx" />
+    <Content Include="AreaAdm\TipoUA\Busca.aspx" />
+    <Content Include="AreaAdm\TipoUA\Cadastro.aspx" />
+    <Content Include="AreaAdm\UA\Busca.aspx" />
+    <Content Include="AreaAdm\UA\Cadastro.aspx" />
+    <Content Include="AreaAdm\Usuario\Busca.aspx" />
+    <Content Include="AreaAdm\Usuario\Cadastro.aspx" />
+    <Content Include="AreaAdm\Usuario\MeusDados.aspx" />
+    <Content Include="Busca\Cidade.aspx" />
+    <Content Include="Busca\Pessoas.aspx" />
+    <Content Include="Busca\UA.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Includes\altoContraste.css" />
+    <Content Include="Includes\cssIE6.css" />
+    <Content Include="Includes\JQuery\jquery-1.4.4-min.js" />
+    <Content Include="Includes\JQuery\jquery-1.5.1.min.js" />
+    <Content Include="Includes\JQuery\jquery-ui-1.8.12.custom.min.js" />
+    <Content Include="Includes\JQuery\jquery.blockUI.js" />
+    <Content Include="Includes\JQuery\jquery.meio.mask-min.js" />
+    <Content Include="Includes\JQuery\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="Includes\JQuery\jquery.tablesorter.min.js" />
+    <Content Include="Includes\JQuery\jquery.validation-min.js" />
+    <Content Include="Includes\JQuery\json2.min.js" />
+    <Content Include="Includes\JQuery\ui.ariaTabs.js" />
+    <Content Include="Includes\jsSiteMap.js" />
+    <Content Include="Includes\SiteMap.xslt" />
+    <Content Include="Includes\stylesheetToggle.js" />
+    <Content Include="Includes\Telas\jsCadastroCertidaoCivil.js" />
+    <Content Include="Includes\Telas\jsCadastroPessoa.js" />
+    <Content Include="Includes\Telas\jsConfigRelatorio.js" />
+    <Content Include="Includes\Telas\jsEntidadesLigadas.js" />
+    <Content Include="Includes\Telas\jsLogin.js" />
+    <Content Include="Includes\Telas\jsLoginRio.js" />
+    <Content Include="Includes\Telas\jsModuloSeguranca.js" />
+    <Content Include="Includes\Telas\jsUCCadastroContato.js" />
+    <Content Include="Includes\Telas\jsUCCadastroEndereco.js" />
+    <Content Include="Includes\Util\Init.js" />
+    <Content Include="Includes\Util\jquery.fixer.js" />
+    <Content Include="Includes\Util\jsBuscaDinamica.js" />
+    <Content Include="Includes\Util\jsCamposData.js" />
+    <Content Include="Includes\Util\jsExitPageConfirm.js" />
+    <Content Include="Includes\Util\jsMascarasCampos.js" />
+    <Content Include="Includes\Util\jsMsgConfirmBtn.js" />
+    <Content Include="Includes\Util\jsMsgConfirmExclusao.js" />
+    <Content Include="Includes\Util\jsTabs.js" />
+    <Content Include="Includes\Util\Util.js" />
+    <Content Include="Index.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Manutencao.aspx" />
+    <Content Include="manutencao.htm" />
+    <Content Include="MeusDados.aspx" />
+    <Content Include="SAML\Signon.aspx" />
+    <Content Include="Sistema.aspx" />
+    <Content Include="version.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebControls\Busca\UCPessoas.ascx" />
+    <Content Include="WebControls\Busca\UCUA.ascx" />
+    <Content Include="WebControls\Busca\UCUASuperior.ascx" />
+    <Content Include="WebControls\Busca\UCUsuario.ascx" />
+    <Content Include="WebControls\CertidaoCivil\UCGridCertidaoCivil.ascx" />
+    <Content Include="WebControls\Combos\UCComboCidade.ascx" />
+    <Content Include="WebControls\Combos\UCComboEntidade.ascx" />
+    <Content Include="WebControls\Combos\UCComboEstadoCivil.ascx" />
+    <Content Include="WebControls\Combos\UCComboGrupo.ascx" />
+    <Content Include="WebControls\Combos\UCComboPais.ascx" />
+    <Content Include="WebControls\Combos\UCComboRacaCor.ascx" />
+    <Content Include="WebControls\Combos\UCComboServico.ascx" />
+    <Content Include="WebControls\Combos\UCComboSexo.ascx" />
+    <Content Include="WebControls\Combos\UCComboSistema.ascx" />
+    <Content Include="WebControls\Combos\UCComboSistemaGrupo.ascx" />
+    <Content Include="WebControls\Combos\UCComboTemaPadrao.ascx" />
+    <Content Include="WebControls\Combos\UCComboTemaPaleta.ascx" />
+    <Content Include="WebControls\Combos\UCComboTipoCertidaoCivil.ascx" />
+    <Content Include="WebControls\Combos\UCComboTipoDeficiencia.ascx" />
+    <Content Include="WebControls\Combos\UCComboTipoDocumentacao.ascx" />
+    <Content Include="WebControls\Combos\UCComboTipoEntidade.ascx" />
+    <Content Include="WebControls\Combos\UCComboTipoEscolaridade.ascx" />
+    <Content Include="WebControls\Combos\UCComboTipoMeioContato.ascx" />
+    <Content Include="WebControls\Combos\UCComboTipoUnidadeAdministrativa.ascx" />
+    <Content Include="WebControls\Combos\UCComboUnidadeAdministrativa.ascx" />
+    <Content Include="WebControls\Combos\UCComboUnidadeFederativa.ascx" />
+    <Content Include="WebControls\Combos\UCComboVisao.ascx" />
+    <Content Include="WebControls\Combos\UCComboZona.ascx" />
+    <Content Include="WebControls\Contato\UCGridContato.ascx" />
+    <Content Include="WebControls\Documento\UCGridDocumento.ascx" />
+    <Content Include="WebControls\EnderecoAntigo2\UCEnderecosAntigo2.ascx" />
+    <Content Include="WebControls\EnderecoAntigo\UCEnderecosAntigo.ascx" />
+    <Content Include="WebControls\Endereco\UCEnderecos.ascx" />
+    <Content Include="WebControls\FrequenciaServico\UCFrequenciaServico.ascx" />
+    <Content Include="WebControls\MeusDados\UCMeusDados.ascx" />
+    <Content Include="WebControls\Permissoes\UCPermissoes.ascx" />
+    <Content Include="WebControls\Pessoa\UCCadastroPessoa.ascx" />
+    <Content Include="WebControls\Sistemas\UCSistemas.ascx" />
+    <Content Include="WSServicos.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autenticador.Adapters\Autenticador.Adapters.csproj">
+      <Project>{FEA48E22-51E6-4FFB-85F2-CBA98D113317}</Project>
+      <Name>Autenticador.Adapters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.BLL\Autenticador.BLL.csproj">
+      <Project>{15A9548E-FDF2-415C-BDAB-92AEF00A6156}</Project>
+      <Name>Autenticador.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.DAL\Autenticador.DAL.csproj">
+      <Project>{A8963003-DA4B-4D2A-A644-90C3076AD445}</Project>
+      <Name>Autenticador.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Entities\Autenticador.Entities.csproj">
+      <Project>{5C2D11D0-2FFA-4E80-8AEA-2FA82FD323E0}</Project>
+      <Name>Autenticador.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Jobs\Autenticador.Jobs.csproj">
+      <Project>{2d8084a6-ca17-470b-96fb-68b8853ea3fe}</Project>
+      <Name>Autenticador.Jobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Providers\Autenticador.Providers.csproj">
+      <Project>{1086693C-802F-4207-93E5-1EEE66A94988}</Project>
+      <Name>Autenticador.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Quartz\Autenticador.QuartzProvider.csproj">
+      <Project>{4be1c2b6-f1b5-4170-a2ca-9e591fa4e8c8}</Project>
+      <Name>Autenticador.QuartzProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.UserControlLibrary\Autenticador.UserControlLibrary.csproj">
+      <Project>{6d154cdd-943d-4b25-bc0e-0b9007148230}</Project>
+      <Name>Autenticador.UserControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Web.WebProject\Autenticador.Web.WebProject.csproj">
+      <Project>{95843B67-086E-4B19-B769-B3DC8B793CBA}</Project>
+      <Name>Autenticador.Web.WebProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.WebServices.Consumer\Autenticador.WebServices.Consumer.csproj">
+      <Project>{47a0abb9-333b-4bb4-ba2e-a973895faf28}</Project>
+      <Name>Autenticador.WebServices.Consumer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="AreaAdm\UnidadeFederativa\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>54296</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54295/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

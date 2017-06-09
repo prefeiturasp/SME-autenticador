@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C2D11D0-2FFA-4E80-8AEA-2FA82FD323E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autenticador.Entities</RootNamespace>
+    <AssemblyName>Autenticador.Entities</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreLibrary.Data.Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstracts\Abstract_CFG_Arquivo.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_Configuracao.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_Relatorio.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_RelatorioServidorRelatorio.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_ServidorRelatorio.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_TemaPadrao.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_TemaPaleta.cs" />
+    <Compile Include="Abstracts\Abstract_CFG_UsuarioAPI.cs" />
+    <Compile Include="Abstracts\Abstract_END_Cidade.cs" />
+    <Compile Include="Abstracts\Abstract_END_Endereco.cs" />
+    <Compile Include="Abstracts\Abstract_END_Pais.cs" />
+    <Compile Include="Abstracts\Abstract_END_UnidadeFederativa.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_Auditoria.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_Erros.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_Sistema.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_UsuarioAD.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_UsuarioADErro.cs" />
+    <Compile Include="Abstracts\Abstract_LOG_UsuarioAPI.cs" />
+    <Compile Include="Abstracts\Abstract_PES_CertidaoCivil.cs" />
+    <Compile Include="Abstracts\Abstract_PES_Pessoa.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaContato.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaDeficiencia.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaDocumento.cs" />
+    <Compile Include="Abstracts\Abstract_PES_PessoaEndereco.cs" />
+    <Compile Include="Abstracts\Abstract_PES_TipoDeficiencia.cs" />
+    <Compile Include="Abstracts\Abstract_PES_TipoEscolaridade.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_DiaNaoUtil.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Entidade.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_EntidadeContato.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_EntidadeEndereco.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Grupo.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_GrupoPermissao.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_IntegracaoExterna.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_IntegracaoExternaTipo.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_LoginProviderDominioPermitido.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_LoginProvider_Config.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_MensagemSistema.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Modulo.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Parametro.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_ModuloSiteMap.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_ParametroGrupoPerfil.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Servico.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Sistema.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_SistemaEntidade.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoDocumentacao.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoDocumentacaoAtributo.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoEntidade.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoMeioContato.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_TipoUnidadeAdministrativa.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UnidadeAdministrativa.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UnidadeAdministrativaContato.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UnidadeAdministrativaEndereco.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Usuario.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioFalhaAutenticacao.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioGrupo.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioGrupoUA.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioLoginProvider.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_UsuarioSenhaHistorico.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_Visao.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_VisaoModulo.cs" />
+    <Compile Include="Abstracts\Abstract_SYS_VisaoModuloMenu.cs" />
+    <Compile Include="CFG_Arquivo.cs" />
+    <Compile Include="CFG_Configuracao.cs" />
+    <Compile Include="CFG_Relatorio.cs" />
+    <Compile Include="CFG_RelatorioServidorRelatorio.cs" />
+    <Compile Include="CFG_ServidorRelatorio.cs" />
+    <Compile Include="CFG_TemaPadrao.cs" />
+    <Compile Include="CFG_TemaPaleta.cs" />
+    <Compile Include="CFG_UsuarioAPI.cs" />
+    <Compile Include="DTO\UnidadeAdministrativaDTO.cs" />
+    <Compile Include="END_Cidade.cs" />
+    <Compile Include="END_Endereco.cs" />
+    <Compile Include="END_Pais.cs" />
+    <Compile Include="END_UnidadeFederativa.cs" />
+    <Compile Include="Enums\Sistemas.cs" />
+    <Compile Include="LOG_Auditoria.cs" />
+    <Compile Include="LOG_Erros.cs" />
+    <Compile Include="LOG_Sistema.cs" />
+    <Compile Include="LOG_UsuarioAD.cs" />
+    <Compile Include="LOG_UsuarioADErro.cs" />
+    <Compile Include="LOG_UsuarioAPI.cs" />
+    <Compile Include="DTO\EntidadeDTO.cs" />
+    <Compile Include="DTO\GrupoPermissaoDTO.cs" />
+    <Compile Include="PES_CertidaoCivil.cs" />
+    <Compile Include="PES_Pessoa.cs" />
+    <Compile Include="PES_PessoaContato.cs" />
+    <Compile Include="PES_PessoaDeficiencia.cs" />
+    <Compile Include="PES_PessoaDocumento.cs" />
+    <Compile Include="PES_PessoaEndereco.cs" />
+    <Compile Include="PES_TipoEscolaridade.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="SYS_DiaNaoUtil.cs" />
+    <Compile Include="SYS_Entidade.cs" />
+    <Compile Include="SYS_EntidadeContato.cs" />
+    <Compile Include="SYS_EntidadeEndereco.cs" />
+    <Compile Include="SYS_IntegracaoExterna.cs" />
+    <Compile Include="SYS_IntegracaoExternaTipo.cs" />
+    <Compile Include="SYS_LoginProviderDominioPermitido.cs" />
+    <Compile Include="SYS_LoginProvider_Config.cs" />
+    <Compile Include="SYS_MensagemSistema.cs" />
+    <Compile Include="SYS_ModuloSiteMap.cs" />
+    <Compile Include="SYS_ParametroGrupoPerfil.cs" />
+    <Compile Include="SYS_Servico.cs" />
+    <Compile Include="SYS_SistemaEntidade.cs" />
+    <Compile Include="SYS_TipoDocumentacaoAtributo.cs" />
+    <Compile Include="SYS_TipoEntidade.cs" />
+    <Compile Include="SYS_TipoMeioContato.cs" />
+    <Compile Include="PES_TipoDeficiencia.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYS_Grupo.cs" />
+    <Compile Include="SYS_GrupoPermissao.cs" />
+    <Compile Include="SYS_Modulo.cs" />
+    <Compile Include="SYS_Parametro.cs" />
+    <Compile Include="SYS_Sistema.cs" />
+    <Compile Include="SYS_TipoDocumentacao.cs" />
+    <Compile Include="SYS_TipoUnidadeAdministrativa.cs" />
+    <Compile Include="SYS_UnidadeAdministrativa.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaContato.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaEndereco.cs" />
+    <Compile Include="SYS_Usuario.cs" />
+    <Compile Include="SYS_UsuarioFalhaAutenticacao.cs" />
+    <Compile Include="SYS_UsuarioGrupo.cs" />
+    <Compile Include="SYS_UsuarioGrupoUA.cs" />
+    <Compile Include="SYS_UsuarioLoginProvider.cs" />
+    <Compile Include="SYS_UsuarioSenhaHistorico.cs" />
+    <Compile Include="SYS_Visao.cs" />
+    <Compile Include="SYS_VisaoModulo.cs" />
+    <Compile Include="SYS_VisaoModuloMenu.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

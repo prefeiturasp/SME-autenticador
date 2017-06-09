@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="CriarAluno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="escola" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="turma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serie" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarAlunoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CriarAlunoResult" type="tns:Aluno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Aluno">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgErro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Validation" type="tns:Validation" />
+      <s:complexType name="Validation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CriarProfessor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="escola" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="turma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Disciplina" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarProfessorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CriarProfessorResult" type="tns:Professor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Professor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgErro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CriarFuncionario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="funcao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="setor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriarFuncionarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CriarFuncionarioResult" type="tns:Funcionario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Funcionario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgErro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExisteContaEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteContaEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteContaEmailResult" type="tns:Conta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Conta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgErro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AlterarSenhaConta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ativo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarSenhaContaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlterarSenhaContaResult" type="tns:Senha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Senha">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ativo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msgErro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AceitarTermos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="aceito" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AceitarTermosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AceitarTermosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirPergunta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pergunta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirPerguntaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InserirPerguntaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarPergunta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pergunta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarPerguntaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlterarPerguntaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetaSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pergunta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetaSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetaSenhaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlteraSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="novasenha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlteraSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlteraSenhaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CriarAlunoSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarAluno" />
+  </wsdl:message>
+  <wsdl:message name="CriarAlunoSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarAlunoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarAlunoValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="CriarProfessorSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarProfessor" />
+  </wsdl:message>
+  <wsdl:message name="CriarProfessorSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarProfessorResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarProfessorValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="CriarFuncionarioSoapIn">
+    <wsdl:part name="parameters" element="tns:CriarFuncionario" />
+  </wsdl:message>
+  <wsdl:message name="CriarFuncionarioSoapOut">
+    <wsdl:part name="parameters" element="tns:CriarFuncionarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriarFuncionarioValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="ExisteContaEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteContaEmail" />
+  </wsdl:message>
+  <wsdl:message name="ExisteContaEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteContaEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExisteContaEmailValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaContaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarSenhaConta" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaContaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarSenhaContaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaContaValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="AceitarTermosSoapIn">
+    <wsdl:part name="parameters" element="tns:AceitarTermos" />
+  </wsdl:message>
+  <wsdl:message name="AceitarTermosSoapOut">
+    <wsdl:part name="parameters" element="tns:AceitarTermosResponse" />
+  </wsdl:message>
+  <wsdl:message name="AceitarTermosValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="InserirPerguntaSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirPergunta" />
+  </wsdl:message>
+  <wsdl:message name="InserirPerguntaSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirPerguntaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirPerguntaValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="AlterarPerguntaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarPergunta" />
+  </wsdl:message>
+  <wsdl:message name="AlterarPerguntaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarPerguntaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarPerguntaValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="ResetaSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetaSenha" />
+  </wsdl:message>
+  <wsdl:message name="ResetaSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetaSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetaSenhaValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="AlteraSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlteraSenha" />
+  </wsdl:message>
+  <wsdl:message name="AlteraSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlteraSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlteraSenhaValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUsuarioValidation">
+    <wsdl:part name="Validation" element="tns:Validation" />
+  </wsdl:message>
+  <wsdl:portType name="LoginWSSoap">
+    <wsdl:operation name="CriarAluno">
+      <wsdl:input message="tns:CriarAlunoSoapIn" />
+      <wsdl:output message="tns:CriarAlunoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CriarProfessor">
+      <wsdl:input message="tns:CriarProfessorSoapIn" />
+      <wsdl:output message="tns:CriarProfessorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CriarFuncionario">
+      <wsdl:input message="tns:CriarFuncionarioSoapIn" />
+      <wsdl:output message="tns:CriarFuncionarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteContaEmail">
+      <wsdl:input message="tns:ExisteContaEmailSoapIn" />
+      <wsdl:output message="tns:ExisteContaEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenhaConta">
+      <wsdl:input message="tns:AlterarSenhaContaSoapIn" />
+      <wsdl:output message="tns:AlterarSenhaContaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AceitarTermos">
+      <wsdl:input message="tns:AceitarTermosSoapIn" />
+      <wsdl:output message="tns:AceitarTermosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirPergunta">
+      <wsdl:input message="tns:InserirPerguntaSoapIn" />
+      <wsdl:output message="tns:InserirPerguntaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPergunta">
+      <wsdl:input message="tns:AlterarPerguntaSoapIn" />
+      <wsdl:output message="tns:AlterarPerguntaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetaSenha">
+      <wsdl:input message="tns:ResetaSenhaSoapIn" />
+      <wsdl:output message="tns:ResetaSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlteraSenha">
+      <wsdl:input message="tns:AlteraSenhaSoapIn" />
+      <wsdl:output message="tns:AlteraSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <wsdl:input message="tns:ValidaUsuarioSoapIn" />
+      <wsdl:output message="tns:ValidaUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoginWSSoap" type="tns:LoginWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CriarAluno">
+      <soap:operation soapAction="http://tempuri.org/CriarAluno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarAlunoValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarProfessor">
+      <soap:operation soapAction="http://tempuri.org/CriarProfessor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarProfessorValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarFuncionario">
+      <soap:operation soapAction="http://tempuri.org/CriarFuncionario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriarFuncionarioValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteContaEmail">
+      <soap:operation soapAction="http://tempuri.org/ExisteContaEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExisteContaEmailValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenhaConta">
+      <soap:operation soapAction="http://tempuri.org/AlterarSenhaConta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlterarSenhaContaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AceitarTermos">
+      <soap:operation soapAction="http://tempuri.org/AceitarTermos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AceitarTermosValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirPergunta">
+      <soap:operation soapAction="http://tempuri.org/InserirPergunta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InserirPerguntaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPergunta">
+      <soap:operation soapAction="http://tempuri.org/AlterarPergunta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlterarPerguntaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetaSenha">
+      <soap:operation soapAction="http://tempuri.org/ResetaSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResetaSenhaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlteraSenha">
+      <soap:operation soapAction="http://tempuri.org/AlteraSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlteraSenhaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <soap:operation soapAction="http://tempuri.org/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidaUsuarioValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoginWSSoap12" type="tns:LoginWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CriarAluno">
+      <soap12:operation soapAction="http://tempuri.org/CriarAluno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarAlunoValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarProfessor">
+      <soap12:operation soapAction="http://tempuri.org/CriarProfessor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarProfessorValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CriarFuncionario">
+      <soap12:operation soapAction="http://tempuri.org/CriarFuncionario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriarFuncionarioValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteContaEmail">
+      <soap12:operation soapAction="http://tempuri.org/ExisteContaEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExisteContaEmailValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenhaConta">
+      <soap12:operation soapAction="http://tempuri.org/AlterarSenhaConta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlterarSenhaContaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AceitarTermos">
+      <soap12:operation soapAction="http://tempuri.org/AceitarTermos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AceitarTermosValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirPergunta">
+      <soap12:operation soapAction="http://tempuri.org/InserirPergunta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InserirPerguntaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPergunta">
+      <soap12:operation soapAction="http://tempuri.org/AlterarPergunta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlterarPerguntaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetaSenha">
+      <soap12:operation soapAction="http://tempuri.org/ResetaSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ResetaSenhaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlteraSenha">
+      <soap12:operation soapAction="http://tempuri.org/AlteraSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlteraSenhaValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidaUsuarioValidation" part="Validation" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoginWS">
+    <wsdl:port name="LoginWSSoap" binding="tns:LoginWSSoap">
+      <soap:address location="http://ws.rioeduca.rio.gov.br/LoginWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoginWSSoap12" binding="tns:LoginWSSoap12">
+      <soap12:address location="http://ws.rioeduca.rio.gov.br/LoginWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

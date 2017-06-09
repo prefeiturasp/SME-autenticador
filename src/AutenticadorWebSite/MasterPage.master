@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPage" CodeBehind="MasterPage.master.cs" %>
+
+<%@ Register Src="~/WebControls/Sistemas/UCSistemas.ascx" TagName="UCSistemas" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store" />
+    <meta http-equiv="Pragma" content="no-cache, no-store" />
+    <meta http-equiv="Expires" content="0" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--[if IE]>
+<style type="text/css">
+   fieldset {
+     position:relative;
+     clear:both;
+   }
+   .summary td {
+        padding:10px;
+        padding-left:50px;
+    }
+    .ui-state-error {
+	    margin-bottom:20px;
+    }
+</style>
+<![endif]-->
+    <!--[if IE 8]>
+<style type="text/css">
+   legend {
+     margin-top:-10px!important;
+   }
+</style>
+<![endif]-->
+    <!--[if lte IE 7]>
+<style>
+   fieldset {
+      padding-top:10px!important;
+      }
+   #SiteMap .txtSubMenu {
+      float:left;
+   }
+  legend {
+      margin-top:-10px;
+      margin-left:-18px!important;
+      
+   }
+   .m {
+      margin-left:-20px!important;
+   }
+</style>
+<![endif]-->
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <!-- Cabeçalho -->
+    <div id="hd">
+        <div id="acessibilidade">
+            <a href="#" title="Diminuir Tamanho da Fonte" class="lnkDiminuirFonte">A</a> <a href="#"
+                title="Tamanho da Fonte Normal" class="lnkFonteNormal">A</a> <a href="#" title="Aumentar Tamanho da Fonte"
+                    class="lnkAumentarFonte">A</a> <a href="#" title="Mudar esquema de cores para Alto Contraste"
+                        rel="altoContraste" class="lnkAltoContraste styleSwitch">C</a>
+        </div>
+        <h1 class="logo">
+            <asp:HyperLink ID="ImgLogoGeral" runat="server">
+                <asp:Image ID="imgGeral" runat="server" />
+            </asp:HyperLink>
+        </h1>
+        <h2 class="logoSistemaAtual">
+            <asp:HyperLink ID="ImgLogoSistemaAtual" runat="server">
+                <asp:Image ID="imgSistemaAtual" runat="server" />
+            </asp:HyperLink>
+        </h2>
+        <h2 class="logoInstitiuicao">
+            <asp:HyperLink ID="ImgLogoInstitiuicao" runat="server" Target="_blank">
+            </asp:HyperLink>
+            <asp:Image ID="imgImagemInstituicao" runat="server" Visible="false" />
+        </h2>
+        <!-- Usuário -->
+        <div class="user">
+            Bem-vindo, <strong>
+                <asp:Literal ID="lblUsuario" runat="server" Text="Usuário"></asp:Literal></strong>
+            |
+            <asp:HyperLink ID="hplMeusDados" runat="server" NavigateUrl="~/MeusDados.aspx">Meus dados</asp:HyperLink>
+            |
+            <uc1:UCSistemas ID="UCSistemas1" runat="server" />
+            |
+            <asp:HyperLink ID="hplSair" runat="server" NavigateUrl="~/Logout.ashx">Sair</asp:HyperLink>
+        </div>
+        <span ID="spnHelpDesk" runat="server"></span>
+        <asp:HyperLink ID="hplHelp" runat="server" Target="_blank" SkinID="hplHelp">
+        </asp:HyperLink>
+    </div>
+    <!-- /Cabeçalho -->
+    <!-- Menu -->
+    <asp:Menu ID="Menu1" runat="server" DataSourceID="XmlDataSource1" Orientation="Horizontal">
+        <DataBindings>
+            <asp:MenuItemBinding DataMember="menu" NavigateUrlField="url" TextField="id" />
+            <asp:MenuItemBinding DataMember="item" NavigateUrlField="url" TextField="id" />
+            <asp:MenuItemBinding DataMember="subitem" NavigateUrlField="url" TextField="id" />
+            <asp:MenuItemBinding DataMember="subitem2" NavigateUrlField="url" TextField="id" />
+        </DataBindings>
+    </asp:Menu>
+    <asp:XmlDataSource ID="XmlDataSource1" runat="server" CacheKeyDependency="id" XPath="/menus/menu">
+    </asp:XmlDataSource>
+    <!-- /Menu -->
+    <!-- SiteMap -->
+    <div class="breadCrumb">
+        Você está em:<asp:SiteMapPath ID="SiteMapPath1" RenderCurrentNodeAsLink="true" runat="server"
+            SiteMapProvider="SsoSiteMapProvider">
+        </asp:SiteMapPath>
+    </div>
+    <!-- /SiteMap -->
+    <!-- /Header -->
+    <!-- Conteudo -->
+    <div id="bd">
+        <div id="e">
+            <asp:ContentPlaceHolder ID="ContentMasterLevel0" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <!-- /Conteudo -->
+    <!-- Rodapé -->
+    <div id="ft">
+        <asp:Label ID="lblCopyright" runat="server" Text="Label"></asp:Label>
+    </div>
+    <!-- /Rodapé -->
+    </form>
+</body>
+</html>

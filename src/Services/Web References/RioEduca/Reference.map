@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ws.rioeduca.rio.gov.br/LoginWS.asmx?wsdl" filename="LoginWS.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://ws.rioeduca.rio.gov.br/LoginWS.asmx?disco" filename="LoginWS.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

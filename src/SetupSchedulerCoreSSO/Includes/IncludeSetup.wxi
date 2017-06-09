@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- "Guid" deve ser único para cada serviço - pois fica no Registro do Windows e é utilizado para controlar a instalação -->
+  <?define GuidProduto="CC66EBDC-8FF7-485A-B26F-545CE12B11DD" ?>
+  <?define GuidConfig="D31A1E17-4A3B-4A53-9C1B-87454A835EE3" ?>
+  <?define GuidConfigDll="58879FE2-4FFE-4780-B197-B0CEA9A1BFFD" ?>
+  <?define GuidUpdateCode="CBDAD27E-7D49-452A-9006-786C454C22ED" ?>
+
+  <!-- Nomes padrões do produto -->
+  <?define NomeEmpresa="CoreLibrary" ?>
+  <?define NomeProduto="Autenticador Scheduler" ?>
+  <?define DescricaoProduto="Serviço Autenticador Scheduler" ?> 
+
+  <!-- Nomes dos arquivos -->
+  <?define NomeExecutavel="SchedulerCoreSSO.exe" ?>
+  <?define NomeConfigExecutavel="CoreLibrary.Config.exe" ?>
+  <?define NomeConfigConexao="CoreLibrary.Data.Common.dll.config" ?>
+
+  <!-- Pastas e arquivos -->
+  <?define PastaArquivos="$(sys.CURRENTDIR)\Arquivos\" ?>
+  <?define PastaBinServico="$(var.SchedulerCoreSSO.ProjectDir)bin\$(var.SchedulerCoreSSO.Configuration)" ?>
+  <?define CaminhoExecutavel="$(var.SchedulerCoreSSO.ProjectDir)bin\$(var.SchedulerCoreSSO.Configuration)\$(var.SchedulerCoreSSO.TargetFileName)" ?>
+</Include>

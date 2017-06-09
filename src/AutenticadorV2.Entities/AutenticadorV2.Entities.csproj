@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB8D305E-4CBF-419F-A1CA-6102712752EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutenticadorV2.Entities</RootNamespace>
+    <AssemblyName>AutenticadorV2.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\CFG_Arquivo.cs" />
+    <Compile Include="Models\CFG_Configuracao.cs" />
+    <Compile Include="Models\CFG_Relatorio.cs" />
+    <Compile Include="Models\CFG_ServidorRelatorio.cs" />
+    <Compile Include="Models\CFG_TemaPadrao.cs" />
+    <Compile Include="Models\CFG_TemaPaleta.cs" />
+    <Compile Include="Models\CFG_UsuarioAPI.cs" />
+    <Compile Include="Models\CFG_Versao.cs" />
+    <Compile Include="Models\AutenticadorContext.cs" />
+    <Compile Include="Models\END_Cidade.cs" />
+    <Compile Include="Models\END_Endereco.cs" />
+    <Compile Include="Models\END_Pais.cs" />
+    <Compile Include="Models\END_UnidadeFederativa.cs" />
+    <Compile Include="Models\LOG_UsuarioAD.cs" />
+    <Compile Include="Models\LOG_UsuarioADErro.cs" />
+    <Compile Include="Models\LOG_UsuarioAPI.cs" />
+    <Compile Include="Models\Mapping\CFG_ArquivoMap.cs" />
+    <Compile Include="Models\Mapping\CFG_ConfiguracaoMap.cs" />
+    <Compile Include="Models\Mapping\CFG_RelatorioMap.cs" />
+    <Compile Include="Models\Mapping\CFG_ServidorRelatorioMap.cs" />
+    <Compile Include="Models\Mapping\CFG_TemaPadraoMap.cs" />
+    <Compile Include="Models\Mapping\CFG_TemaPaletaMap.cs" />
+    <Compile Include="Models\Mapping\CFG_UsuarioAPIMap.cs" />
+    <Compile Include="Models\Mapping\CFG_VersaoMap.cs" />
+    <Compile Include="Models\Mapping\END_CidadeMap.cs" />
+    <Compile Include="Models\Mapping\END_EnderecoMap.cs" />
+    <Compile Include="Models\Mapping\END_PaisMap.cs" />
+    <Compile Include="Models\Mapping\END_UnidadeFederativaMap.cs" />
+    <Compile Include="Models\Mapping\LOG_UsuarioADErroMap.cs" />
+    <Compile Include="Models\Mapping\LOG_UsuarioADMap.cs" />
+    <Compile Include="Models\Mapping\LOG_UsuarioAPIMap.cs" />
+    <Compile Include="Models\Mapping\PES_CertidaoCivilMap.cs" />
+    <Compile Include="Models\Mapping\PES_PessoaContatoMap.cs" />
+    <Compile Include="Models\Mapping\PES_PessoaDocumentoMap.cs" />
+    <Compile Include="Models\Mapping\PES_PessoaEnderecoMap.cs" />
+    <Compile Include="Models\Mapping\PES_PessoaMap.cs" />
+    <Compile Include="Models\Mapping\PES_TipoDeficienciaMap.cs" />
+    <Compile Include="Models\Mapping\PES_TipoEscolaridadeMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Blob_TriggersMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_CalendarsMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Cron_TriggersMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Fired_TriggersMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Job_DetailsMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_LocksMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Paused_Trigger_GrpsMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Scheduler_StateMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Simple_TriggersMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_Simprop_TriggersMap.cs" />
+    <Compile Include="Models\Mapping\QTZ_TriggersMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\SYS_BancoRelacionadoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_DiaNaoUtilMap.cs" />
+    <Compile Include="Models\Mapping\SYS_EntidadeContatoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_EntidadeEnderecoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_EntidadeMap.cs" />
+    <Compile Include="Models\Mapping\SYS_GrupoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_GrupoPermissaoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_IntegracaoExternaMap.cs" />
+    <Compile Include="Models\Mapping\SYS_MensagemSistemaMap.cs" />
+    <Compile Include="Models\Mapping\SYS_ModuloMap.cs" />
+    <Compile Include="Models\Mapping\SYS_ModuloSiteMapMap.cs" />
+    <Compile Include="Models\Mapping\SYS_ParametroGrupoPerfilMap.cs" />
+    <Compile Include="Models\Mapping\SYS_ParametroMap.cs" />
+    <Compile Include="Models\Mapping\SYS_ServicoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_SistemaEntidadeMap.cs" />
+    <Compile Include="Models\Mapping\SYS_SistemaMap.cs" />
+    <Compile Include="Models\Mapping\SYS_TipoDocumentacaoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_TipoEntidadeMap.cs" />
+    <Compile Include="Models\Mapping\SYS_TipoMeioContatoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_TipoUnidadeAdministrativaMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UnidadeAdministrativaContatoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UnidadeAdministrativaEnderecoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UnidadeAdministrativaMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UsuarioFalhaAutenticacaoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UsuarioGrupoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UsuarioGrupoUAMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UsuarioMap.cs" />
+    <Compile Include="Models\Mapping\SYS_UsuarioSenhaHistoricoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_VisaoMap.cs" />
+    <Compile Include="Models\Mapping\SYS_VisaoModuloMap.cs" />
+    <Compile Include="Models\Mapping\SYS_VisaoModuloMenuMap.cs" />
+    <Compile Include="Models\Mapping\VW_PES_PessoaMap.cs" />
+    <Compile Include="Models\PES_CertidaoCivil.cs" />
+    <Compile Include="Models\PES_Pessoa.cs" />
+    <Compile Include="Models\PES_PessoaContato.cs" />
+    <Compile Include="Models\PES_PessoaDocumento.cs" />
+    <Compile Include="Models\PES_PessoaEndereco.cs" />
+    <Compile Include="Models\PES_TipoDeficiencia.cs" />
+    <Compile Include="Models\PES_TipoEscolaridade.cs" />
+    <Compile Include="Models\QTZ_Blob_Triggers.cs" />
+    <Compile Include="Models\QTZ_Calendars.cs" />
+    <Compile Include="Models\QTZ_Cron_Triggers.cs" />
+    <Compile Include="Models\QTZ_Fired_Triggers.cs" />
+    <Compile Include="Models\QTZ_Job_Details.cs" />
+    <Compile Include="Models\QTZ_Locks.cs" />
+    <Compile Include="Models\QTZ_Paused_Trigger_Grps.cs" />
+    <Compile Include="Models\QTZ_Scheduler_State.cs" />
+    <Compile Include="Models\QTZ_Simple_Triggers.cs" />
+    <Compile Include="Models\QTZ_Simprop_Triggers.cs" />
+    <Compile Include="Models\QTZ_Triggers.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\SYS_BancoRelacionado.cs" />
+    <Compile Include="Models\SYS_DiaNaoUtil.cs" />
+    <Compile Include="Models\SYS_Entidade.cs" />
+    <Compile Include="Models\SYS_EntidadeContato.cs" />
+    <Compile Include="Models\SYS_EntidadeEndereco.cs" />
+    <Compile Include="Models\SYS_Grupo.cs" />
+    <Compile Include="Models\SYS_GrupoPermissao.cs" />
+    <Compile Include="Models\SYS_IntegracaoExterna.cs" />
+    <Compile Include="Models\SYS_MensagemSistema.cs" />
+    <Compile Include="Models\SYS_Modulo.cs" />
+    <Compile Include="Models\SYS_ModuloSiteMap.cs" />
+    <Compile Include="Models\SYS_Parametro.cs" />
+    <Compile Include="Models\SYS_ParametroGrupoPerfil.cs" />
+    <Compile Include="Models\SYS_Servico.cs" />
+    <Compile Include="Models\SYS_Sistema.cs" />
+    <Compile Include="Models\SYS_SistemaEntidade.cs" />
+    <Compile Include="Models\SYS_TipoDocumentacao.cs" />
+    <Compile Include="Models\SYS_TipoEntidade.cs" />
+    <Compile Include="Models\SYS_TipoMeioContato.cs" />
+    <Compile Include="Models\SYS_TipoUnidadeAdministrativa.cs" />
+    <Compile Include="Models\SYS_UnidadeAdministrativa.cs" />
+    <Compile Include="Models\SYS_UnidadeAdministrativaContato.cs" />
+    <Compile Include="Models\SYS_UnidadeAdministrativaEndereco.cs" />
+    <Compile Include="Models\SYS_Usuario.cs" />
+    <Compile Include="Models\SYS_UsuarioFalhaAutenticacao.cs" />
+    <Compile Include="Models\SYS_UsuarioGrupo.cs" />
+    <Compile Include="Models\SYS_UsuarioGrupoUA.cs" />
+    <Compile Include="Models\SYS_UsuarioSenhaHistorico.cs" />
+    <Compile Include="Models\SYS_Visao.cs" />
+    <Compile Include="Models\SYS_VisaoModulo.cs" />
+    <Compile Include="Models\SYS_VisaoModuloMenu.cs" />
+    <Compile Include="Models\VW_PES_Pessoa.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutenticadorV2.Infra\AutenticadorV2.Infra.csproj">
+      <Project>{6611c3e6-d0c0-46c4-894e-ca1f3fe5622e}</Project>
+      <Name>AutenticadorV2.Infra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

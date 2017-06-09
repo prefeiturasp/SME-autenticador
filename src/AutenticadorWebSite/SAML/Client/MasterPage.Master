@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs"
+    Inherits="AutenticadorWebSite.SAML.Client.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store" />
+    <meta http-equiv="Pragma" content="no-cache, no-store" />
+    <meta http-equiv="Expires" content="0" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <!-- Cabeçalho -->
+    <div id="hd">
+        <div id="acessibilidade">
+            <a href="#" title="Diminuir Tamanho da Fonte" class="lnkDiminuirFonte">A</a>
+            <a href="#" title="Tamanho da Fonte Normal" class="lnkFonteNormal">A</a>
+            <a href="#" title="Aumentar Tamanho da Fonte" class="lnkAumentarFonte">A</a>
+            <a href="#" title="Mudar esquema de cores para Alto Contraste" rel="altoContraste" class="lnkAltoContraste styleSwitch">C</a>
+        </div>
+        <h1 class="logo">
+            <asp:HyperLink ID="ImgLogoGeral" runat="server">
+                <asp:Image ID="imgGeral" runat="server" />
+            </asp:HyperLink>
+        </h1>
+    </div>
+    <!-- /Cabeçalho -->
+    <!-- Conteudo -->
+    <div id="bd">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <!-- /Conteudo -->
+    <!-- Rodapé -->
+    <div id="ft">
+        <asp:Label ID="lblCopyright" runat="server" Text="Label"></asp:Label>
+    </div>
+    <!-- /Rodapé -->
+    </form>
+</body>
+</html>

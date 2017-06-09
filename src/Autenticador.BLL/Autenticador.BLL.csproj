@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15A9548E-FDF2-415C-BDAB-92AEF00A6156}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autenticador.BLL</RootNamespace>
+    <AssemblyName>Autenticador.BLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreLibrary.Business.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Business.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Data.Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.LDAP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.LDAP.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.SAML20, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.SAML20.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Security.Cryptography, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreLibrary.Web.Mail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Web.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CFG_ArquivoBO.cs" />
+    <Compile Include="CFG_ConfiguracaoBO.cs" />
+    <Compile Include="CFG_RelatorioBO.cs" />
+    <Compile Include="CFG_ServidorRelatorioBO.cs" />
+    <Compile Include="CFG_TemaPadraoBO.cs" />
+    <Compile Include="CFG_TemaPaletaBO.cs" />
+    <Compile Include="CFG_UsuarioAPIBO.cs" />
+    <Compile Include="CoreServicoBO.cs" />
+    <Compile Include="LOG_UsuarioADBO.cs" />
+    <Compile Include="LOG_UsuarioADErroBO.cs" />
+    <Compile Include="LOG_UsuarioAPIBO.cs" />
+    <Compile Include="StatusBO.cs" />
+    <Compile Include="SYS_IntegracaoExternaBO.cs" />
+    <Compile Include="SYS_IntegracaoExternaTipoBO.cs" />
+    <Compile Include="SYS_LoginProviderDominioPermitidoBO.cs" />
+    <Compile Include="SYS_LoginProvider_ConfigBO.cs" />
+    <Compile Include="SYS_MensagemSistemaBO.cs" />
+    <Compile Include="SYS_ServicoBO.cs" />
+    <Compile Include="SYS_TipoDocumentacaoAtributoBO.cs" />
+    <Compile Include="SYS_UsuarioAutenticacaoExternaBO.cs" />
+    <Compile Include="SYS_UsuarioFalhaAutenticacaoBO.cs" />
+    <Compile Include="SYS_UsuarioGrupoBO.cs" />
+    <Compile Include="SYS_UsuarioGrupoUABO.cs" />
+    <Compile Include="SYS_UsuarioLoginProviderBO.cs" />
+    <Compile Include="SYS_UsuarioSenhaHistoricoBO.cs" />
+    <Compile Include="SYS_VisaoModuloMenuBO.cs" />
+    <Compile Include="SYS_GrupoPermissaoBO.cs">
+    </Compile>
+    <Compile Include="SYS_VisaoModuloBO.cs" />
+    <Compile Include="SYS_ModuloSiteMapBO.cs" />
+    <Compile Include="END_CidadeBO.cs" />
+    <Compile Include="END_EnderecoBO.cs" />
+    <Compile Include="LOG_ErrosBO.cs" />
+    <Compile Include="LOG_SistemaBO.cs" />
+    <Compile Include="PES_CertidaoCivilBO.cs" />
+    <Compile Include="PES_PessoaBO.cs" />
+    <Compile Include="PES_PessoaContatoBO.cs" />
+    <Compile Include="PES_PessoaDeficienciaBO.cs" />
+    <Compile Include="PES_PessoaDocumentoBO.cs" />
+    <Compile Include="PES_PessoaEnderecoBO.cs" />
+    <Compile Include="PES_TipoEscolaridadeBO.cs" />
+    <Compile Include="SYS_DiaNaoUtilBO.cs" />
+    <Compile Include="SYS_EntidadeContatoBO.cs" />
+    <Compile Include="SYS_EntidadeEnderecoBO.cs" />
+    <Compile Include="END_PaisBO.cs" />
+    <Compile Include="END_UnidadeFederativaBO.cs" />
+    <Compile Include="PES_TipoDeficienciaBO.cs" />
+    <Compile Include="SYS_EntidadeBO.cs" />
+    <Compile Include="SYS_GrupoBO.cs" />
+    <Compile Include="SYS_ModuloBO.cs" />
+    <Compile Include="SYS_ParametroBO.cs" />
+    <Compile Include="SYS_ParametroGrupoPerfilBO.cs" />
+    <Compile Include="SYS_SistemaBO.cs" />
+    <Compile Include="SYS_SistemaEntidadeBO.cs" />
+    <Compile Include="SYS_TipoDocumentacaoBO.cs" />
+    <Compile Include="SYS_TipoEntidadeBO.cs" />
+    <Compile Include="SYS_TipoMeioContatoBO.cs" />
+    <Compile Include="SYS_TipoUnidadeAdministrativaBO.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaBO.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaContatoBO.cs" />
+    <Compile Include="SYS_UnidadeAdministrativaEnderecoBO.cs" />
+    <Compile Include="SYS_UsuarioBO.cs" />
+    <Compile Include="SYS_VisaoBO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V2\EntidadeBO.cs" />
+    <Compile Include="V2\UsuarioBO.cs" />
+    <Compile Include="UtilBO.cs" />
+    <Compile Include="V2\GrupoBO.cs" />
+    <Compile Include="V2\UnidadeAdministrativaBO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Autenticador.DAL\Autenticador.DAL.csproj">
+      <Project>{A8963003-DA4B-4D2A-A644-90C3076AD445}</Project>
+      <Name>Autenticador.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.Entities\Autenticador.Entities.csproj">
+      <Project>{5C2D11D0-2FFA-4E80-8AEA-2FA82FD323E0}</Project>
+      <Name>Autenticador.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Autenticador.WebServices.Consumer\Autenticador.WebServices.Consumer.csproj">
+      <Project>{47a0abb9-333b-4bb4-ba2e-a973895faf28}</Project>
+      <Name>Autenticador.WebServices.Consumer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <?include $(sys.CURRENTDIR)Includes\IncludeSetup.wxi ?>
+  <?include $(sys.CURRENTDIR)Includes\Version.wxi ?>
+  
+	<Product Id="*" Name="$(var.NomeProduto)" Language="1046" Version="$(var.VersionNumber)" Manufacturer="$(var.NomeEmpresa)" UpgradeCode="$(var.GuidUpdateCode)">
+		<Package InstallerVersion="$(var.VersaoInstalacao)" InstallPrivileges="elevated" AdminImage="no" Compressed="yes" InstallScope="perMachine" />
+    <Media Id="1" Cabinet="MySetup.cab" EmbedCab="yes" CompressionLevel="high" />
+
+		<MajorUpgrade DowngradeErrorMessage="Uma versão mais atualizada do serviço $(var.NomeProduto) já está instalada." />
+    <Upgrade Id="$(var.GuidUpdateCode)">
+      <UpgradeVersion Minimum="0.0.0.0" IncludeMinimum="yes" OnlyDetect="no" Maximum="$(var.VersionNumber)" IncludeMaximum="no" Property="PREVIOUSFOUND" />
+    </Upgrade>
+
+    <Condition Message="Essa aplicação necessita da plataforma .NET 2.0." >MsiNetAssemblySupport >= "2.0.50727"</Condition>
+    
+		<Feature Id="ProductFeature" Title="$(var.NomeProduto)" Level="1">
+      <ComponentRef Id="DLL" />
+      <ComponentRef Id="EXE" />
+      <ComponentRef Id="CONFIG" />
+		</Feature>
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="EmpresaFolder" Name="$(var.NomeEmpresa)">
+          <Directory Id="INSTALLFOLDER" Name="$(var.NomeProduto)">
+          </Directory>
+        </Directory>
+			</Directory>
+		</Directory>
+
+    <CustomAction Id="DialogConfig" Directory="INSTALLFOLDER" ExeCommand='"[INSTALLFOLDER]$(var.NomeConfigExecutavel)"'
+                  Execute="deferred" Return="check"></CustomAction>
+
+    <InstallExecuteSequence>
+      <Custom Action="DialogConfig" Before="StartServices">NOT Installed</Custom>
+    </InstallExecuteSequence>
+    
+    <WixVariable Id="Language" Value="pt-BR"/>
+
+    <UI Id="WixUI_Minimal">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="Minimal" />
+
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <!-- This is the welcome dialog you specified-->
+      <DialogRef Id="WelcomeDlg" />
+
+      <!-- Hook the new welcome dialog to the next one in the stack-->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="PrepareDlg">1</Publish>
+
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+      <Property Id="ARPNOMODIFY" Value="1" />
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="DLL" Guid="$(var.GuidConfigDll)">
+        <File Id="Quartz.dll"                   Source="$(var.PastaBinServico)\Quartz.dll"></File>
+        <File Id="C5"                           Source="$(var.PastaBinServico)\C5.dll" />
+        <File Id="Common.Logging"               Source="$(var.PastaBinServico)\Common.Logging.dll" />
+        <File Id="CoreLibrary.Business.Common"       Source="$(var.PastaBinServico)\CoreLibrary.Business.Common.dll"></File>
+        <File Id="CoreLibrary.Data.Common"           Source="$(var.PastaBinServico)\CoreLibrary.Data.Common.dll"></File>
+        <File Id="CoreLibrary.Security.Cryptography" Source="$(var.PastaBinServico)\CoreLibrary.Security.Cryptography.dll" />
+        <File Id="Autenticador.BLL"           Source="$(var.PastaBinServico)\Autenticador.BLL.dll"></File>
+        <File Id="Autenticador.DAL"           Source="$(var.PastaBinServico)\Autenticador.DAL.dll"></File>
+        <File Id="Autenticador.Entities"      Source="$(var.PastaBinServico)\Autenticador.Entities.dll"></File>
+        <File Id="Autenticador.Jobs"          Source="$(var.PastaBinServico)\Autenticador.Jobs.dll"></File>
+        <File Id="CoreLibrary.Validation"            Source="$(var.PastaBinServico)\CoreLibrary.Validation.dll" />
+        <File Id="CoreLibrary.LDAP"                  Source="$(var.PastaBinServico)\CoreLibrary.LDAP.dll" />  
+        <File Id="Autenticador.WebServices.Consumer" Source="$(var.PastaBinServico)\Autenticador.WebServices.Consumer.dll" />
+
+    </Component>
+
+      <!-- Arquivos necessários ao serviço -->
+      <Component Id="EXE" Guid="$(var.GuidProduto)">
+        <File Id="Executavel" Name="$(var.NomeExecutavel)" KeyPath="yes" Source="$(var.CaminhoExecutavel)"></File>
+        <ServiceInstall Id="ServicoInstall" DisplayName="$(var.NomeProduto)" Name="$(var.NomeProduto)" Type="ownProcess" Vital="yes"
+                        Account="LocalSystem" Description="$(var.DescricaoProduto) - Versão: $(var.VersionNumber)" Interactive="no"
+                        ErrorControl="critical" Start="auto"></ServiceInstall>
+        <ServiceControl Id="ServicoControl" Start="install" Stop="both" Remove="both" Wait="yes" Name="$(var.NomeProduto)"></ServiceControl>
+      </Component>
+
+      <!-- Arquivo de config - não remove quando desinstalar nem sobrescreve -->
+      <Component Id="CONFIG" Guid="$(var.GuidConfig)" NeverOverwrite="yes" Permanent="yes">
+        <File Id="ConfigConexao" Name="$(var.NomeConfigConexao)" Source="$(var.PastaArquivos)$(var.NomeConfigConexao)"></File>
+        <File Id="ConfigExe" Name="$(var.NomeConfigExecutavel)" KeyPath="yes" Source="$(var.PastaArquivos)$(var.NomeConfigExecutavel)"></File>
+      </Component>
+    </DirectoryRef>
+  </Product>
+</Wix>
