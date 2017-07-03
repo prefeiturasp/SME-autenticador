@@ -80,7 +80,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DLLS\CoreLibrary.IO.Compression.SevenZipLib.dll" />
     <Content Include="DLLS\CoreLibrary.Log.dll" />
     <Content Include="DLLS\CoreLibrary.SqlServer.ReportingServices.dll" />
     <Content Include="DLLS\CoreLibrary.Validation.dll" />
