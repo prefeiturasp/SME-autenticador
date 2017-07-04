@@ -28,7 +28,7 @@ namespace Autenticador.Web.WebProject
 
                 if (!UserIsAuthenticated())
                 {
-                    string provider = "mstech";
+                    string provider = "cliauth";
                     Context.GetOwinContext().Authentication.Challenge(provider);
                 }
                 else
