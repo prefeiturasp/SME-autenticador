@@ -236,7 +236,7 @@ namespace Autenticador.Web.WebProject
                 if (SYS_SistemaBO.GetSelectBy_sis_caminho(entitySistema, SYS_SistemaBO.TypePath.login))
                 {
                     // Armazena sistema no Cookie
-                    cookie.Values[entitySistema.sis_id.ToString()] = entitySistema.sis_nome;
+                    cookie.Values[entitySistema.sis_id.ToString()] = entitySistema.sis_id.ToString();
                     // Atualiza dados do Cookie
                     context.Response.Cookies.Set(cookie);
                 }

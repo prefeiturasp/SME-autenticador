@@ -60,6 +60,9 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
@@ -217,6 +220,7 @@
     <Compile Include="AcessoNaoAutorizado.aspx.designer.cs">
       <DependentUpon>AcessoNaoAutorizado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\IdentitySettingsConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="AreaAdm\Cidade\Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
@@ -1140,6 +1144,8 @@
     <Content Include="App_Themes\IntranetSME\IntranetSME.skin" />
     <Content Include="Captcha.ashx" />
     <Content Include="packages.config" />
+    <Content Include="identitysettings.json" />
+    <Content Include="Login.ashx" />
     <None Include="Properties\PublishProfiles\CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\DEV_CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
