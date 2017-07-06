@@ -38,17 +38,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="C5, Version=2.4.5947.17249, Culture=neutral, PublicKeyToken=282361b99ded7e8e, processorArchitecture=MSIL">
+    <Reference Include="C5, Version=1.1.0.0, Culture=neutral, PublicKeyToken=06a1b38866503b69, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\fork\coresso\Src\_External_Dependencies\C5.dll</HintPath>
+      <HintPath>..\_External_Dependencies\C5.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+    <Reference Include="Common.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\fork\coresso\Src\_External_Dependencies\Common.Logging.dll</HintPath>
+      <HintPath>..\_External_Dependencies\Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Quartz, Version=2.5.0.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+    <Reference Include="Quartz, Version=2.0.0.200, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\fork\coresso\Src\_External_Dependencies\Quartz.dll</HintPath>
+      <HintPath>..\_External_Dependencies\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
