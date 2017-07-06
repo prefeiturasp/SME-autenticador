@@ -60,6 +60,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CoreLibrary.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\fork\coresso\Src\AutenticadorLibrary\DLLS\CoreLibrary.Log.dll</HintPath>
+    </Reference>
     <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
     </Reference>
@@ -132,10 +136,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.LDAP.dll</HintPath>
     </Reference>
-    <Reference Include="MSTech.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AutenticadorLibrary\DLLS\MSTech.Log.dll</HintPath>
-    </Reference>
     <Reference Include="CoreLibrary.Providers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Providers.dll</HintPath>
@@ -147,10 +147,6 @@
     <Reference Include="CoreLibrary.Security.Cryptography, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Security.Cryptography.dll</HintPath>
-    </Reference>
-    <Reference Include="MSTech.Util.Strings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AutenticadorLibrary\DLLS\MSTech.Util.Strings.dll</HintPath>
     </Reference>
     <Reference Include="CoreLibrary.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

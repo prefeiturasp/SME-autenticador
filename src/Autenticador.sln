@@ -83,6 +83,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutenticadorWebSite", "Aute
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_External_Dependencies", "{9467E442-D28D-4D86-8A07-5DFC6303650A}"
 	ProjectSection(SolutionItems) = preProject
+		_External_Dependencies\C5.dll = _External_Dependencies\C5.dll
 		_External_Dependencies\Common.Logging.dll = _External_Dependencies\Common.Logging.dll
 		_External_Dependencies\Microsoft.MetadirectoryServices.dll = _External_Dependencies\Microsoft.MetadirectoryServices.dll
 		_External_Dependencies\Microsoft.MetadirectoryServicesEx.dll = _External_Dependencies\Microsoft.MetadirectoryServicesEx.dll
@@ -91,6 +92,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_
 		_External_Dependencies\Microsoft.SqlServer.Smo.dll = _External_Dependencies\Microsoft.SqlServer.Smo.dll
 		_External_Dependencies\Microsoft.SqlServer.SqlEnum.dll = _External_Dependencies\Microsoft.SqlServer.SqlEnum.dll
 		_External_Dependencies\Microsoft.Web.Administration.dll = _External_Dependencies\Microsoft.Web.Administration.dll
+		_External_Dependencies\Quartz.dll = _External_Dependencies\Quartz.dll
 	EndProjectSection
 EndProject
 Global
