@@ -839,6 +839,14 @@
     <Compile Include="WebControls\Pessoa\UCCadastroPessoa.ascx.designer.cs">
       <DependentUpon>UCCadastroPessoa.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebControls\PluginNotificacao\NotificacaoConfig.cs" />
+    <Compile Include="WebControls\PluginNotificacao\UCPluginNotificacao.ascx.cs">
+      <DependentUpon>UCPluginNotificacao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\PluginNotificacao\UCPluginNotificacao.ascx.designer.cs">
+      <DependentUpon>UCPluginNotificacao.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebControls\Sistemas\UCSistemas.ascx.cs">
       <DependentUpon>UCSistemas.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1148,6 +1156,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="SAML\SignonService.ashx" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1498,6 +1507,11 @@
     <Content Include="manutencao.htm" />
     <Content Include="MeusDados.aspx" />
     <Content Include="SAML\Signon.aspx" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\plg-notify.min.js" />
     <Content Include="Sistema.aspx" />
     <Content Include="version.xml" />
     <Content Include="Web.config">
@@ -1540,6 +1554,7 @@
     <Content Include="WebControls\MeusDados\UCMeusDados.ascx" />
     <Content Include="WebControls\Permissoes\UCPermissoes.ascx" />
     <Content Include="WebControls\Pessoa\UCCadastroPessoa.ascx" />
+    <Content Include="WebControls\PluginNotificacao\UCPluginNotificacao.ascx" />
     <Content Include="WebControls\Sistemas\UCSistemas.ascx" />
     <Content Include="WSServicos.asmx" />
   </ItemGroup>
