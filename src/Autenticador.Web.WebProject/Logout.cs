@@ -147,7 +147,7 @@ namespace Autenticador.Web.WebProject
         }
 
         /// <summary>
-        /// Verifica se está logado no SAML provider do CoreSSO.
+        /// Verifica se está logado no SAML provider do Autenticador.
         /// Se sim, redireciona para o logout do provider.
         /// </summary>
         /// <param name="context">Contexto http</param>
