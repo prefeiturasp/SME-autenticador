@@ -30,6 +30,7 @@ namespace Autenticador.Web.WebProject
                     Cookies_AuthenticationType = ConfigurationManager.AppSettings["Cookies_AuthenticationType"],
                     Cookies_CookieName = ConfigurationManager.AppSettings["Cookies_CookieName"],
                     Cookies_LoginPath = ConfigurationManager.AppSettings["Cookies_LoginPath"],
+                    Cookies_CookieDomain = ConfigurationManager.AppSettings["Cookies_CookieDomain"],
                     AuthenticationType = ConfigurationManager.AppSettings["AuthenticationType"],
                     Authority = ConfigurationManager.AppSettings["Authority"],
                     ClientId = ConfigurationManager.AppSettings["ClientId"],
@@ -68,7 +69,7 @@ namespace Autenticador.Web.WebProject
         public string Cookies_AuthenticationType { get; set; }
         public string Cookies_CookieName { get; set; }
         public string Cookies_LoginPath { get; set; }
-
+        public string Cookies_CookieDomain { get; set; }
         public string AuthenticationType { get; set; }
         public string SignInAsAuthenticationType { get; set; }
         public string Authority { get; set; }

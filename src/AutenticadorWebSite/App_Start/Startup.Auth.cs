@@ -30,7 +30,8 @@ namespace AutenticadorWebSite
                 {
                     AuthenticationType = IDSSettings.Cookies_AuthenticationType,
                     LoginPath = new PathString(IDSSettings.Cookies_LoginPath),
-                    CookieName = IDSSettings.Cookies_CookieName
+                    CookieName = IDSSettings.Cookies_CookieName,
+                    CookieDomain = IDSSettings.Cookies_CookieDomain
                 });
 
                 app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions

@@ -88,24 +88,27 @@ namespace Autenticador.Web.WebProject
 
                     // Verifica se existe sistemas autenticados em Cookie para realizar logout
                     HttpCookie cookie = context.Request.Cookies["SistemasLogged"];
-
-                    if (cookie != null)
+                    if (cookie != null
+                        && cookie.Values.AllKeys.Count(p => p != null) > 0)
                     {
-                        if (cookie.Values.AllKeys.Count(p => p != null) > 0)
-                        {
-                            SYS_Sistema entitySistema = SYS_SistemaBO.GetEntity(new SYS_Sistema { sis_id = Convert.ToInt32(cookie.Values.AllKeys.First()) });
-                            HttpContext.Current.Response.Redirect(entitySistema.sis_caminhoLogout, false);
-                            HttpContext.Current.ApplicationInstance.CompleteRequest();
-                        }
-                        else
-                        {
-                            RedirecionarParaLogin(context);
-                        }
+                        SYS_Sistema entitySistema = SYS_SistemaBO.GetEntity(new SYS_Sistema { sis_id = Convert.ToInt32(cookie.Values.AllKeys.First()) });
+                        HttpContext.Current.Response.Redirect(entitySistema.sis_caminhoLogout, false);
+                        HttpContext.Current.ApplicationInstance.CompleteRequest();
                     }
                     else
                     {
-                        RedirecionarParaLogin(context);
+                        HttpCookie cookieHibrido = context.Request.Cookies["LogoutHibrido"];
+                        if (cookieHibrido == null)
+                        {
+                            cookieHibrido = new HttpCookie("LogoutHibrido");
+                            cookieHibrido.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
+                            cookieHibrido.Values["hibrido"] = "true";
+                            context.Response.Cookies.Add(cookieHibrido);
+                        }
+
+                        RedirecionarParaLogoutIdentityServer(context);
                     }
+
                 }
             }
             catch (ValidationException ex)
@@ -118,6 +121,18 @@ namespace Autenticador.Web.WebProject
 
                 ErrorMessage("Não foi possível atender a solicitação.");
             }
+        }
+
+       /// <summary>
+        /// Redireciona para a página de logout do IdentityServer
+        /// </summary>
+        /// <param name="context">HttpContext</param>
+        private void RedirecionarParaLogoutIdentityServer(HttpContext context)
+        {
+            if (context.Session != null)
+                context.Session.Abandon();
+
+            context.Request.GetOwinContext().Authentication.SignOut();
         }
 
         /// <summary>
@@ -134,30 +149,7 @@ namespace Autenticador.Web.WebProject
                 __SessionWEB.SistemaIDLogout_QueryString = sistemaLogout.sis_id;
             }
         }
-
-        /// <summary>
-        /// Redireciona para a página de login
-        /// </summary>
-        /// <param name="context">HttpContext</param>
-        private void RedirecionarParaLogin(HttpContext context)
-        {
-            context.Request.GetOwinContext().Authentication.SignOut();
-            if (context.Session != null)
-                context.Session.Abandon();
-        }
-
-        /// <summary>
-        /// Verifica se está logado no SAML provider do Autenticador.
-        /// Se sim, redireciona para o logout do provider.
-        /// </summary>
-        /// <param name="context">Contexto http</param>
-        /// <returns>Se foi redirecionado para o SAML Provider</returns>
-        private static bool VerificaLogoutCoreProvider(HttpContext context)
-        {
-            context.Request.GetOwinContext().Authentication.SignOut();
-            return true;            
-        }
-
+        
         #endregion IHttpHandler Members
 
         private void ErrorMessage(string message)
