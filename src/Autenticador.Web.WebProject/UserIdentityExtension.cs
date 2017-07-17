@@ -3,7 +3,7 @@ using System.Security.Principal;
 using System.Web;
 using System.Linq;
 
-namespace Autenticador.Web.WebProject
+namespace Autenticador.Web.WebProjects
 {
     public static class UserIdentityExtension
     {

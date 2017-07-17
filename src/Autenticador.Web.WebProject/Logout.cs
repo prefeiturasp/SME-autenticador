@@ -6,7 +6,6 @@ using System.Web.SessionState;
 using CoreLibrary.SAML20.Bindings;
 using CoreLibrary.SAML20.Configuration;
 using CoreLibrary.SAML20;
-using System.Web.Security;
 using CoreLibrary.SAML20.Schemas.Protocol;
 using CoreLibrary.SAML20.Schemas.Core;
 using System.IO;
@@ -14,9 +13,6 @@ using System.IO.Compression;
 using Autenticador.Entities;
 using Autenticador.BLL;
 using CoreLibrary.Validation.Exceptions;
-using Autenticador.Web.WebProject;
-using System.Threading;
-using Microsoft.AspNet.Identity;
 
 namespace Autenticador.Web.WebProject
 {
@@ -110,18 +106,6 @@ namespace Autenticador.Web.WebProject
                     {
                         RedirecionarParaLogin(context);
                     }
-
-                    //var sistema = User.Identity.GetSistemaLogged(context.Request);
-                    //if (!string.IsNullOrEmpty(sistema))
-                    //{
-                    //    SYS_Sistema entitySistema = SYS_SistemaBO.GetEntity(new SYS_Sistema { sis_id = Convert.ToInt32(sistema) });
-                    //    HttpContext.Current.Response.Redirect(entitySistema.sis_caminhoLogout, false);
-                    //    HttpContext.Current.ApplicationInstance.CompleteRequest();
-                    //}
-                    //else
-                    //{
-                    //    RedirecionarParaLogin(context);
-                    //}
                 }
             }
             catch (ValidationException ex)
@@ -160,50 +144,10 @@ namespace Autenticador.Web.WebProject
             context.Request.GetOwinContext().Authentication.SignOut();
             if (context.Session != null)
                 context.Session.Abandon();
-            //int sis_IdLoginAutomatico = GetSistemaID_QueryString(context);
-            //string sis_UrlLogout = __SessionWEB.SistemaUrlLogout_QueryString;
-
-            //if (context.Session != null)
-            //    context.Session.Abandon();
-
-            //if (!VerificaLogoutCoreProvider(context))
-            //{
-            //    try
-            //    {
-            //        //Se existia a Url de redirect na Session, previni de redirecionar para a
-            //        //tela de login do Core e redireciona para a Url especificada.
-            //        if (sis_UrlLogout != null)
-            //        {
-            //            //Redireciona para a Url enviada pelo sistema que solicitou logout
-            //            HttpContext.Current.Response.Redirect(sis_UrlLogout, false);
-            //            HttpContext.Current.ApplicationInstance.CompleteRequest();
-            //            return;
-            //        }
-
-            //        int sis_idLogoutQueryString = __SessionWEB.SistemaIDLogout_QueryString;
-            //        if (sis_idLogoutQueryString > 0)
-            //        {
-            //            SignHelper.RedirectToLoginPage("sis=" + sis_idLogoutQueryString);
-            //        }
-            //        else if (sis_IdLoginAutomatico > 0)
-            //        {
-            //            SignHelper.RedirectToLoginPage("sis=" + sis_IdLoginAutomatico);
-            //        }
-            //        else
-            //        {
-            //            SignHelper.RedirectToLoginPage();
-            //            //FormsAuthentication.RedirectToLoginPage();
-            //        }
-            //    }
-            //    catch (ThreadAbortException)
-            //    {
-            //        HttpContext.Current.ApplicationInstance.CompleteRequest(); ;
-            //    }
-            //}
         }
 
         /// <summary>
-        /// Verifica se está logado no SAML provider do CoreSSO.
+        /// Verifica se está logado no SAML provider do Autenticador.
         /// Se sim, redireciona para o logout do provider.
         /// </summary>
         /// <param name="context">Contexto http</param>
@@ -211,37 +155,7 @@ namespace Autenticador.Web.WebProject
         private static bool VerificaLogoutCoreProvider(HttpContext context)
         {
             context.Request.GetOwinContext().Authentication.SignOut();
-            return true;
-
-
-            //HttpCookie cookieProvider = context.Request.Cookies["CoreSAMLProvider"];
-            //if (cookieProvider != null)
-            //{
-            //    if (cookieProvider.Values.AllKeys.Count(p => p != null) > 0)
-            //    {
-            //        string provider = cookieProvider.Values.Get(cookieProvider.Values.AllKeys.First());
-            //        bool redirect;
-            //        if ((Boolean.TryParse(provider, out redirect)) &&
-            //            redirect)
-            //        {
-            //            // Carrega as configurações do ServiceProvider
-            //            ServiceProvider config = ServiceProvider.GetConfig();
-            //            ServiceProviderEndpoint spend = SAMLUtility.GetServiceProviderEndpoint(config.ServiceEndpoint, SAMLTypeSSO.logout);
-
-            //            // Verifica configuração do ServiceProvider para logout
-            //            if (spend == null)
-            //                throw new ValidationException("Não foi possível encontrar as configurações do ServiceProvider para logout.");
-
-            //            // Redireciona para a página de logout do provider SAML.
-            //            HttpContext.Current.Response.Redirect(spend.redirectUrl, false);
-            //            HttpContext.Current.ApplicationInstance.CompleteRequest();
-
-            //            return true;
-            //        }
-            //    }
-            //}
-
-            //return false;
+            return true;            
         }
 
         #endregion IHttpHandler Members
