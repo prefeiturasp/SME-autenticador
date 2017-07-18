@@ -81,8 +81,20 @@ public partial class SAML_Signon : MotherPage
                 else
                     throw new ValidationException("Não foi possível atender a solicitação, requisição inválida.");
             }
-            else
-                throw new ValidationException("Não foi possível atender a solicitação, o usuário não tem permissão de acesso ao sistema.");
+            else //Autenticar com SAML no CoreSSO
+            {
+                if (Request.QueryString.AllKeys.Contains("RelayState")
+                    && !String.IsNullOrWhiteSpace(Request.QueryString["RelayState"].ToString())
+                    && Request.QueryString["RelayState"].ToString().Split('?').Count() > 1
+                    && Request.QueryString["RelayState"].ToString().Contains("RedirectUrlSAML")
+                    )
+                {
+                    string redirectUrlSAML = Request.QueryString["RelayState"].ToString().Split('?')[1];
+                    Response.Redirect("~/Login.ashx?" + redirectUrlSAML, false);
+                }
+                else
+                    throw new ValidationException("Não foi possível atender a solicitação, configuração da RedirectUrlSAML inválida.");
+            }
         }
         catch (ValidationException ex)
         {
