@@ -249,3 +249,17 @@ ModelManifest.xml
 .fake/
 *.dll.config
 *Backup.rdl
+
+
+# Build related
+tools/**
+!tools/packages.config	
+[Oo]utput/	 
+
+[Bb]uild/**
+!build/*.cake
+!build/*.targets
+!build/*.json
+
+
+
