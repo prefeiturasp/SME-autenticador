@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{354192E6-8CCC-47BD-A1E7-F2D18C0E5E87}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts SQL", "Scripts SQL", "{7D6BCD17-416C-457C-902A-C9058C7378F5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web Application", "Web Application", "{2FB26967-593B-44AD-B6A6-9A76CF144AF9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_External_Dependencies", "{8732EA04-B247-426C-939D-3AEABFC03579}"
@@ -63,13 +61,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console Application", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpiraSenhaPadrao", "ExpiraSenhaPadrao\ExpiraSenhaPadrao.csproj", "{829BF3FE-2784-4427-92EA-137D1E134FBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB.Scripts", "DB.Scripts\DB.Scripts.csproj", "{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution items", ".solution items", "{DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}"
-	ProjectSection(SolutionItems) = preProject
-		..\.gitattributes = ..\.gitattributes
-		..\.gitignore = ..\.gitignore
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticador.UserControlLibrary", "Autenticador.UserControlLibrary\Autenticador.UserControlLibrary.csproj", "{6D154CDD-943D-4B25-BC0E-0B9007148230}"
 EndProject
@@ -83,6 +75,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutenticadorWebSite", "Aute
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_External_Dependencies", "{9467E442-D28D-4D86-8A07-5DFC6303650A}"
 	ProjectSection(SolutionItems) = preProject
+		_External_Dependencies\C5.dll = _External_Dependencies\C5.dll
 		_External_Dependencies\Common.Logging.dll = _External_Dependencies\Common.Logging.dll
 		_External_Dependencies\Microsoft.MetadirectoryServices.dll = _External_Dependencies\Microsoft.MetadirectoryServices.dll
 		_External_Dependencies\Microsoft.MetadirectoryServicesEx.dll = _External_Dependencies\Microsoft.MetadirectoryServicesEx.dll
@@ -91,6 +84,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_
 		_External_Dependencies\Microsoft.SqlServer.Smo.dll = _External_Dependencies\Microsoft.SqlServer.Smo.dll
 		_External_Dependencies\Microsoft.SqlServer.SqlEnum.dll = _External_Dependencies\Microsoft.SqlServer.SqlEnum.dll
 		_External_Dependencies\Microsoft.Web.Administration.dll = _External_Dependencies\Microsoft.Web.Administration.dll
+		_External_Dependencies\Quartz.dll = _External_Dependencies\Quartz.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{FACF6869-529A-419E-8CDD-F1E9A81DE45C}"
+	ProjectSection(SolutionItems) = preProject
+		..\build.cake = ..\build.cake
+		..\build.ps1 = ..\build.ps1
+		..\gitversion.yml = ..\gitversion.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{0E6386AE-EA93-4F65-8B1A-17A357F82D0D}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{35421039-CF08-4647-9707-E6A10CE2AAC5}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\build-tasks.wpp.targets = ..\build\build-tasks.wpp.targets
+		..\build\buildsettings.json = ..\build\buildsettings.json
+		..\build\ms-helpers.cake = ..\build\ms-helpers.cake
+		..\build\ms-tasks.cake = ..\build\ms-tasks.cake
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{DEEF14CB-FF21-4E3B-A085-8AD3870ADBFB}"
+	ProjectSection(SolutionItems) = preProject
+		..\tools\packages.config = ..\tools\packages.config
 	EndProjectSection
 EndProject
 Global
@@ -406,24 +426,6 @@ Global
 		{829BF3FE-2784-4427-92EA-137D1E134FBC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{829BF3FE-2784-4427-92EA-137D1E134FBC}.Release|x86.ActiveCfg = Release|Any CPU
 		{829BF3FE-2784-4427-92EA-137D1E134FBC}.Release|x86.Build.0 = Release|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Debug|x86.Build.0 = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.DebugLocal|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.DebugLocal|Mixed Platforms.Build.0 = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.DebugLocal|x86.Build.0 = Debug|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Release|x86.ActiveCfg = Release|Any CPU
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E}.Release|x86.Build.0 = Release|Any CPU
 		{6D154CDD-943D-4B25-BC0E-0B9007148230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D154CDD-943D-4B25-BC0E-0B9007148230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D154CDD-943D-4B25-BC0E-0B9007148230}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -538,9 +540,12 @@ Global
 		{47A0ABB9-333B-4BB4-BA2E-A973895FAF28} = {8D0C1AD1-BB5B-4E13-94B0-577118BA5362}
 		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE} = {79B76A6B-3126-4082-9096-5ABAF6C32268}
 		{829BF3FE-2784-4427-92EA-137D1E134FBC} = {88360CFA-75B0-4744-AA0B-97A01503ECEB}
-		{173A0ED6-C9C3-4F48-9938-68C2E3676C3E} = {7D6BCD17-416C-457C-902A-C9058C7378F5}
 		{F64F3CB5-CEED-4096-8A8B-9A0993E90F5A} = {2FB26967-593B-44AD-B6A6-9A76CF144AF9}
 		{6C34F657-CAAC-4C8C-9A0D-FE5C9213EC57} = {79B76A6B-3126-4082-9096-5ABAF6C32268}
 		{F584F2A7-AFD6-4EE1-948B-98C186E1CE81} = {2FB26967-593B-44AD-B6A6-9A76CF144AF9}
+		{FACF6869-529A-419E-8CDD-F1E9A81DE45C} = {DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}
+		{0E6386AE-EA93-4F65-8B1A-17A357F82D0D} = {DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}
+		{35421039-CF08-4647-9707-E6A10CE2AAC5} = {FACF6869-529A-419E-8CDD-F1E9A81DE45C}
+		{DEEF14CB-FF21-4E3B-A085-8AD3870ADBFB} = {FACF6869-529A-419E-8CDD-F1E9A81DE45C}
 	EndGlobalSection
 EndGlobal

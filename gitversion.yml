@@ -1,0 +1,6 @@
+next-version: 2.7.0  
+branches: 
+  release[/-]: 
+    tag: rc 
+  hotfix(es)?[/-]:
+    tag: rc 

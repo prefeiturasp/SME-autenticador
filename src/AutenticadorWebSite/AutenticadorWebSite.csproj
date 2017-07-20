@@ -60,6 +60,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CoreLibrary.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Log.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
@@ -129,10 +133,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.LDAP.dll</HintPath>
     </Reference>
-    <Reference Include="MSTech.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AutenticadorLibrary\DLLS\MSTech.Log.dll</HintPath>
-    </Reference>
     <Reference Include="CoreLibrary.Providers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Providers.dll</HintPath>
@@ -144,10 +144,6 @@
     <Reference Include="CoreLibrary.Security.Cryptography, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Security.Cryptography.dll</HintPath>
-    </Reference>
-    <Reference Include="MSTech.Util.Strings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AutenticadorLibrary\DLLS\MSTech.Util.Strings.dll</HintPath>
     </Reference>
     <Reference Include="CoreLibrary.Validation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -173,7 +169,8 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Quartz">
+    <Reference Include="Quartz, Version=2.5.0.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_External_Dependencies\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -1134,12 +1131,14 @@
     <Content Include="MasterPageSistema.master" />
     <Content Include="LoginService.ashx" />
     <Content Include="App_Themes\SMESP\smesp.skin" />
+    <Content Include="Parameters.xml" />
     <Content Include="SAML\Client\Login.ashx" />
     <Content Include="SAML\Client\MasterPage.Master" />
     <Content Include="SAML\Client\samlcert.pfx" />
     <Content Include="App_Themes\IntranetSME\IntranetSME.skin" />
     <Content Include="Captcha.ashx" />
     <Content Include="packages.config" />
+    <Content Include="build-tasks.wpp.targets" />
     <None Include="Properties\PublishProfiles\CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\DEV_CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />

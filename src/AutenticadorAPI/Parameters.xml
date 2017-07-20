@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" defaultValue="$SiteName$" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" />
+  </parameter>
+
+  <parameter name="ConnectionString.CoreSSO" defaultValue="$ConnectionString.CoreSSO$"
+          description="Conexão com o banco de dado do CoreSSO." tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile"
+          scope="\\bin\\MSTech.Data.Common.dll.config$"
+          match="/configuration/connectionStrings/add[@name='CoreSSO']/@connectionString" />
+  </parameter>
+
+  <parameter name="ConnectionString.CoreSSOLog" defaultValue="$ConnectionString.MStech.Log$"
+             description="Conexão com o banco de dado do CoreSSO_Log." tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile"
+        scope="\\bin\\MSTech.Data.Common.dll.config$"
+        match="/configuration/connectionStrings/add[@name='MSTech.Log']/@connectionString" />
+  </parameter>
+
+  <parameter name="IDProvider.Id" defaultvalue="$IDProvider.Id$" description="IDProvider.">
+    <parameterEntry kind="XmlFile"
+                    scope="\\configs\\saml.config$"
+                    match="/*[local-name()='IDProvider'][namespace-uri()='urn:MSTech.SAML20.Configuration'][1]/@id" />
+  </parameter>
+</parameters>
