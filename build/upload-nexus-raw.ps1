@@ -14,7 +14,7 @@ $Headers = @{
     Authorization = $basicAuthValue
 }
 
-$fileToUpload = (ls ..\output\*zip)
+$fileToUpload = (ls .\output\*zip)
 $uploadUrl="$nexusUrl/repository/$projectRepository/$($fileToUpload.Name)"
 
 Invoke-RestMethod -Uri $uploadUrl -Headers $Headers -Method Put -InFile $fileToUpload.FullName
