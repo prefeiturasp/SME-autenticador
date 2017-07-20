@@ -1,5 +1,5 @@
 {
-  "BuildName": "poc-coresso",
+  "BuildName": "autenticador",
   "SolutionFile": "./src/Autenticador.sln",
   "Configuration": "Release",
   "SemVer": null,
