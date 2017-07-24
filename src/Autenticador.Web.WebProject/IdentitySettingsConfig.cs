@@ -39,7 +39,8 @@ namespace Autenticador.Web.WebProject
                     RedirectUri = ConfigurationManager.AppSettings["RedirectUri"],
                     ResponseType = ConfigurationManager.AppSettings["ResponseType"],
                     Scope = ConfigurationManager.AppSettings["Scope"],
-                    SignInAsAuthenticationType = ConfigurationManager.AppSettings["SignInAsAuthenticationType"]
+                    SignInAsAuthenticationType = ConfigurationManager.AppSettings["SignInAsAuthenticationType"],
+                    LogoutUrlAVA = ConfigurationManager.AppSettings["LogoutUrlAVA"]
                 };
 
                 if (!settings.IsValid)
@@ -79,6 +80,7 @@ namespace Autenticador.Web.WebProject
         public string Scope { get; set; }
         public string ResponseType { get; set; }
         public string EndpointUserInfo { get; set; }
+        public string LogoutUrlAVA { get; set; }
 
         public bool IsValid
         {

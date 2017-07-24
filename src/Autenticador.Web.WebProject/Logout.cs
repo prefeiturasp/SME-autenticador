@@ -97,18 +97,30 @@ namespace Autenticador.Web.WebProject
                     }
                     else
                     {
-                        HttpCookie cookieHibrido = context.Request.Cookies["LogoutHibrido"];
-                        if (cookieHibrido == null)
+                        HttpCookie cookieBH = context.Request.Cookies["LogoutBH"];
+                        if (cookieBH == null && !String.IsNullOrWhiteSpace(IdentitySettingsConfig.IDSSettings.LogoutUrlAVA))
                         {
-                            cookieHibrido = new HttpCookie("LogoutHibrido");
-                            cookieHibrido.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
-                            cookieHibrido.Values["hibrido"] = "true";
-                            context.Response.Cookies.Add(cookieHibrido);
+                            HttpContext.Current.Response.Redirect(IdentitySettingsConfig.IDSSettings.LogoutUrlAVA, false);
+                            HttpContext.Current.ApplicationInstance.CompleteRequest();
                         }
+                        else
+                        {
+                            cookieBH.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
+                            cookieBH.Expires = DateTime.Now.AddDays(-1);
+                            context.Response.Cookies.Set(cookieBH);
 
-                        RedirecionarParaLogoutIdentityServer(context);
+                            HttpCookie cookieHibrido = context.Request.Cookies["LogoutHibrido"];
+                            if (cookieHibrido == null)
+                            {
+                                cookieHibrido = new HttpCookie("LogoutHibrido");
+                                cookieHibrido.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
+                                cookieHibrido.Values["hibrido"] = "true";
+                                context.Response.Cookies.Add(cookieHibrido);
+                            }
+
+                            RedirecionarParaLogoutIdentityServer(context);
+                        }
                     }
-
                 }
             }
             catch (ValidationException ex)
@@ -123,7 +135,7 @@ namespace Autenticador.Web.WebProject
             }
         }
 
-       /// <summary>
+        /// <summary>
         /// Redireciona para a página de logout do IdentityServer
         /// </summary>
         /// <param name="context">HttpContext</param>
@@ -149,7 +161,7 @@ namespace Autenticador.Web.WebProject
                 __SessionWEB.SistemaIDLogout_QueryString = sistemaLogout.sis_id;
             }
         }
-        
+
         #endregion IHttpHandler Members
 
         private void ErrorMessage(string message)
