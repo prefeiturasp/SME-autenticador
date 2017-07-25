@@ -221,7 +221,6 @@
     <Compile Include="AcessoNaoAutorizado.aspx.designer.cs">
       <DependentUpon>AcessoNaoAutorizado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\IdentitySettingsConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="AreaAdm\Cidade\Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
