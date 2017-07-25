@@ -186,6 +186,9 @@
     <Compile Include="CustomControls\CoreUI_Menu.cs" />
     <Compile Include="CustomTreeView.cs" />
     <Compile Include="HttpHandlers\ImageHandler.cs" />
+    <Compile Include="Login.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LoginService.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -217,6 +220,7 @@
     <Compile Include="SignonService.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UserIdentityExtension.cs" />
     <Compile Include="UsuarioWEB.cs" />
     <Compile Include="WebArea\Area.cs" />
     <Compile Include="WebArea\AreaAdm.cs" />

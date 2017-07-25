@@ -161,6 +161,9 @@ namespace Autenticador.Web.WebProject
         /// <returns>True - está autenticado | False - não está autenticado</returns>
         protected bool UserIsAuthenticated()
         {
+            if (!User.Identity.IsAuthenticated)
+                return false;
+
             bool ret;
             if (!UsuarioWebIsValid())
             {

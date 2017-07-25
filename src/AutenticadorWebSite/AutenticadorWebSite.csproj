@@ -60,6 +60,9 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
+    </Reference>
     <Reference Include="CoreLibrary.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Log.dll</HintPath>
@@ -169,7 +172,8 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Quartz">
+    <Reference Include="Quartz, Version=2.0.0.200, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_External_Dependencies\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -213,6 +217,7 @@
     <Compile Include="AcessoNaoAutorizado.aspx.designer.cs">
       <DependentUpon>AcessoNaoAutorizado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\IdentitySettingsConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="AreaAdm\Cidade\Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
@@ -1136,6 +1141,8 @@
     <Content Include="App_Themes\IntranetSME\IntranetSME.skin" />
     <Content Include="Captcha.ashx" />
     <Content Include="packages.config" />
+    <Content Include="identitysettings.json" />
+    <Content Include="Login.ashx" />
     <None Include="Properties\PublishProfiles\CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\DEV_CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />

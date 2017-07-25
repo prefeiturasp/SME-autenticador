@@ -7,18 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{354192E6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web Application", "Web Application", "{2FB26967-593B-44AD-B6A6-9A76CF144AF9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_External_Dependencies", "{8732EA04-B247-426C-939D-3AEABFC03579}"
-	ProjectSection(SolutionItems) = preProject
-		_External_Dependencies\C5.dll = _External_Dependencies\C5.dll
-		_External_Dependencies\Common.Logging.dll = _External_Dependencies\Common.Logging.dll
-		_External_Dependencies\Microsoft.SqlServer.ConnectionInfo.dll = _External_Dependencies\Microsoft.SqlServer.ConnectionInfo.dll
-		_External_Dependencies\Microsoft.SqlServer.Management.Sdk.Sfc.dll = _External_Dependencies\Microsoft.SqlServer.Management.Sdk.Sfc.dll
-		_External_Dependencies\Microsoft.SqlServer.Smo.dll = _External_Dependencies\Microsoft.SqlServer.Smo.dll
-		_External_Dependencies\Microsoft.SqlServer.SqlEnum.dll = _External_Dependencies\Microsoft.SqlServer.SqlEnum.dll
-		_External_Dependencies\Microsoft.Web.Administration.dll = _External_Dependencies\Microsoft.Web.Administration.dll
-		_External_Dependencies\Quartz.dll = _External_Dependencies\Quartz.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticador.Entities", "Autenticador.Entities\Autenticador.Entities.csproj", "{5C2D11D0-2FFA-4E80-8AEA-2FA82FD323E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticador.DAL", "Autenticador.DAL\Autenticador.DAL.csproj", "{A8963003-DA4B-4D2A-A644-90C3076AD445}"
@@ -76,6 +64,20 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticador.FIM.PasswordManagement", "Autenticador.FIM.PasswordManagement\Autenticador.FIM.PasswordManagement.csproj", "{6C34F657-CAAC-4C8C-9A0D-FE5C9213EC57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutenticadorWebSite", "AutenticadorWebSite\AutenticadorWebSite.csproj", "{F584F2A7-AFD6-4EE1-948B-98C186E1CE81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_External_Dependencies", "{FC86C2A8-14A3-4F0F-8AFD-69B9A8DD9238}"
+	ProjectSection(SolutionItems) = preProject
+		_External_Dependencies\C5.dll = _External_Dependencies\C5.dll
+		_External_Dependencies\Common.Logging.dll = _External_Dependencies\Common.Logging.dll
+		_External_Dependencies\Microsoft.MetadirectoryServices.dll = _External_Dependencies\Microsoft.MetadirectoryServices.dll
+		_External_Dependencies\Microsoft.MetadirectoryServicesEx.dll = _External_Dependencies\Microsoft.MetadirectoryServicesEx.dll
+		_External_Dependencies\Microsoft.SqlServer.ConnectionInfo.dll = _External_Dependencies\Microsoft.SqlServer.ConnectionInfo.dll
+		_External_Dependencies\Microsoft.SqlServer.Management.Sdk.Sfc.dll = _External_Dependencies\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+		_External_Dependencies\Microsoft.SqlServer.Smo.dll = _External_Dependencies\Microsoft.SqlServer.Smo.dll
+		_External_Dependencies\Microsoft.SqlServer.SqlEnum.dll = _External_Dependencies\Microsoft.SqlServer.SqlEnum.dll
+		_External_Dependencies\Microsoft.Web.Administration.dll = _External_Dependencies\Microsoft.Web.Administration.dll
+		_External_Dependencies\Quartz.dll = _External_Dependencies\Quartz.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -485,7 +487,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8732EA04-B247-426C-939D-3AEABFC03579} = {DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}
 		{5C2D11D0-2FFA-4E80-8AEA-2FA82FD323E0} = {354192E6-8CCC-47BD-A1E7-F2D18C0E5E87}
 		{A8963003-DA4B-4D2A-A644-90C3076AD445} = {354192E6-8CCC-47BD-A1E7-F2D18C0E5E87}
 		{15A9548E-FDF2-415C-BDAB-92AEF00A6156} = {354192E6-8CCC-47BD-A1E7-F2D18C0E5E87}
@@ -507,5 +508,6 @@ Global
 		{F64F3CB5-CEED-4096-8A8B-9A0993E90F5A} = {2FB26967-593B-44AD-B6A6-9A76CF144AF9}
 		{6C34F657-CAAC-4C8C-9A0D-FE5C9213EC57} = {79B76A6B-3126-4082-9096-5ABAF6C32268}
 		{F584F2A7-AFD6-4EE1-948B-98C186E1CE81} = {2FB26967-593B-44AD-B6A6-9A76CF144AF9}
+		{FC86C2A8-14A3-4F0F-8AFD-69B9A8DD9238} = {DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}
 	EndGlobalSection
 EndGlobal
