@@ -1,0 +1,24 @@
+{
+  "BuildName": "autenticador",
+  "SolutionFile": "./src/Autenticador.sln",
+  "Configuration": "Release",
+  "SemVer": null,
+  "WebProjects": [
+    {
+      "UpdateVersionXml": true,
+      "ProjectName": "AutenticadorWebSite",
+      "ProjectFile": "./src/AutenticadorWebSite/AutenticadorWebSite.csproj",
+      "PublishMethod": {
+        "Type": "Package"
+      }
+    },
+    {
+      "UpdateVersionXml": true,
+      "ProjectName": "AutenticadorAPI",
+      "ProjectFile": "./src/AutenticadorAPI/AutenticadorAPI.csproj",
+      "PublishMethod": {
+        "Type": "Package"
+      }
+    }
+  ]  
+}

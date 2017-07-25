@@ -250,12 +250,19 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+*.dll.config
+*Backup.rdl
 
-### VisualStudioCode ###
-.vscode/
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
 
-[Oo]utput
+# Build related
+tools/**
+!tools/packages.config	
+[Oo]utput/	 
+
+[Bb]uild/**
+!build/*.cake
+!build/*.targets
+!build/*.json
+
+
 

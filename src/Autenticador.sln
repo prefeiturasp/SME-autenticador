@@ -43,17 +43,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticador.WebServices.Ad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticador.WebServices.Consumer", "Autenticador.WebServices.Consumer\Autenticador.WebServices.Consumer.csproj", "{47A0ABB9-333B-4BB4-BA2E-A973895FAF28}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SetupSchedulerCoreSSO", "SetupSchedulerCoreSSO\SetupSchedulerCoreSSO.wixproj", "{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console Application", "Console Application", "{88360CFA-75B0-4744-AA0B-97A01503ECEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpiraSenhaPadrao", "ExpiraSenhaPadrao\ExpiraSenhaPadrao.csproj", "{829BF3FE-2784-4427-92EA-137D1E134FBC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution items", ".solution items", "{DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}"
-	ProjectSection(SolutionItems) = preProject
-		..\.gitattributes = ..\.gitattributes
-		..\.gitignore = ..\.gitignore
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticador.UserControlLibrary", "Autenticador.UserControlLibrary\Autenticador.UserControlLibrary.csproj", "{6D154CDD-943D-4B25-BC0E-0B9007148230}"
 EndProject
@@ -77,6 +71,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_External_Dependencies", "_
 		_External_Dependencies\Microsoft.SqlServer.SqlEnum.dll = _External_Dependencies\Microsoft.SqlServer.SqlEnum.dll
 		_External_Dependencies\Microsoft.Web.Administration.dll = _External_Dependencies\Microsoft.Web.Administration.dll
 		_External_Dependencies\Quartz.dll = _External_Dependencies\Quartz.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{FACF6869-529A-419E-8CDD-F1E9A81DE45C}"
+	ProjectSection(SolutionItems) = preProject
+		..\build.cake = ..\build.cake
+		..\build.ps1 = ..\build.ps1
+		..\gitversion.yml = ..\gitversion.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{0E6386AE-EA93-4F65-8B1A-17A357F82D0D}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{35421039-CF08-4647-9707-E6A10CE2AAC5}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\build-tasks.wpp.targets = ..\build\build-tasks.wpp.targets
+		..\build\buildsettings.json = ..\build\buildsettings.json
+		..\build\ms-helpers.cake = ..\build\ms-helpers.cake
+		..\build\ms-tasks.cake = ..\build\ms-tasks.cake
+		..\build\upload-nexus-raw.ps1 = ..\build\upload-nexus-raw.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{DEEF14CB-FF21-4E3B-A085-8AD3870ADBFB}"
+	ProjectSection(SolutionItems) = preProject
+		..\tools\packages.config = ..\tools\packages.config
 	EndProjectSection
 EndProject
 Global
@@ -358,22 +379,6 @@ Global
 		{47A0ABB9-333B-4BB4-BA2E-A973895FAF28}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{47A0ABB9-333B-4BB4-BA2E-A973895FAF28}.Release|x86.ActiveCfg = Release|Any CPU
 		{47A0ABB9-333B-4BB4-BA2E-A973895FAF28}.Release|x86.Build.0 = Release|Any CPU
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Debug|x86.ActiveCfg = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Debug|x86.Build.0 = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.DebugLocal|Any CPU.ActiveCfg = Release|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.DebugLocal|Any CPU.Build.0 = Release|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.DebugLocal|Mixed Platforms.ActiveCfg = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.DebugLocal|Mixed Platforms.Build.0 = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.DebugLocal|x86.ActiveCfg = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.DebugLocal|x86.Build.0 = Debug|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Release|Any CPU.ActiveCfg = Release|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Release|Mixed Platforms.Build.0 = Release|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Release|x86.ActiveCfg = Release|x86
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE}.Release|x86.Build.0 = Release|x86
 		{829BF3FE-2784-4427-92EA-137D1E134FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{829BF3FE-2784-4427-92EA-137D1E134FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{829BF3FE-2784-4427-92EA-137D1E134FBC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -503,11 +508,13 @@ Global
 		{6611C3E6-D0C0-46C4-894E-CA1F3FE5622E} = {354192E6-8CCC-47BD-A1E7-F2D18C0E5E87}
 		{E8B132A4-1C54-4F60-8B84-2644CC9D1086} = {8D0C1AD1-BB5B-4E13-94B0-577118BA5362}
 		{47A0ABB9-333B-4BB4-BA2E-A973895FAF28} = {8D0C1AD1-BB5B-4E13-94B0-577118BA5362}
-		{87854C7B-27B5-4D7B-9FEF-9C9403F22FAE} = {79B76A6B-3126-4082-9096-5ABAF6C32268}
 		{829BF3FE-2784-4427-92EA-137D1E134FBC} = {88360CFA-75B0-4744-AA0B-97A01503ECEB}
 		{F64F3CB5-CEED-4096-8A8B-9A0993E90F5A} = {2FB26967-593B-44AD-B6A6-9A76CF144AF9}
 		{6C34F657-CAAC-4C8C-9A0D-FE5C9213EC57} = {79B76A6B-3126-4082-9096-5ABAF6C32268}
 		{F584F2A7-AFD6-4EE1-948B-98C186E1CE81} = {2FB26967-593B-44AD-B6A6-9A76CF144AF9}
-		{FC86C2A8-14A3-4F0F-8AFD-69B9A8DD9238} = {DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}
+		{FACF6869-529A-419E-8CDD-F1E9A81DE45C} = {DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}
+		{0E6386AE-EA93-4F65-8B1A-17A357F82D0D} = {DA85EFB9-1DBC-4E0C-BD05-0E85A77F06F2}
+		{35421039-CF08-4647-9707-E6A10CE2AAC5} = {FACF6869-529A-419E-8CDD-F1E9A81DE45C}
+		{DEEF14CB-FF21-4E3B-A085-8AD3870ADBFB} = {FACF6869-529A-419E-8CDD-F1E9A81DE45C}
 	EndGlobalSection
 EndGlobal
