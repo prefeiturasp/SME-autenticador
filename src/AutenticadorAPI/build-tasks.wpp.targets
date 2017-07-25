@@ -5,7 +5,7 @@
       <FromTarget>build-tasks.wpp.targets</FromTarget>
     </ExcludeFromPackageFiles>
   </ItemGroup>
-  <!--<PropertyGroup>
+  <PropertyGroup>
     <CopyAllFilesToSingleFolderForPackageDependsOn>
       IncludeConnectionStringFile;
       $(CopyAllFilesToSingleFolderForPackageDependsOn);
@@ -22,5 +22,5 @@
         <DestinationRelativePath>bin\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
     </ItemGroup>
-  </Target>-->
+  </Target>
 </Project>
