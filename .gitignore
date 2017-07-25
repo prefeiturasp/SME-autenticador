@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*StyleCop.Cache
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -21,12 +22,13 @@
 bld/
 [Bb]in/
 [Oo]bj/
-*.cache   
-Debug/
-[o]bj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+
+#Sonar
+.sonar/
+
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
@@ -42,6 +44,9 @@ TestResult.xml
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c
+
+tools/*
+!tools/packages.config
 
 # DNX
 project.lock.json
@@ -184,13 +189,11 @@ BundleArtifacts/
 
 # Others
 ClientBin/
-[Ss]tyle[Cc]op.*
 ~$*
 *~
 *.dbmdl
 *.dbproj.schemaview
-#Certificado SAML (samlcert.pfx)
-#*.pfx
+*.pfx
 *.publishsettings
 node_modules/
 orleans.codegen.cs
@@ -249,3 +252,17 @@ ModelManifest.xml
 .fake/
 *.dll.config
 *Backup.rdl
+
+
+# Build related
+tools/**
+!tools/packages.config	
+[Oo]utput/	 
+
+[Bb]uild/**
+!build/*.cake
+!build/*.targets
+!build/*.json
+
+
+

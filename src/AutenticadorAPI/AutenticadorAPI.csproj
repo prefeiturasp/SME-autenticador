@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Parameters.xml" />
     <Content Include="version.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -188,6 +189,7 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="build-tasks.wpp.targets" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -241,7 +243,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4694</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
