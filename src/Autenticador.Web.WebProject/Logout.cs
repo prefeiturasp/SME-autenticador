@@ -143,6 +143,8 @@ namespace Autenticador.Web.WebProject
         {
             if (context.Session != null)
                 context.Session.Abandon();
+            //int sis_IdLoginAutomatico = GetSistemaID_QueryString(context);
+            //string sis_UrlLogout = __SessionWEB.SistemaUrlLogout_QueryString;
 
             context.Request.GetOwinContext().Authentication.SignOut();
         }

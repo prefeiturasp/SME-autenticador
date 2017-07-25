@@ -18,6 +18,6 @@
 
   <!-- Pastas e arquivos -->
   <?define PastaArquivos="$(sys.CURRENTDIR)\Arquivos\" ?>
-  <?define PastaBinServico="$(var.SchedulerCoreSSO.ProjectDir)bin\$(var.SchedulerCoreSSO.Configuration)" ?>
-  <?define CaminhoExecutavel="$(var.SchedulerCoreSSO.ProjectDir)bin\$(var.SchedulerCoreSSO.Configuration)\$(var.SchedulerCoreSSO.TargetFileName)" ?>
+  <?define PastaBinServico="$(var.SchedulerCoreSSO.ProjectDir)bin\$(var.Configuration)" ?>
+  <?define CaminhoExecutavel="$(var.SchedulerCoreSSO.ProjectDir)bin\$(var.Configuration)\$(var.SchedulerCoreSSO.TargetFileName)" ?>
 </Include>
