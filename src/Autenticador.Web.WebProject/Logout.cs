@@ -98,26 +98,20 @@ namespace Autenticador.Web.WebProject
                     else
                     {
                         HttpCookie cookieBH = context.Request.Cookies["LogoutBH"];
-                        if (cookieBH == null && !String.IsNullOrWhiteSpace(IdentitySettingsConfig.IDSSettings.LogoutUrlAVA))
+                        if (cookieBH == null 
+                            && !String.IsNullOrEmpty(IdentitySettingsConfig.IDSSettings.LogoutUrlAVA))
                         {
                             HttpContext.Current.Response.Redirect(IdentitySettingsConfig.IDSSettings.LogoutUrlAVA, false);
                             HttpContext.Current.ApplicationInstance.CompleteRequest();
                         }
                         else
                         {
-                            cookieBH.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
-                            cookieBH.Expires = DateTime.Now.AddDays(-1);
-                            context.Response.Cookies.Set(cookieBH);
-
-                            HttpCookie cookieHibrido = context.Request.Cookies["LogoutHibrido"];
-                            if (cookieHibrido == null)
+                            if(cookieBH != null)
                             {
-                                cookieHibrido = new HttpCookie("LogoutHibrido");
-                                cookieHibrido.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
-                                cookieHibrido.Values["hibrido"] = "true";
-                                context.Response.Cookies.Add(cookieHibrido);
+                                cookieBH.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
+                                cookieBH.Expires = DateTime.Now.AddDays(-1);
+                                context.Response.Cookies.Set(cookieBH);
                             }
-
                             RedirecionarParaLogoutIdentityServer(context);
                         }
                     }
@@ -125,13 +119,16 @@ namespace Autenticador.Web.WebProject
             }
             catch (ValidationException ex)
             {
-                ErrorMessage(ex.Message);
+                ApplicationWEB._GravaErro(ex);
+                //ErrorMessage(ex.Message);
+                RedirecionarParaLogoutIdentityServer(context);
+
             }
             catch (Exception ex)
             {
                 ApplicationWEB._GravaErro(ex);
-
-                ErrorMessage("Não foi possível atender a solicitação.");
+                //ErrorMessage("Não foi possível atender a solicitação.");
+                RedirecionarParaLogoutIdentityServer(context);
             }
         }
 
