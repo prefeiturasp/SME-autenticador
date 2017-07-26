@@ -1425,8 +1425,6 @@ namespace Autenticador.BLL
         public static readonly string JQueryTableSorter = PastaJQuery + "jquery.tablesorter.min.js";
 
         //Plugin Notificações
-        public static readonly string JQueryNotification = PastaScripts + "jquery-1.6.4.min.js";
-        public static readonly string JQuerySignalRNotification = PastaScripts + "jquery.signalR-2.2.2.min.js";
         public static readonly string PluginNotification = PastaScripts + "plg-notify.min.js";
 
         //Util

@@ -10,14 +10,6 @@ namespace Autenticador.Web.WebProject
         {
             base.OnInit(e);
 
-            HttpCookie cookieBH = Request.Cookies["LogoutBH"];
-            if (cookieBH != null)
-            {
-                Response.Redirect("~/Logout.ashx", false);
-                HttpContext.Current.ApplicationInstance.CompleteRequest();
-            }
-
-
             // Verifica autenticação do usuário pelo Ticket da autenticação SAML
             if (!UserIsAuthenticated())
             {

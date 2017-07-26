@@ -18,13 +18,6 @@ namespace Autenticador.Web.WebProject
         {
             try
             {
-                HttpCookie cookieBH = context.Request.Cookies["LogoutBH"];
-                if (cookieBH != null)
-                {
-                    Context.Response.Redirect("~/Logout.ashx", false);
-                    HttpContext.Current.ApplicationInstance.CompleteRequest();
-                }
-
                 if (!UserIsAuthenticated())
                 {
                     string provider = IdentitySettingsConfig.IDSSettings.AuthenticationType;
