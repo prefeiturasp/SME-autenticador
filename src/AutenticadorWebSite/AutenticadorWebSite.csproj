@@ -1062,12 +1062,10 @@
     <Content Include="App_Themes\IntranetSME\images\logos\logo-quadro-horario-full.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-quadro-horario.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-remocao.png" />
-    <Content Include="App_Themes\IntranetSME\images\logos\logo-rio-educacao.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-rioeduca.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-transporteescolar-full.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-transporteescolar.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\LOGO_CLIENTE.png" />
-    <Content Include="App_Themes\IntranetSME\images\logos\LOGO_CLIENTE_.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\LOGO_GERAL_SISTEMA.png" />
     <Content Include="App_Themes\IntranetSME\images\notepad.png" />
     <Content Include="App_Themes\IntranetSME\images\novo.png" />
@@ -1250,7 +1248,6 @@
     <Content Include="App_Themes\Default\images\logos\logo-pic.png" />
     <Content Include="App_Themes\Default\images\logos\logo-remocao-full.png" />
     <Content Include="App_Themes\Default\images\logos\logo-remocao.png" />
-    <Content Include="App_Themes\Default\images\logos\logo-rio-educacao.png" />
     <Content Include="App_Themes\Default\images\logos\logo-undime.png" />
     <Content Include="App_Themes\Default\images\logos\LOGO_GERAL_SISTEMA.png" />
     <Content Include="App_Themes\Default\images\notepad.png" />
