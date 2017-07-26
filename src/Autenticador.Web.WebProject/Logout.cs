@@ -97,8 +97,8 @@ namespace Autenticador.Web.WebProject
                     }
                     else
                     {
-                        HttpCookie cookieBH = context.Request.Cookies["LogoutBH"];
-                        if (cookieBH == null 
+                        HttpCookie cookieBH = context.Request.Cookies["BH"];
+                        if (cookieBH != null 
                             && !String.IsNullOrEmpty(IdentitySettingsConfig.IDSSettings.LogoutUrlAVA))
                         {
                             HttpContext.Current.Response.Redirect(IdentitySettingsConfig.IDSSettings.LogoutUrlAVA, false);
@@ -106,12 +106,6 @@ namespace Autenticador.Web.WebProject
                         }
                         else
                         {
-                            if(cookieBH != null)
-                            {
-                                cookieBH.Domain = IdentitySettingsConfig.IDSSettings.Cookies_CookieDomain;
-                                cookieBH.Expires = DateTime.Now.AddDays(-1);
-                                context.Response.Cookies.Set(cookieBH);
-                            }
                             RedirecionarParaLogoutIdentityServer(context);
                         }
                     }
@@ -122,7 +116,6 @@ namespace Autenticador.Web.WebProject
                 ApplicationWEB._GravaErro(ex);
                 //ErrorMessage(ex.Message);
                 RedirecionarParaLogoutIdentityServer(context);
-
             }
             catch (Exception ex)
             {

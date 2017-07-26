@@ -102,13 +102,11 @@ namespace Autenticador.Web.WebProject
             if (sm != null)
             {
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.JQueryCore));
-                sm.Scripts.Add(new ScriptReference(ArquivoJS.JQueryNotification));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.JQueryUI));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.JQueryScrollTo));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.StylesheetToggle));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.AutiFill));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.Util));                
-                sm.Scripts.Add(new ScriptReference(ArquivoJS.JQuerySignalRNotification));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.PluginNotification));
             }
         }

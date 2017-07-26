@@ -1161,7 +1161,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="SAML\SignonService.ashx" />
-    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1512,10 +1511,6 @@
     <Content Include="manutencao.htm" />
     <Content Include="MeusDados.aspx" />
     <Content Include="SAML\Signon.aspx" />
-    <Content Include="Scripts\jquery-1.6.4.js" />
-    <Content Include="Scripts\jquery-1.6.4.min.js" />
-    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
-    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Scripts\plg-notify.min.js" />
     <Content Include="Sistema.aspx" />
     <Content Include="version.xml" />
