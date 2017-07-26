@@ -22,7 +22,7 @@
     <OldToolsVersion>14.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44397</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -1154,6 +1154,7 @@
     <Content Include="Captcha.ashx" />
     <Content Include="packages.config" />
     <Content Include="Login.ashx" />
+    <Content Include="build-tasks.wpp.targets" />
     <None Include="Properties\PublishProfiles\CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\DEV_CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
@@ -1622,7 +1623,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>54296</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
