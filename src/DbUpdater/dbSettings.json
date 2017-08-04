@@ -1,0 +1,35 @@
+﻿{
+  "SystemId": 1,
+  "DbSettings": [
+    {
+      "ProjectDatabase": "CoreSSO.Database",
+      "DeployConnectionString": "$DeployConnectionStringCore$",
+      "RestoreInitialVersion": "False",
+      "BackupFilePath": "",
+      "Variables": {
+        "SystemName": "$SystemName$",
+        "UserName": "$UserName$",
+        "UserPass": "$UserPass$",
+        "UrlMain": "$UrlMain$",
+        "UrlLogin": "$UrlLogin$",
+        "UrlLogout": "$UrlLogout$",
+        "HostService": "$HostService$"
+      }
+    },
+    {
+      "ProjectDatabase": "CoreSSOLog.Database",
+      "DeployConnectionString": "$DeployConnectionStringCoreLog$",
+      "RestoreInitialVersion": "False",
+      "BackupFilePath": "",
+      "Variables": {
+        "SystemName": "$SystemName$",
+        "UserName": "$UserName$",
+        "UserPass": "$UserPass$",
+        "SystemDatabase": "$SystemDatabase$",
+        "CoreSource": "$CoreSource$",
+        "CoreTarget": "$CoreTarget$"
+
+      }
+    }
+  ]
+}

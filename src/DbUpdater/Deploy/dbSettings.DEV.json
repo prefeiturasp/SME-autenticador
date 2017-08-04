@@ -1,0 +1,33 @@
+﻿{
+  "SystemId": 101,
+  "DbSettings": [
+    {
+      "ProjectDatabase": "CoreSSO.Database",
+      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=CoreSSO;Integrated Security=SSPI;Connection Timeout=30;",
+      "RestoreInitialVersion": "False",
+      "BackupFilePath": "C:\\SQL\\Backups\\CoreSSO.bak",
+      "Variables": {
+        "SystemName": "CoreSSO",
+        "UserName": "user_Name",
+        "UserPass": "user_pass",
+        "UrlMain": "http://localhost/",
+        "UrlLogin": "http://localhost/SAML/Login.ashx",
+        "UrlLogout": "http://localhost/Logout.ashx",
+        "HostService": "localhost:500"
+      }
+    },
+    {
+      "ProjectDatabase": "CoreSSOLog.Database",
+      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=CoreSSO_Log;Integrated Security=SSPI;Connection Timeout=30;",
+      "RestoreInitialVersion": "False",
+      "BackupFilePath": "C:\\SQL\\Backups\\CoreSSO_Log.bak",
+      "Variables": {
+        "UserName": "user_Name",
+        "UserPass": "user_pass",
+        "SystemDatabase": "CoreSSO_Log",
+        "CoreSource": "CoreSSO",
+        "CoreTarget": "CoreSSO"
+      }
+    }
+  ]
+}
