@@ -46,7 +46,7 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Always\updateConfigCore.sql" />
+    <EmbeddedResource Include="Restore\updateConfigCore.sql" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Always\createRole.sql" />

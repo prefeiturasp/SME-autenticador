@@ -22,10 +22,14 @@ namespace DbUpdater
             var assembly = Assembly.Load(dbConfig.ProjectDatabase);
 
             ConsoleOutput.Warning($"Deploying {dbConfig.InitialCatalog}...");
-            Func<string, bool> filterSqlFiles = (x) => x.StartsWith(dbConfig.ProjectDatabase, StringComparison.OrdinalIgnoreCase)
-                                                        && x.EndsWith(".sql", StringComparison.OrdinalIgnoreCase);
+            Func<string, bool> filterSqlFiles =
+               (x) => x.StartsWith(dbConfig.ProjectDatabase, StringComparison.OrdinalIgnoreCase)
+                       && x.EndsWith(".sql", StringComparison.OrdinalIgnoreCase);
 
-            SqlJournalSystem journal = new SqlJournalSystem(dbConfig.ConnectionFactory, dbConfig.SystemId);
+            if (!dbConfig.RestoreInitialVersion)
+                filterSqlFiles += (x) => (!x.StartsWith(string.Concat(dbConfig.ProjectDatabase, ".", SqlJournalSystem.folderRestore, "."), StringComparison.OrdinalIgnoreCase));
+
+            SqlJournalSystem journal = new SqlJournalSystem(dbConfig);
 
             var upgradeDB =
             DeployChanges.To
