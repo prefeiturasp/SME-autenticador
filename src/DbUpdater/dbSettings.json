@@ -11,8 +11,8 @@
         "UserName": "$UserName$",
         "UserPass": "$UserPass$",
         "UrlMain": "$UrlMain$",
-        "UrlLogin": "$UrlLogin$",
-        "UrlLogout": "$UrlLogout$",
+        "UrlCoreLogin": "$UrlCoreLogin$",
+        "UrlCoreLogout": "$UrlCoreLogout$",
         "HostService": "$HostService$"
       }
     },
@@ -29,6 +29,16 @@
         "CoreSource": "$CoreSource$",
         "CoreTarget": "$CoreTarget$"
 
+      }
+    },
+    {
+      "ProjectDatabase": "CoreIDS.Database",
+      "DeployConnectionString": "$DeployConnectionStringCoreIDS$",
+      "RestoreInitialVersion": "False",
+      "BackupFilePath": "",
+      "Variables": {
+        "UrlMain": "$UrlMain$",
+        "UrlCoreLogin": "$UrlCoreLogin$"
       }
     }
   ]

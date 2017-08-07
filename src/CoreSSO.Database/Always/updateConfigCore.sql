@@ -11,7 +11,7 @@ UPDATE SYS_Sistema
 SET sis_caminho = '', sis_caminhoLogout = ''
 
 UPDATE SYS_Sistema
-SET sis_caminho = '$UrlLogin$', sis_caminhoLogout = '$UrlLogout$'
+SET sis_caminho = '$UrlCoreLogin$', sis_caminhoLogout = 'UrlCoreLogout'
 WHERE sis_id = 1
 
 UPDATE CFG_Configuracao

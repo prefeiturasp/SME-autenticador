@@ -108,6 +108,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreSSO.Database", "CoreSSO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreSSOLog.Database", "CoreSSOLog.Database\CoreSSOLog.Database.csproj", "{3EC72846-1BA2-44CF-9511-D7622607589A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreIDS.Database", "CoreIDS.Database\CoreIDS.Database.csproj", "{3BF79376-C31F-4778-A7CB-C7E7CB524016}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -549,6 +551,24 @@ Global
 		{3EC72846-1BA2-44CF-9511-D7622607589A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3EC72846-1BA2-44CF-9511-D7622607589A}.Release|x86.ActiveCfg = Release|Any CPU
 		{3EC72846-1BA2-44CF-9511-D7622607589A}.Release|x86.Build.0 = Release|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Debug|x86.Build.0 = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.DebugLocal|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.DebugLocal|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.DebugLocal|x86.Build.0 = Debug|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Release|x86.ActiveCfg = Release|Any CPU
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -581,5 +601,6 @@ Global
 		{556E9FB5-CD7A-4ED6-8E58-4CB456CEB8BB} = {839ED792-E90A-40D2-80D2-63EF543E0F3B}
 		{75471803-1DEC-44AE-8699-DAFE1334BFBF} = {839ED792-E90A-40D2-80D2-63EF543E0F3B}
 		{3EC72846-1BA2-44CF-9511-D7622607589A} = {839ED792-E90A-40D2-80D2-63EF543E0F3B}
+		{3BF79376-C31F-4778-A7CB-C7E7CB524016} = {839ED792-E90A-40D2-80D2-63EF543E0F3B}
 	EndGlobalSection
 EndGlobal
