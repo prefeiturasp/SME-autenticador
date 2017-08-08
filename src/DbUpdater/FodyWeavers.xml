@@ -5,7 +5,6 @@
       DbUp
       DbUpdater.Core
       Newtonsoft.Json
-      CoreIDS.Database
       CoreSSO.Database
       CoreSSOLog.Database
     </IncludeAssemblies>

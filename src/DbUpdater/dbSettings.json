@@ -1,5 +1,5 @@
 ﻿{
-  "SystemId": 1,
+  "SystemId": "SystemId",
   "DbSettings": [
     {
       "ProjectDatabase": "CoreSSO.Database",
@@ -28,17 +28,6 @@
         "SystemDatabase": "$SystemDatabase$",
         "CoreSource": "$CoreSource$",
         "CoreTarget": "$CoreTarget$"
-
-      }
-    },
-    {
-      "ProjectDatabase": "CoreIDS.Database",
-      "DeployConnectionString": "$DeployConnectionStringCoreIDS$",
-      "RestoreInitialVersion": "False",
-      "BackupFilePath": "",
-      "Variables": {
-        "UrlMain": "$UrlMain$",
-        "UrlCoreLogin": "$UrlCoreLogin$"
       }
     }
   ]

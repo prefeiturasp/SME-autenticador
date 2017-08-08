@@ -1,15 +1,15 @@
 ﻿{
-  "SystemId": 101,
+  "SystemId": "1",
   "DbSettings": [
     {
       "ProjectDatabase": "CoreSSO.Database",
-      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=CoreSSO;Integrated Security=SSPI;Connection Timeout=30;",
-      "RestoreInitialVersion": "False",
+      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=Local_CoreSSO;Integrated Security=SSPI;Connection Timeout=30;",
+      "RestoreInitialVersion": "True",
       "BackupFilePath": "C:\\SQL\\Backups\\CoreSSO.bak",
       "Variables": {
         "SystemName": "CoreSSO",
         "UserName": "user_Name",
-        "UserPass": "user_pass",
+        "UserPass": "User_pass@123",
         "UrlMain": "http://localhost/",
         "UrlCoreLogin": "http://localhost/SAML/Login.ashx",
         "UrlCoreLogout": "http://localhost/Logout.ashx",
@@ -18,25 +18,16 @@
     },
     {
       "ProjectDatabase": "CoreSSOLog.Database",
-      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=CoreSSO_Log;Integrated Security=SSPI;Connection Timeout=30;",
-      "RestoreInitialVersion": "False",
+      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=Local_CoreSSO_Log;Integrated Security=SSPI;Connection Timeout=30;",
+      "RestoreInitialVersion": "True",
       "BackupFilePath": "C:\\SQL\\Backups\\CoreSSO_Log.bak",
       "Variables": {
         "UserName": "user_Name",
-        "UserPass": "user_pass",
-        "SystemDatabase": "CoreSSO_Log",
+        "UserPass": "User_pass@123",
+        "SystemDatabase": "Local_CoreSSO_Log",
         "CoreSource": "CoreSSO",
-        "CoreTarget": "CoreSSO"
+        "CoreTarget": "Local_CoreSSO"
       }
-    },
-    {
-      "ProjectDatabase": "CoreIDS.Database",
-      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=CoreIDS;Integrated Security=SSPI;Connection Timeout=30;",
-      "RestoreInitialVersion": "False",
-      "BackupFilePath": "",
-      "Variables": {
-        "UrlMain": "http://localhost/",
-        "UrlCoreLogin": "http://localhost/SAML/Login.ashx"
-      }
-      ]
     }
+  ]
+}
