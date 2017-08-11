@@ -88,7 +88,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="dbSettings.json" />
-    <None Include="deploy.ps1" />
     <None Include="Deploy\dbSettings.DEV.json" />
     <None Include="Deploy\deploy.dev.ps1" />
     <None Include="packages.config">
