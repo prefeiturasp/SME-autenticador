@@ -1,4 +1,4 @@
-﻿#addin "nuget:http://nexus-ci.educacao.intranet:8081/repository/nuget-group/?package=Build.Tools&version=0.4.0"
+﻿#addin "nuget:http://repositorio.mstech.com.br/repository/nuget-group/?package=Build.Tools&version=0.4.0"
 #addin "nuget:https://www.nuget.org/api/v2?package=Newtonsoft.Json&version=9.0.1"
 #tool "nuget:?package=GitVersion.CommandLine"
 #load "./build/ms-helpers.cake"
@@ -52,7 +52,8 @@ Teardown(context =>
 
 Task("Default")
 .IsDependentOn("Clean")
-    .IsDependentOn("WebProject")    
+    .IsDependentOn("WebProject")  
+    .IsDependentOn("Database")          
     .IsDependentOn("Zip");
 
 
