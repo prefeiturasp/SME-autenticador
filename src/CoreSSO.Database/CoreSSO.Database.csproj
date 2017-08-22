@@ -46,10 +46,13 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Restore\updateConfigCore.sql" />
+    <EmbeddedResource Include="Restore\updateConfigRestore.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Always\createRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Always\updateConfigCore.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
