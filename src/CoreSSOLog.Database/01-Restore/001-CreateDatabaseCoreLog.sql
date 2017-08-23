@@ -883,7 +883,7 @@ IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[Synonym_SYS_Sistema]'
 GO
-CREATE SYNONYM [dbo].[Synonym_SYS_Sistema] FOR $CoreTarget$..[SYS_Sistema]
+CREATE SYNONYM [dbo].[Synonym_SYS_Sistema] FOR [$CoreTarget$]..[SYS_Sistema]
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
 GO

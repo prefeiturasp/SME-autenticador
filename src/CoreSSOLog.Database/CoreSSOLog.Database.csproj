@@ -46,11 +46,11 @@
     <Folder Include="03-Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="02-Always\createRole.sql" />
-    <EmbeddedResource Include="02-Always\updateSynonymCoreLog_Core.sql" />
+    <EmbeddedResource Include="02-Always\001-createRole.sql" />
+    <EmbeddedResource Include="02-Always\002-updateSynonymCoreLog_Core.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="01-Restore\01-CreateDatabaseCoreLog.sql" />
+    <EmbeddedResource Include="01-Restore\001-CreateDatabaseCoreLog.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
