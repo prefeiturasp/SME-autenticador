@@ -102,10 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Content Include="Arquivos\Autenticador.WebServices.Consumer.dll.config">
+    <Content Include="Autenticador.WebServices.Consumer.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Arquivos\CoreLibrary.Data.Common.dll.config">
+    <Content Include="CoreLibrary.Data.Common.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
