@@ -3,7 +3,7 @@ SET par_valor = '$UrlMain$'
 WHERE par_chave = 'URL_ADMINISTRATIVO'
 
 UPDATE SYS_Sistema
-SET sis_caminho = '$UrlCoreLogin$', sis_caminhoLogout = 'UrlCoreLogout'
+SET sis_caminho = '$UrlCoreLogin$', sis_caminhoLogout = 'UrlCoreLogout', sis_situacao = 1
 WHERE sis_id = 1
 
 UPDATE CFG_Configuracao
