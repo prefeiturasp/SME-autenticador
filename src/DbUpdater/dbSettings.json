@@ -20,7 +20,7 @@
       "ProjectDatabase": "CoreSSOLog.Database",
       "DeployConnectionString": "$DeployConnectionStringCoreLog$",
       "InitialVersionRestoreType": "$InitialVersionRestoreTypeCoreLog$",
-      "BackupFilePath": "$BackupFilePathCoreLog$",
+      "BackupFilePath": "",
       "Variables": {
         "SystemName": "$SystemName$",
         "UserName": "$UserName$",
