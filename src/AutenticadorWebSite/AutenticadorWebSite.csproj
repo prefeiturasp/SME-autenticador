@@ -866,6 +866,7 @@
   <ItemGroup>
     <Content Include="AcessoNaoAutorizado.aspx" />
     <Content Include="App_Browsers\BrowserFile.browser" />
+    <Content Include="app_offline.template.htm" />
     <Content Include="App_Themes\Default\images\logos\logo-bigblue-full.png" />
     <Content Include="App_Themes\Default\images\logos\logo-bigblue.png" />
     <Content Include="App_Themes\Default\images\logos\logo-contratos-escolares-full.png" />
