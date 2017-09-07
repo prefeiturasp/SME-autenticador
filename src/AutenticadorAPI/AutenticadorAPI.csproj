@@ -146,6 +146,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app_offline.template.htm" />
     <Content Include="Global.asax" />
     <Content Include="Parameters.xml" />
     <Content Include="version.xml" />
