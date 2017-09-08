@@ -28,6 +28,13 @@
         "CoreSource": "CoreSSO",
         "CoreTarget": "Local_CoreSSO1"
       }
+    },
+    {
+      "ProjectDatabase": "Master.Database",
+      "DeployConnectionString": "Server=localhost\\MSSQLSERVER2014;Database=master;Integrated Security=SSPI;Connection Timeout=30;",
+      "InitialVersionRestoreType": "None",
+      "BackupFilePath": "",
+      "Variables": {}
     }
   ]
 }

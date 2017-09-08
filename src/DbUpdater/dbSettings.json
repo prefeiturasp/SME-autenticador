@@ -29,6 +29,13 @@
         "CoreSource": "$CoreSource$",
         "CoreTarget": "$CoreTarget$"
       }
+    },
+    {
+      "ProjectDatabase": "Master.Database",
+      "DeployConnectionString": "$DeployConnectionStringMaster$",
+      "InitialVersionRestoreType": "None",
+      "BackupFilePath": "",
+      "Variables": {}
     }
   ]
 }

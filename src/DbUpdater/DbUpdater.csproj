@@ -121,6 +121,10 @@
       <Project>{3ec72846-1ba2-44cf-9511-d7622607589a}</Project>
       <Name>CoreSSOLog.Database</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Master.Database\Master.Database.csproj">
+      <Project>{c8e3279a-2514-4a27-ab81-6a98b567f433}</Project>
+      <Name>Master.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

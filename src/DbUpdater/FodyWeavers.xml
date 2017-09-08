@@ -7,6 +7,7 @@
       Newtonsoft.Json
       CoreSSO.Database
       CoreSSOLog.Database
+      Master.Database
     </IncludeAssemblies>
   </Costura>
 </Weavers>
