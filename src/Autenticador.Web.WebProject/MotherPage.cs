@@ -106,7 +106,8 @@ namespace Autenticador.Web.WebProject
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.JQueryScrollTo));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.StylesheetToggle));
                 sm.Scripts.Add(new ScriptReference(ArquivoJS.AutiFill));
-                sm.Scripts.Add(new ScriptReference(ArquivoJS.Util));
+                sm.Scripts.Add(new ScriptReference(ArquivoJS.Util));                
+                sm.Scripts.Add(new ScriptReference(ArquivoJS.PluginNotification));
             }
         }
 

@@ -15,13 +15,14 @@ namespace Autenticador.Web.WebProject
             {
                 try
                 {
-                    HttpContext.Current.Response.Redirect(ApplicationWEB._DiretorioVirtual + ApplicationWEB._PaginaExpira, true);
+                    //HttpContext.Current.Response.Redirect(ApplicationWEB._DiretorioVirtual + ApplicationWEB._PaginaExpira, true);
+                    string provider = IdentitySettingsConfig.IDSSettings.AuthenticationType;
+                    Context.GetOwinContext().Authentication.Challenge(provider);
                 }
                 catch (ThreadAbortException)
                 {
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
-
             }
             __SessionWEB._AreaAtual = new WebArea.AreaAdm();
         }

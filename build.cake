@@ -52,7 +52,9 @@ Teardown(context =>
 
 Task("Default")
 .IsDependentOn("Clean")
-    .IsDependentOn("WebProject")    
+    .IsDependentOn("WebProject")  
+    .IsDependentOn("Database") 
+    .IsDependentOn("WindowsServices")         
     .IsDependentOn("Zip");
 
 

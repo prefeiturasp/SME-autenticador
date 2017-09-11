@@ -1407,6 +1407,7 @@ namespace Autenticador.BLL
 
         //Pastas dos scripts
         public static readonly string PastaScriptRaiz = UrlCoreSSO + "/Includes/";
+        public static readonly string PastaScripts = UrlCoreSSO + "/Scripts/";
 
         private static readonly string PastaUtil = PastaScriptRaiz + "Util/";
         private static readonly string PastaJQuery = PastaScriptRaiz + "JQuery/";
@@ -1422,6 +1423,9 @@ namespace Autenticador.BLL
         public static readonly string UiAriaTabs = PastaJQuery + "ui.ariaTabs.js";
         public static readonly string JQueryBlockUI = PastaJQuery + "jquery.blockUI.js";
         public static readonly string JQueryTableSorter = PastaJQuery + "jquery.tablesorter.min.js";
+
+        //Plugin Notificações
+        public static readonly string PluginNotification = PastaScripts + "plg-notify.min.js";
 
         //Util
         public static readonly string Init = PastaUtil + "Init.js";

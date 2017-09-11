@@ -11,14 +11,20 @@
       "PublishMethod": {
         "Type": "Package"
       }
-    },
-    {
-      "UpdateVersionXml": true,
-      "ProjectName": "AutenticadorAPI",
-      "ProjectFile": "./src/AutenticadorAPI/AutenticadorAPI.csproj",
-      "PublishMethod": {
-        "Type": "Package"
-      }
     }
-  ]  
+  ],
+  "DatabaseProjects": [
+    {
+      "DatabaseProjectType": "DbUp",
+      "ProjectName": "DbUpdater",
+      "ProjectFile": "./src/DbUpdater/DbUpdater.csproj"
+    }
+  ],
+  "WindowsServiceProjects": [
+    {
+      "WindowsServiceProjectType": "CopyFiles",
+      "ProjectName": "SchedulerCoreSSO",
+      "ProjectFile": "./src/SchedulerCoreSSO/SchedulerCoreSSO.csproj"
+    }
+  ]
 }

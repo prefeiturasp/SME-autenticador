@@ -205,7 +205,7 @@ namespace Autenticador.Web.WebProject
                 // Fonte: Microsoft Anti-Cross Site Scripting Library V1.5 - User Guide, p-10.
                 Regex regex = new Regex(@"^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+=&amp;%\$#_]*)?$", RegexOptions.IgnoreCase);
                 if (!regex.IsMatch(destination))
-                    throw new CoreLibrary.Validation.Exceptions.ValidationException("A url contém um valor de entrada possivelmente perigoso, que pode indicar uma tentativa de comprometer a segurança do aplicativo.");
+                    throw new ValidationException("A url contém um valor de entrada possivelmente perigoso, que pode indicar uma tentativa de comprometer a segurança do aplicativo.");
 
                 string samlResponse = SAMLUtility.SerializeToXmlString(responseSAML);
                 samlResponse = HttpUtility.UrlEncode(samlResponse);

@@ -5,23 +5,18 @@
     <parameterEntry kind="ProviderPath" scope="setAcl" />
   </parameter>
 
-  <parameter name="ConnectionString.CoreSSO" defaultValue="$ConnectionString.CoreSSO$"
+  <parameter name="ConnectionString.AutenticadorDB" defaultValue="$ConnectionString.AutenticadorDB$"
           description="Conexão com o banco de dado do CoreSSO." tags="SqlConnectionString">
     <parameterEntry kind="XmlFile"
-          scope="\\bin\\MSTech.Data.Common.dll.config$"
-          match="/configuration/connectionStrings/add[@name='CoreSSO']/@connectionString" />
+          scope="\\bin\\CoreLibrary.Data.Common.dll.config$"
+          match="/configuration/connectionStrings/add[@name='AutenticadorDB']/@connectionString" />
   </parameter>
 
-  <parameter name="ConnectionString.CoreSSOLog" defaultValue="$ConnectionString.MStech.Log$"
+  <parameter name="ConnectionString.LogDB" defaultValue="$ConnectionString.LogDB$"
              description="Conexão com o banco de dado do CoreSSO_Log." tags="SqlConnectionString">
     <parameterEntry kind="XmlFile"
-        scope="\\bin\\MSTech.Data.Common.dll.config$"
-        match="/configuration/connectionStrings/add[@name='MSTech.Log']/@connectionString" />
-  </parameter>
-
-  <parameter name="IDProvider.Id" defaultvalue="$IDProvider.Id$" description="IDProvider.">
-    <parameterEntry kind="XmlFile"
-                    scope="\\configs\\saml.config$"
-                    match="/*[local-name()='IDProvider'][namespace-uri()='urn:MSTech.SAML20.Configuration'][1]/@id" />
-  </parameter>
+        scope="\\bin\\CoreLibrary.Data.Common.dll.config$"
+        match="/configuration/connectionStrings/add[@name='LogDB']/@connectionString" />
+  </parameter>       
+ 
 </parameters>

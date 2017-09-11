@@ -1,14 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security.Google;
-using Autenticador.BLL;
-using Autenticador.Entities;
-using Autenticador.Web.WebProject.Authentication;
-using System.Collections.Generic;
-using Owin;
-using System;
-using System.Configuration;
-using System.Globalization;
-using Quartz;
+﻿using Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols;
@@ -17,16 +7,14 @@ using System.Security.Claims;
 using System.Linq;
 using Microsoft.Owin;
 using IdentityModel.Client;
+using Autenticador.Web.WebProject;
 
 namespace AutenticadorWebSite
 {
     public partial class Startup
     {
         public void ConfigureAuth(IAppBuilder app)
-        {
-            //app.UseCookieAuthentication(new AutenticadorCookieAuthenticationOptions());
-            //app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
-
+        {            
             var IDSSettings = IdentitySettingsConfig.IDSSettings;
             if (!string.IsNullOrEmpty(IdentitySettingsConfig.Msg))
             {
@@ -42,7 +30,8 @@ namespace AutenticadorWebSite
                 {
                     AuthenticationType = IDSSettings.Cookies_AuthenticationType,
                     LoginPath = new PathString(IDSSettings.Cookies_LoginPath),
-                    CookieName = IDSSettings.Cookies_CookieName
+                    CookieName = IDSSettings.Cookies_CookieName,
+                    CookieDomain = IDSSettings.Cookies_CookieDomain
                 });
 
                 app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions

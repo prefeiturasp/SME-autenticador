@@ -67,6 +67,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AutenticadorLibrary\DLLS\CoreLibrary.Log.dll</HintPath>
     </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
@@ -217,7 +221,6 @@
     <Compile Include="AcessoNaoAutorizado.aspx.designer.cs">
       <DependentUpon>AcessoNaoAutorizado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\IdentitySettingsConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="AreaAdm\Cidade\Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
@@ -840,6 +843,14 @@
     <Compile Include="WebControls\Pessoa\UCCadastroPessoa.ascx.designer.cs">
       <DependentUpon>UCCadastroPessoa.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebControls\PluginNotificacao\NotificacaoConfig.cs" />
+    <Compile Include="WebControls\PluginNotificacao\UCPluginNotificacao.ascx.cs">
+      <DependentUpon>UCPluginNotificacao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\PluginNotificacao\UCPluginNotificacao.ascx.designer.cs">
+      <DependentUpon>UCPluginNotificacao.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WebControls\Sistemas\UCSistemas.ascx.cs">
       <DependentUpon>UCSistemas.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -855,6 +866,7 @@
   <ItemGroup>
     <Content Include="AcessoNaoAutorizado.aspx" />
     <Content Include="App_Browsers\BrowserFile.browser" />
+    <Content Include="app_offline.template.htm" />
     <Content Include="App_Themes\Default\images\logos\logo-bigblue-full.png" />
     <Content Include="App_Themes\Default\images\logos\logo-bigblue.png" />
     <Content Include="App_Themes\Default\images\logos\logo-contratos-escolares-full.png" />
@@ -1051,12 +1063,10 @@
     <Content Include="App_Themes\IntranetSME\images\logos\logo-quadro-horario-full.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-quadro-horario.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-remocao.png" />
-    <Content Include="App_Themes\IntranetSME\images\logos\logo-rio-educacao.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-rioeduca.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-transporteescolar-full.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\logo-transporteescolar.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\LOGO_CLIENTE.png" />
-    <Content Include="App_Themes\IntranetSME\images\logos\LOGO_CLIENTE_.png" />
     <Content Include="App_Themes\IntranetSME\images\logos\LOGO_GERAL_SISTEMA.png" />
     <Content Include="App_Themes\IntranetSME\images\notepad.png" />
     <Content Include="App_Themes\IntranetSME\images\novo.png" />
@@ -1142,8 +1152,8 @@
     <Content Include="App_Themes\IntranetSME\IntranetSME.skin" />
     <Content Include="Captcha.ashx" />
     <Content Include="packages.config" />
-    <Content Include="identitysettings.json" />
     <Content Include="Login.ashx" />
+    <Content Include="build-tasks.wpp.targets" />
     <None Include="Properties\PublishProfiles\CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\DEV_CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
@@ -1239,7 +1249,6 @@
     <Content Include="App_Themes\Default\images\logos\logo-pic.png" />
     <Content Include="App_Themes\Default\images\logos\logo-remocao-full.png" />
     <Content Include="App_Themes\Default\images\logos\logo-remocao.png" />
-    <Content Include="App_Themes\Default\images\logos\logo-rio-educacao.png" />
     <Content Include="App_Themes\Default\images\logos\logo-undime.png" />
     <Content Include="App_Themes\Default\images\logos\LOGO_GERAL_SISTEMA.png" />
     <Content Include="App_Themes\Default\images\notepad.png" />
@@ -1501,6 +1510,7 @@
     <Content Include="manutencao.htm" />
     <Content Include="MeusDados.aspx" />
     <Content Include="SAML\Signon.aspx" />
+    <Content Include="Scripts\plg-notify.min.js" />
     <Content Include="Sistema.aspx" />
     <Content Include="version.xml" />
     <Content Include="Web.config">
@@ -1543,6 +1553,7 @@
     <Content Include="WebControls\MeusDados\UCMeusDados.ascx" />
     <Content Include="WebControls\Permissoes\UCPermissoes.ascx" />
     <Content Include="WebControls\Pessoa\UCCadastroPessoa.ascx" />
+    <Content Include="WebControls\PluginNotificacao\UCPluginNotificacao.ascx" />
     <Content Include="WebControls\Sistemas\UCSistemas.ascx" />
     <Content Include="WSServicos.asmx" />
   </ItemGroup>
@@ -1614,11 +1625,10 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>54296</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54295/</IISUrl>
+          <IISUrl>http://coressoids.mstech.com.br</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>http://coresso2.teste.com.br</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

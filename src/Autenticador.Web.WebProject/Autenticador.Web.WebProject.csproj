@@ -186,6 +186,7 @@
     <Compile Include="CustomControls\CoreUI_Menu.cs" />
     <Compile Include="CustomTreeView.cs" />
     <Compile Include="HttpHandlers\ImageHandler.cs" />
+    <Compile Include="IdentitySettingsConfig.cs" />
     <Compile Include="Login.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
