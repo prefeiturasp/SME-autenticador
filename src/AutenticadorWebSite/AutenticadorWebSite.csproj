@@ -1157,9 +1157,9 @@
     <None Include="Properties\PublishProfiles\CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\DEV_CoreSSO.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
-    <None Include="SAML\samlcert.pfx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="SAML\samlcert.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SAML\SignonService.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
