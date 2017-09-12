@@ -1,15 +1,3 @@
-SET NUMERIC_ROUNDABORT OFF
-GO
-SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDENTIFIER, ANSI_NULLS ON
-GO
-SET XACT_ABORT ON
-GO
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-GO
-BEGIN TRANSACTION
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[LOG_Sistema]'
 GO
 CREATE TABLE [dbo].[LOG_Sistema]
@@ -30,8 +18,6 @@ CREATE TABLE [dbo].[LOG_Sistema]
 [gru_nome] [varchar] (50) COLLATE Latin1_General_CI_AS NULL,
 [log_grupoUA] [varchar] (max) COLLATE Latin1_General_CI_AS NULL
 )
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Sistema_UPDATE]'
 GO
@@ -78,8 +64,6 @@ BEGIN
 	RETURN @ret
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[STP_LOG_Sistema_SELECT]'
 GO
 CREATE PROCEDURE [dbo].[STP_LOG_Sistema_SELECT]
@@ -107,8 +91,6 @@ BEGIN
 		LOG_Sistema WITH(NOLOCK) 
 	
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Sistema_LOAD]'
 GO
@@ -138,8 +120,6 @@ BEGIN
 	WHERE 
 		log_id = @log_id
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Sistema_INSERT]'
 GO
@@ -201,8 +181,6 @@ BEGIN
 	SELECT ISNULL(@@ROWCOUNT, -1)
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[STP_LOG_Sistema_DELETE]'
 GO
 CREATE PROCEDURE [dbo].[STP_LOG_Sistema_DELETE]
@@ -219,8 +197,6 @@ BEGIN
 	RETURN @ret
 	
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[LOG_Erros]'
 GO
@@ -240,8 +216,6 @@ CREATE TABLE [dbo].[LOG_Erros]
 [usu_id] [uniqueidentifier] NULL,
 [usu_login] [varchar] (100) COLLATE Latin1_General_CI_AS NULL
 )
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Erros_UPDATE]'
 GO
@@ -285,8 +259,6 @@ BEGIN
 	
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[STP_LOG_Erros_SELECT]'
 GO
 CREATE PROCEDURE [dbo].[STP_LOG_Erros_SELECT]
@@ -309,8 +281,6 @@ BEGIN
 	FROM 
 		LOG_Erros WITH(NOLOCK) 
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Erros_LOAD]'
 GO
@@ -338,8 +308,6 @@ BEGIN
 	WHERE 
 		err_id = @err_id
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Erros_INSERT]'
 GO
@@ -409,8 +377,6 @@ BEGIN
 	SELECT ID FROM @ID
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[STP_LOG_Erros_DELETE]'
 GO
 CREATE PROCEDURE [dbo].[STP_LOG_Erros_DELETE]
@@ -427,8 +393,6 @@ BEGIN
 	RETURN @ret
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[LOG_Auditoria]'
 GO
 CREATE TABLE [dbo].[LOG_Auditoria]
@@ -441,8 +405,6 @@ CREATE TABLE [dbo].[LOG_Auditoria]
 [aud_entidadeOriginal] [varchar] (max) COLLATE Latin1_General_CI_AS NULL,
 [aud_entidadeNova] [varchar] (max) COLLATE Latin1_General_CI_AS NULL
 )
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Auditoria_UPDATE]'
 GO
@@ -472,8 +434,6 @@ BEGIN
 	
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[STP_LOG_Auditoria_SELECT]'
 GO
 CREATE PROCEDURE [dbo].[STP_LOG_Auditoria_SELECT]
@@ -493,8 +453,6 @@ BEGIN
 		LOG_Auditoria WITH(NOLOCK) 
 	
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Auditoria_LOAD]'
 GO
@@ -517,8 +475,6 @@ BEGIN
 		log_id = @log_id
 		AND aud_id = @aud_id
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[STP_LOG_Auditoria_INSERT]'
 GO
@@ -552,8 +508,6 @@ BEGIN
 		)
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[STP_LOG_Auditoria_DELETE]'
 GO
 CREATE PROCEDURE [dbo].[STP_LOG_Auditoria_DELETE]
@@ -572,8 +526,6 @@ BEGIN
 	RETURN @ret
 	
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[NEW_LOG_Sistema_Selectby_usu_id]'
 GO
@@ -614,8 +566,6 @@ BEGIN
 	ORDER BY
 		log_datahora DESC
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[NEW_LOG_Sistema_Selectby_Busca]'
 GO
@@ -664,8 +614,6 @@ BEGIN
 		log_datahora DESC
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[NEW_LOG_Erros_SelectBY_Dia2]'
 GO
 CREATE PROCEDURE [dbo].[NEW_LOG_Erros_SelectBY_Dia2]
@@ -694,8 +642,6 @@ BEGIN
 	ORDER BY 
 		err_dataHora DESC
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[NEW_LOG_Erros_SelectBY_Dia]'
 GO
@@ -837,8 +783,6 @@ BEGIN
 	END
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[NEW_LOG_Erros_Selectby_Busca_TipoErros]'
 GO
 -- ==============================================================
@@ -879,13 +823,9 @@ BEGIN
 
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[Synonym_SYS_Sistema]'
 GO
 CREATE SYNONYM [dbo].[Synonym_SYS_Sistema] FOR [$CoreTarget$]..[SYS_Sistema]
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[NEW_LOG_Erros_Selectby_Busca_QtdErros]'
 GO
@@ -928,8 +868,6 @@ BEGIN
 	
 	SELECT @@ROWCOUNT;
 END
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
 GO
 PRINT N'Creating [dbo].[NEW_LOG_Erros_SelectBy_Busca]'
 GO
@@ -1044,8 +982,6 @@ BEGIN
 	END
 END
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating [dbo].[Serilog]'
 GO
 CREATE TABLE [dbo].[Serilog]
@@ -1060,24 +996,7 @@ CREATE TABLE [dbo].[Serilog]
 [LogEvent] [nvarchar] (max) COLLATE Latin1_General_CI_AS NULL
 )
 GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
 PRINT N'Creating primary key [PK_Logs] on [dbo].[Serilog]'
 GO
 ALTER TABLE [dbo].[Serilog] ADD CONSTRAINT [PK_Logs] PRIMARY KEY CLUSTERED  ([Id])
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
-COMMIT TRANSACTION
-GO
-IF @@ERROR <> 0 SET NOEXEC ON
-GO
-DECLARE @Success AS BIT
-SET @Success = 1
-SET NOEXEC OFF
-IF (@Success = 1) PRINT 'The database update succeeded'
-ELSE BEGIN
-	IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION
-	PRINT 'The database update failed'
-END
 GO

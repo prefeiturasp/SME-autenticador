@@ -6,6 +6,7 @@
       "DeployConnectionString": "$DeployConnectionStringCore$",
       "InitialVersionRestoreType": "$InitialVersionRestoreTypeCore$",
       "BackupFilePath": "$BackupFilePathCore$",
+      "AllowSnapshotIsolation": true,
       "Variables": {
         "SystemName": "$SystemName$",
         "UserName": "$UserName$",
