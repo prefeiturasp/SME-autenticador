@@ -1951,7 +1951,7 @@ namespace Autenticador.BLL
                         if (criptografarSenha)
                         {
                             // Configura criptografia da senha
-                            eCriptografa criptografia = eCriptografa.SHA512;
+                            eCriptografa criptografia = eCriptografa.TripleDES;
                             entity.usu_senha = UtilBO.CriptografarSenha(entity.usu_senha, criptografia);
                             entity.usu_criptografia = Convert.ToByte(criptografia);
                         }
@@ -2100,7 +2100,7 @@ namespace Autenticador.BLL
                         if (criptografarSenha)
                         {
                             // Configura criptografia da senha
-                            eCriptografa criptografia = eCriptografa.SHA512;
+                            eCriptografa criptografia = eCriptografa.TripleDES;
                             entity.usu_senha = UtilBO.CriptografarSenha(entity.usu_senha, criptografia);
                             entity.usu_criptografia = Convert.ToByte(criptografia);
                         }
