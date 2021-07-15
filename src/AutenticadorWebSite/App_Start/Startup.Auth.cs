@@ -36,7 +36,7 @@ namespace AutenticadorWebSite
 
                 app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions
                 {
-                    AuthenticationType = IDSSettings.AuthenticationType,
+                    AuthenticationType = "smesp",//IDSSettings.AuthenticationType,
                     SignInAsAuthenticationType = IDSSettings.SignInAsAuthenticationType,
                     Authority = IDSSettings.Authority,
                     RedirectUri = IDSSettings.RedirectUri,
